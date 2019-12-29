@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://hanlin.fun').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+  <meta name="description" content="1.sql基础sql又叫结构化查询语言，分为三大类：DDL（数据定义语言）、DML（数据操作语言）、DCL（数据控制语言）  DDL：create（创建数据库和表）、drop（删除数据库和表）、alter（修改数据库和表） DML：insert（增）、delete（删）、update（改）、select（查） DCL：grant（授权）、revoke（召回授权）  sql的注释是在注释前加–；sq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01.SQL基础语法">
+<meta property="og:url" content="https://hanlin.fun/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="霖时人間">
+<meta property="og:description" content="1.sql基础sql又叫结构化查询语言，分为三大类：DDL（数据定义语言）、DML（数据操作语言）、DCL（数据控制语言）  DDL：create（创建数据库和表）、drop（删除数据库和表）、alter（修改数据库和表） DML：insert（增）、delete（删）、update（改）、select（查） DCL：grant（授权）、revoke（召回授权）  sql的注释是在注释前加–；sq">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-24T11:08:00.000Z">
+<meta property="article:modified_time" content="2019-12-29T08:08:41.350Z">
+<meta property="article:author" content="霖">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="mySQL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hanlin.fun/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>01.SQL基础语法 | 霖时人間</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="霖时人間" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"><a href="https://github.com/zzd6263165" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></div>
+    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">霖时人間</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">相信的心就是你的魔法</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="霖">
+      <meta itemprop="description" content="一个人的狂欢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="霖时人間">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          01.SQL基础语法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-24 19:08:00" itemprop="dateCreated datePublished" datetime="2019-12-24T19:08:00+08:00">2019-12-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-29 16:08:41" itemprop="dateModified" datetime="2019-12-29T16:08:41+08:00">2019-12-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="1-sql基础"><a href="#1-sql基础" class="headerlink" title="1.sql基础"></a>1.sql基础</h3><p>sql又叫结构化查询语言，分为三大类：DDL（数据定义语言）、DML（数据操作语言）、DCL（数据控制语言）</p>
+<ul>
+<li>DDL：create（创建数据库和表）、drop（删除数据库和表）、alter（修改数据库和表）</li>
+<li>DML：insert（增）、delete（删）、update（改）、select（查）</li>
+<li>DCL：grant（授权）、revoke（召回授权）</li>
+</ul>
+<p>sql的注释是在注释前加–；sql中sql的关键字不区分大小写；sql语句结束后需要加分号</p>
+<h3 id="2-DDL（数据定义语言）"><a href="#2-DDL（数据定义语言）" class="headerlink" title="2. DDL（数据定义语言）"></a>2. DDL（数据定义语言）</h3><h4 id="2-1-数据库操作"><a href="#2-1-数据库操作" class="headerlink" title="2.1 数据库操作"></a>2.1 数据库操作</h4><h5 id="2-1-1-创建数据库"><a href="#2-1-1-创建数据库" class="headerlink" title="2.1.1 创建数据库"></a>2.1.1 创建数据库</h5><p>create database 数据库名称；    -    创建指定数据库，如果这个数据库已经存在，会报错</p>
+<p>create database if not exists 数据库名称；    -     当指定数据库不存在的时候创建对应的数据库</p>
+<p>create database if not exists 数据库名称 default charset utf8；    -    创建数据库的时候指定数据库文件的编码方式</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span> school <span class="keyword">default</span> <span class="keyword">charset</span> utf8;</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-2-删除数据库"><a href="#2-1-2-删除数据库" class="headerlink" title="2.1.2 删除数据库"></a>2.1.2 删除数据库</h5><p>drop database 数据库名称；</p>
+<p>drop database if exists 数据库名称；</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> <span class="keyword">if</span> <span class="keyword">exists</span> school;</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-3-切换-使用数据库"><a href="#2-1-3-切换-使用数据库" class="headerlink" title="2.1.3 切换/使用数据库"></a>2.1.3 切换/使用数据库</h5><p>use 数据库；    -    切换/使用指定数据库；切换后所有数据库相关操作都是针对这个数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> school;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-表的操作"><a href="#2-2-表的操作" class="headerlink" title="2.2 表的操作"></a>2.2 表的操作</h4><h5 id="2-2-1-创建表（数据库文件是通过表来存数据）"><a href="#2-2-1-创建表（数据库文件是通过表来存数据）" class="headerlink" title="2.2.1 创建表（数据库文件是通过表来存数据）"></a>2.2.1 创建表（数据库文件是通过表来存数据）</h5><p>create table if not exists 表名（字段名1 类型名1 约束1，字段名2 类型名2 约束2，字段名3 类型名3 约束3，…）；</p>
+<ul>
+<li>表名：程序员自己命名，见名知意，一般需要加前缀t_/tb_表示表</li>
+<li>字段名：程序员自己命名，见名知意；注意：字段中一定要有一个字段来作为主键（可以表示唯一一条记录）；主键要求不能为空，并且是唯一的，而且类型是整型</li>
+<li>类型名：必须是当前数据库支持的数据类型，mysql中常用的数据类型：int（整型），float（浮点型），double（更大取值范围的浮点型数据），varchar（字符串）/text（字符串），bit（布尔），date/datetime（日期和时间）</li>
+<li>约束：not null（非空约束）、unique（唯一约束）、default（默认值约束）、primary key（主键约束）、foreign key（外键约束）、auto_increment（自动增长）</li>
+<li>注意：约束可以没有，也可以有多个<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> tb_student</span><br><span class="line">(</span><br><span class="line">stuid <span class="built_in">int</span> PRIMARY <span class="keyword">KEY</span> auto_increment,</span><br><span class="line">stuname <span class="built_in">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">stubirth <span class="built_in">date</span>,</span><br><span class="line">stugender <span class="built_in">bit</span> <span class="keyword">DEFAULT</span> <span class="number">1</span>,</span><br><span class="line">stutel <span class="built_in">VARCHAR</span>(<span class="number">11</span>) <span class="keyword">UNIQUE</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h5 id="2-2-2-删除表"><a href="#2-2-2-删除表" class="headerlink" title="2.2.2 删除表"></a>2.2.2 删除表</h5>drop table if exists 表名;        -    删除指定表<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">TABLE</span> <span class="keyword">if</span> <span class="keyword">EXISTS</span> tb_student;</span><br></pre></td></tr></table></figure>
+<h5 id="2-2-3-修改表"><a href="#2-2-3-修改表" class="headerlink" title="2.2.3 修改表"></a>2.2.3 修改表</h5></li>
+<li>添加字段</li>
+</ul>
+<p>alter table 表名 add column 字段名 字段类型 字段约束；</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tb_student <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> stuadd <span class="built_in">VARCHAR</span>(<span class="number">200</span>);</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tb_student <span class="keyword">ADD</span> <span class="keyword">COLUMN</span></span><br><span class="line">(</span><br><span class="line">stuclass <span class="built_in">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">stuheight <span class="built_in">float</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除字段</li>
+</ul>
+<p>alter table 表名 drop column 字段名；</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">table</span> tb_student <span class="keyword">drop</span> <span class="keyword">COLUMN</span> stuheight;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改字段名</li>
+</ul>
+<p>alter table 表名 change 原字段 新字段 新的类型；</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tb_student <span class="keyword">CHANGE</span> tel stutel <span class="built_in">VARCHAR</span>(<span class="number">11</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加约束</li>
+<li>删除约束</li>
+</ul>
+<h3 id="3-DML（数据操作语言）"><a href="#3-DML（数据操作语言）" class="headerlink" title="3.DML（数据操作语言）"></a>3.DML（数据操作语言）</h3><p>数据操作语言主要提供表中数据的增、删、改、查操作</p>
+<h4 id="3-1-insert"><a href="#3-1-insert" class="headerlink" title="3.1 insert"></a>3.1 insert</h4><p>insert into 表名 values（值1，值2，值3，…）；    -    按表中字段的顺序依次给每个字段赋值，最终形成一条新的记录</p>
+<p>insert into 表名（字段名1，字段名2，…）values（值1，值2，…）    -    按指定顺序给指定字段赋值，最终形成一条新的记录</p>
+<p>insert into 表名（字段名1，字段名2，…）values（第一条数据的值1，第一条数据的值2，…），（第二条数据的值1，第二条数据的值2），…；</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_student <span class="keyword">values</span> (<span class="number">1001</span>,<span class="string">'狗剩'</span>,<span class="string">'1993-10-8'</span>, <span class="number">1</span>, <span class="string">'18181818001'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_student (stuname,stubirth,stutel) <span class="keyword">values</span> (<span class="string">'王大拿'</span>,<span class="string">'1990-3-17'</span>,<span class="string">'18188888888'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_student (stuname,stubirth,stugender,stutel)<span class="keyword">values</span>(<span class="string">'稻花香'</span>,<span class="built_in">date</span>(<span class="keyword">now</span>()),<span class="number">0</span>,<span class="string">'19012345678'</span>),(<span class="string">'牛王庙'</span>,<span class="string">'1999-2-13'</span>,<span class="number">1</span>,<span class="string">'18966666666'</span>),(<span class="string">'天下一剑'</span>,<span class="string">'1997-12-21'</span>,<span class="number">1</span>,<span class="string">'13190909090'</span>);</span><br></pre></td></tr></table></figure>
+<p>补充：值的问题</p>
+<ul>
+<li>字符串    -    用引号（单双都可）引起来</li>
+<li>日期（date）    -    1）日期字符串  2）date（now（））    -    当前日期  year（now（））    -    当前年    month（now（））    -    当前月：这些都是mysql的函数</li>
+<li>布尔    -    1或0 </li>
+</ul>
+<h4 id="3-2-delete"><a href="#3-2-delete" class="headerlink" title="3.2 delete"></a>3.2 delete</h4><p>delete from 表名;    -    删除当前表中所有的记录（清空表）</p>
+<p>delete from 表名 where 条件； - 删除所有满足条件的记录</p>
+<p>补充：</p>
+<ul>
+<li>sql条件语句的写法（筛选）；条件语句在写的时候可以通过加（）来改变运算的优先级</li>
+<li>比较运算：=（等于），&lt;&gt;（不等于）,&gt;,&lt;,&gt;=,&lt;=</li>
+<li>逻辑运算：and（逻辑与），or（逻辑或） ，not（逻辑非）</li>
+<li>集合包含：in eg：delete from tb_student where stuname in (‘狗剩’,’稻花香’);</li>
+<li>范围: between and</li>
+<li>判断是否为空：is null，is not null</li>
+<li>筛选：like（%表示任意个任意字符，_表示一个任意字符）<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> tb_student <span class="keyword">where</span> stutel <span class="keyword">like</span> <span class="string">'_3%'</span>;</span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> tb_student <span class="keyword">where</span> stuname=<span class="string">'王大拿'</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="3-3-update"><a href="#3-3-update" class="headerlink" title="3.3 update"></a>3.3 update</h4></li>
+</ul>
+<p>update 表名 set 字段1=新值1,字段2=新值2,…;    -    将指定表中所有记录中指定的字段修改成指定的值</p>
+<p>update 表名 set 字段1=新值1，字段2=新值2，…where 条件；    -    将满足条件的记录的指定字段设置为指定值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">table</span> tb_student <span class="keyword">add</span> <span class="keyword">COLUMN</span> stuaddr <span class="built_in">VARCHAR</span>(<span class="number">200</span>);</span><br><span class="line"><span class="keyword">UPDATE</span> tb_student <span class="keyword">set</span> stuaddr=<span class="string">'成都'</span>,stubirth=<span class="built_in">date</span>(<span class="keyword">now</span>()) <span class="keyword">where</span> stugender=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="3-4-select"><a href="#3-4-select" class="headerlink" title="3.4 select"></a>3.4 select</h4><p>select * from 表名;    -    获取指定表中所有的记录中的所有字段的数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_student;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>映射</li>
+</ul>
+<p>select 字段1，字段2，字段3，…from 表名；    -    获取表中所有记录指定字段的数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> stuname,stutel <span class="keyword">FROM</span> tb_student;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>列重命名</li>
+</ul>
+<p>select 字段名1 as 新字段名1，字段名2，字段名3 as 新字段名3,… from 表名；    – as 可以省略</p>
+<p>select stuname as ‘姓名’,stutel as ‘电话’ from tb_student;<br>– 结果重新赋值（主要针对布尔）</p>
+<p>select if(字段名,值1,值2) from 表名;    -    如果if中对应的字段的值是1，最后的结果就是值1，否则是值2（mysql特有写法）</p>
+<p>通用写法：select case 字段 when 值 then 新值1 else 新值2 end<br>select stuname as ‘姓名’,if(stugender,’男’,’女’) as ‘性别’ from tb_student;</p>
+<p>ifnull(字段，值)    –    如果指定的字段值为空，则返回指定的值，否则返回字段本身</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> stuname <span class="keyword">as</span> <span class="string">'姓名'</span>,<span class="keyword">case</span> stugender <span class="keyword">when</span> <span class="number">1</span> <span class="keyword">then</span> <span class="string">'男'</span> <span class="keyword">else</span> <span class="string">'女'</span> <span class="keyword">end</span> <span class="keyword">as</span> <span class="string">'性别'</span> <span class="keyword">from</span> tb_student;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>列合并（查询的时候将多个字段合并成一个数据返回结果）</li>
+</ul>
+<p>select concat(字段1,字段2,…)from 表名;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(stuid,stuname) <span class="keyword">as</span> <span class="string">'information'</span> <span class="keyword">FROM</span> tb_student;</span><br></pre></td></tr></table></figure>
+<p>注：</p>
+<ul>
+<li>筛选</li>
+</ul>
+<p>上面所有的查询语法后面都可以加’where条件’对记录进行筛选<br>– select * from 表名 where 条件；</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> stuname,stutel <span class="keyword">from</span> tb_student <span class="keyword">where</span> stugender=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>排序</li>
+</ul>
+<p>select * from 表名 order by 字段；    -    将查询结果按指定字段的值从小到大排序</p>
+<p>select * from 表名 order by 字段 asc；    -    将查询结果按指定字段的值从小到大排序</p>
+<p>select * from 表名 order by 字段 desc；    -    将查询结果按指定字段的值从大到小排序</p>
+<p>select * from tb_student order by stugender, stubirth desc;    – 先按性别进行从小到大的排序，排序之后，再按照生日从大到小对性别相同的对象进行排序</p>
+
+    </div>
+
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Hanlin Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hanlin.fun/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="01.SQL基础语法">https://hanlin.fun/2019/12/24/01-SQL基础语法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/SQL/" rel="tag"><i class="fa fa-tag"></i> SQL</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+              <a href="/tags/mySQL/" rel="tag"><i class="fa fa-tag"></i> mySQL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/24/mySQL/" rel="prev" title="02.外键约束和高级查询">
+      <i class="fa fa-chevron-left"></i> 02.外键约束和高级查询
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/25/03-%E6%8E%88%E6%9D%83%E4%BA%8B%E5%8A%A1%E3%80%81%E8%A7%86%E5%9B%BE%E5%92%8C%E7%B4%A2%E5%BC%95/" rel="next" title="03.授权、事务、视图和索引">
+      03.授权、事务、视图和索引 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-sql基础"><span class="nav-number">1.</span> <span class="nav-text">1.sql基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-DDL（数据定义语言）"><span class="nav-number">2.</span> <span class="nav-text">2. DDL（数据定义语言）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-数据库操作"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 数据库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-1-创建数据库"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 创建数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-2-删除数据库"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2 删除数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-3-切换-使用数据库"><span class="nav-number">2.1.3.</span> <span class="nav-text">2.1.3 切换&#x2F;使用数据库</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-表的操作"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 表的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-1-创建表（数据库文件是通过表来存数据）"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 创建表（数据库文件是通过表来存数据）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-2-删除表"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 删除表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-3-修改表"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3 修改表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-DML（数据操作语言）"><span class="nav-number">3.</span> <span class="nav-text">3.DML（数据操作语言）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-insert"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 insert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-delete"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 delete</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-update"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 update</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-select"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 select</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="霖"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">霖</p>
+  <div class="site-description" itemprop="description">一个人的狂欢</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zzd6263165" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zzd6263165" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:541276587@qq.com" title="E-Mail → mailto:541276587@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=541276587" title="QQ → tencent:&#x2F;&#x2F;AddContact&#x2F;?fromId&#x3D;50&amp;fromSubId&#x3D;1&amp;subcmd&#x3D;all&amp;uin&#x3D;541276587" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+        <span class="links-of-blogroll-item">
+          <a href="https://tingzai.github.io/" title="https:&#x2F;&#x2F;tingzai.github.io&#x2F;" rel="noopener" target="_blank">婷仔</a>
+        </span>
+        <span class="links-of-blogroll-item">
+          <a href="https://fhlsyol.top/" title="https:&#x2F;&#x2F;fhlsyol.top&#x2F;" rel="noopener" target="_blank">Fhlsyol</a>
+        </span>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">霖</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">29k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">26 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        访客数：<span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        访问量：<span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'wMLvHRQdkadhpPGKoWXUz11d-gzGzoHsz',
+      appKey: 'Ipz1DCcghBkQg3esYwNirDvv',
+      placeholder: "别走呀！发个滑稽也行呀",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+  <!-- 音频播放 -->
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+</body>
+</html>

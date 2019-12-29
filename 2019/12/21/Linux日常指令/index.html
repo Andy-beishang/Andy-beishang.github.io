@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://hanlin.fun').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+  <meta name="description" content="Linux是一个非常强大的系统，它具有：  源代码完全开源 支持所有的因特网协议 系统工具链完整 执行效率高  等优点；因此熟练地掌握Linux系统的常用指令就显得非常重要了。 1.cd指令   -  进入文件夹cd  文件夹路径(路径可以是绝对地址也可以是相对地址)      -  进入到指定路径对应的文件夹 cd  ..              -   返回上层目录 cd  &#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux日常指令">
+<meta property="og:url" content="https://hanlin.fun/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:site_name" content="霖时人間">
+<meta property="og:description" content="Linux是一个非常强大的系统，它具有：  源代码完全开源 支持所有的因特网协议 系统工具链完整 执行效率高  等优点；因此熟练地掌握Linux系统的常用指令就显得非常重要了。 1.cd指令   -  进入文件夹cd  文件夹路径(路径可以是绝对地址也可以是相对地址)      -  进入到指定路径对应的文件夹 cd  ..              -   返回上层目录 cd  &#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-21T08:25:00.000Z">
+<meta property="article:modified_time" content="2019-12-29T07:15:18.934Z">
+<meta property="article:author" content="霖">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hanlin.fun/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Linux日常指令 | 霖时人間</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="霖时人間" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"><a href="https://github.com/zzd6263165" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></div>
+    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">霖时人間</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">相信的心就是你的魔法</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="霖">
+      <meta itemprop="description" content="一个人的狂欢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="霖时人間">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux日常指令
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-21 16:25:00" itemprop="dateCreated datePublished" datetime="2019-12-21T16:25:00+08:00">2019-12-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-29 15:15:18" itemprop="dateModified" datetime="2019-12-29T15:15:18+08:00">2019-12-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux%E6%8C%87%E4%BB%A4/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux指令</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Linux是一个非常强大的系统，它具有：</p>
+<ul>
+<li>源代码完全开源</li>
+<li>支持所有的因特网协议</li>
+<li>系统工具链完整</li>
+<li>执行效率高</li>
+</ul>
+<p>等优点；因此熟练地掌握Linux系统的常用指令就显得非常重要了。</p>
+<h3 id="1-cd指令-进入文件夹"><a href="#1-cd指令-进入文件夹" class="headerlink" title="1.cd指令   -  进入文件夹"></a>1.cd指令   -  进入文件夹</h3><p>cd  文件夹路径(路径可以是绝对地址也可以是相对地址)      -  进入到指定路径对应的文件夹</p>
+<p>cd  ..              -   返回上层目录</p>
+<p>cd  /               -  进入操作系统根目录</p>
+<p>cd ~               -  进入电脑的文件系统根目录</p>
+<h3 id="2-ls指令-显示当前目录中的内容"><a href="#2-ls指令-显示当前目录中的内容" class="headerlink" title="2.ls指令   - 显示当前目录中的内容"></a>2.ls指令   - 显示当前目录中的内容</h3><p>ls                  -   直接显示当前文件夹中的内容的名字(隐藏文件和文件夹看不到)</p>
+<p>ls   -l/-lh      -   显示当前文件夹中的内容和内容的基本信息(隐藏文件和文件夹看不到)</p>
+<p>ls   -a           -   显示当前文件夹中所有的内容(包括隐藏文件)</p>
+<p>ls  -R            -  递归显示当前目录以及当前目录下所有的子目录中的内容</p>
+<p>ls   -r            -  内容倒序显示</p>
+<p>ls  -S/-t        -   显示文件夹中的内容，并且内容按大小/时间从大到小排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls  -Sr     -   按大小从小到大排序</span><br><span class="line">ls  -Srlh   -   按大小从小到大排序,并且显示内容的基本信息</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-pwd指令"><a href="#3-pwd指令" class="headerlink" title="3. pwd指令"></a>3. pwd指令</h3><p>pwd             -   查看当前目录的绝对路径(系统目录下的)</p>
+<h3 id="4-文件操作"><a href="#4-文件操作" class="headerlink" title="4.文件操作"></a>4.文件操作</h3><p>1）touch指令      -   新建文件</p>
+<p>touch   文件路径         -  在指定位置创建指定文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch a.txt      - 在当前目录下新建一个文件a.txt</span><br><span class="line">touch ..&#x2F;a.txt   - 在当前目录的上层目录新建一个文件a.txt</span><br><span class="line">touch &#x2F;home&#x2F;a&#x2F;a.txt     -  在根目录下home目录中的a目录里面创建一个文件a.txt</span><br></pre></td></tr></table></figure>
+
+<p>2) cat指令         -     查看文件内容(读文件)</p>
+<p>cat    文件路径             -  读取指定路径对应的文件的内容</p>
+<p>3) vim指令   </p>
+<p>vim   文件路径            -  使用vim打开文件</p>
+<p>###5.文件夹操作</p>
+<p>1) mkdir指令           -   新建文件夹</p>
+<p>mkdir  文件夹路径       -   在指定位置创建文件夹</p>
+<p>mkdir  -p  文件夹路径     -  在指定位置创建文件夹(会创建目录中所有不存在的文件夹)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p  a&#x2F;b&#x2F;c     - a,b,c可以都没有，会在当前目录中创建a,在a中创建b，b中创建c</span><br><span class="line">mkdir -p  a&#x2F;&#123;b,c&#125;   - a,b,c可以都没有，会在当前目录中创建a,在a中创建b和c</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-删除文件和文件夹"><a href="#6-删除文件和文件夹" class="headerlink" title="6.删除文件和文件夹"></a>6.删除文件和文件夹</h3><p>1)rm指令       -    删除文件和文件夹</p>
+<p>rm   文件路径            -  删除指定文件(删除的时候会循环是否确定删除，y-同意， n-不同意)</p>
+<p>rm  -f  文件路径        -  删除指定文件（删除的时候不询问）</p>
+<p>rm  -r  文件夹路径    -  删除指定文件夹</p>
+<p>2) rmdir指令      -    删除空目录</p>
+<p>rmdir  文件夹路径       -   删除指定文件夹(这个文件夹必须是空的)</p>
+<p>3)cp指令           -      拷贝</p>
+<p>cp 文件路径1  文件路径2        - 将文件路径1指定的文件中的内容复制到文件路径2指定的文件中(文件路径2对应的                                        文件本身是不存在) </p>
+<p>​                          - 将文件1中的内容复制粘贴到文件2(如果文件2不存，会自动创建；如果存在会询问                             是否覆盖)</p>
+<p>cp   文件路径    文件夹路径      -  将指定文件复制粘贴到指定文件夹中</p>
+<p>cp  -r  文件夹路径1  文件夹路径2    - 将文件夹1复制粘贴到文件夹2中</p>
+<p>4)mv指令       -  移动</p>
+<p>mv   文件路径1   文件路径2       -  将文件1移动文件2所在的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv  文件名1  文件名2     -  对文件进行重命名(将文件名1修改为文件名2)</span><br><span class="line">mv  a.txt   b.txt      -  将当前文件夹中的a.txt重命名为b.txt</span><br><span class="line">mv  &#x2F;home&#x2F;a.txt  &#x2F;home&#x2F;b.txt    -  将系统根目录下home文件中的a.txt重命名为b.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<p>mv   文件路径   文件夹路径           -  将文件直接移动到指定文件夹中</p>
+<p>mv   文件夹路径1  文件夹路径2     -  将文件夹1移动到文件夹2中</p>
+<h3 id="7-history指令-获取历史记录-指令的历史记录"><a href="#7-history指令-获取历史记录-指令的历史记录" class="headerlink" title="7.history指令    -  获取历史记录(指令的历史记录)"></a>7.history指令    -  获取历史记录(指令的历史记录)</h3><p>history     -  显示当前系统已经执行过的所有的指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">如果想要显示历史记录的时候显示指令执行的时间需要修改~/.bashrc文件:</span></span><br><span class="line">export  HISTTIMEFORMAT="[%y‐%m‐%d_%T] " </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改完成后需要通过指令: <span class="built_in">source</span> ~/.bashrc 去执行这个配置文件， 最后历史记录的时间才会生效</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="8-创建连接"><a href="#8-创建连接" class="headerlink" title="8. 创建连接"></a>8. 创建连接</h3><h6 id="1-创建软连接（掌握-）"><a href="#1-创建软连接（掌握-）" class="headerlink" title="1)创建软连接（掌握!）"></a>1)创建软连接（掌握!）</h6><p>ln -s  源文件路径  软连接文件地址     - 给源文件在指定位置创建一个软连接(软连接本质就是用来保存源文件绝对                                地址的一个文件， 可以理解为windows中的快捷方式)</p>
+<p>​                                 注意: 源文件路径必须写绝对路径</p>
+<p>​                                如果删除或者移动源文件，软连接会直接无效</p>
+<p>######2)创建硬链接</p>
+<p>ln  源文件路径  硬连接文件地址      -    给源文件在指定位置创建一个硬链接</p>
+<p>​                                硬链接的本质就是源文件内容的另外一个引用，所以删除或者移动源文件硬                                        链接仍然有效，只是删除硬链接会变成普通文件</p>
+<h3 id="9-进程相关指令"><a href="#9-进程相关指令" class="headerlink" title="9.进程相关指令"></a>9.进程相关指令</h3><h6 id="1-ps指令"><a href="#1-ps指令" class="headerlink" title="1) ps指令"></a>1) ps指令</h6><p>ps                 - 查看进程状态</p>
+<p>ps -aux         - 查看当前所有的进程的信息</p>
+<p>ps  grep 进程名/进程ID     -  根据进程名/进程ID查看指定进程</p>
+<h6 id="2-top指令"><a href="#2-top指令" class="headerlink" title="2)top指令"></a>2)top指令</h6><p>top           -    实时查看当前所有的进程信息和系统信息</p>
+<p>top -p  PID1,PID2,….     - 实时监测指定的进程</p>
+<h6 id="3-free指令"><a href="#3-free指令" class="headerlink" title="3)free指令"></a>3)free指令</h6><p>free      -   显示当前系统的内存信息，显示的时候以kb为单位</p>
+<p>free  -单位    - 显示当前系统的内存信息，以指定单位来显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -m    - 显示当前系统的内存信息，以Mb为单位</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="4-kill指令"><a href="#4-kill指令" class="headerlink" title="4)kill指令"></a>4)kill指令</h6><p>kill 进程ID       -  杀掉指定id对应的进程</p>
+<p>kill -1/-9/-15 进程ID      -  以指定的方式(-1表示不间断重启; -9表示强制杀死进程；-15表示正常结束进程)杀掉指定                                   进程</p>
+<p>pkill  进程名      - 杀死指定进程名对应的进程(中间可以加-1/-9/-15)</p>
+<p>killall   进程名    - 杀死和进程名相关的所有进程</p>
+<h6 id="5-uptime"><a href="#5-uptime" class="headerlink" title="5)uptime"></a>5)uptime</h6><p>uptime     -  获取系统信息</p>
+<h3 id="10-用户管理"><a href="#10-用户管理" class="headerlink" title="10.用户管理"></a>10.用户管理</h3><p>一个Linux操作系统可以有多个用户(user)，也可以有多个用户组(group); 用户和用户组之间的关系是多对多</p>
+<p>users    -   查看当前用户</p>
+<p>groups   -  查看当前分组</p>
+<p>groupadd  分组名       -  创建分组(管理员才能创建; 可以通过查看/etc/group文件来查看当前系统所有的分组)</p>
+<p>useradd  用户名          - 创建指定用户(1.用户创建成功后系统会自动在/home目录下创建一个和用户名同名的文件                    夹；2.会自动创建和用户名同名的分组，并且将当前用户添加到这个分组中)</p>
+<p>useradd -G  分组1,分组2,…   用户名    -  创建指定用户，并且将用户添加到指定分组中</p>
+<p>usermod -G  分组1,分组2  用户名       -  修改用户分组</p>
+<p>password 用户名         -  修改用户密码(需要root权限)</p>
+<p>su 用户名        -  切换账号(root登录的时候切换不需要密码，其他账号需要)</p>
+<p>exit             -    退出当前账号</p>
+<p>sudo           -  在命令前sudo是以管理员身份执行指令</p>
+<p>注意:      不是所有的用户都可以通过sudo来以管理员身份执行指令，如果想要能够使用sudo必须添加配置    </p>
+<p>​        a.ubuntu:  将需要有管理员身份的账号添加到sudo分组中</p>
+<p>​        b.redhat和contos: 在/etc/sudoers配置文件中添加代码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Allow root to run any commands anywhere</span></span></span><br><span class="line">root    ALL=(ALL)       ALL     #(默认有的)</span><br><span class="line">xiaoming ALL=(ALL)      ALL		#(自己添加的，xiaoming是用户名)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="11-文件权限"><a href="#11-文件权限" class="headerlink" title="11.文件权限"></a>11.文件权限</h3><table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>所有者权限</th>
+<th>同组用户权限</th>
+<th>其他用户权限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>默认情况下文件和文件夹的权限: 文件所有者有读写权限， 同组用户和其他用户都是只读权限。</p>
+<p>######1）chmod指令</p>
+<p>chmod 权限值   文件路径        - 将指定文件的权限修改成指定值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">权限：     rwx r-- rw-</span><br><span class="line">权限二进制：111 100 110  </span><br><span class="line">权限值:    7   4   6</span><br><span class="line">chmod 746 文件路径</span><br><span class="line"></span><br><span class="line">权限:     rwx rwx rwx</span><br><span class="line">权限值:    7    7  7</span><br><span class="line">chmod 777 文件路径</span><br></pre></td></tr></table></figure>
+
+
+
+<p>chmod  [a,u,g,o]/[+-]/[r,w,x]  文件地址      - 给指定文件对应指定用户添加或者删除指定权限</p>
+<p>​                                                                         (a-所有用户，u-文件所有者,g-同组用户,o-其他用户；</p>
+<p>​                                      +表示添加权限， -表示删除权限;</p>
+<p>​                                      r-表示读权限, w表示写权限,x表示执行权限)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod a-x 文件地址     #  删除所有用户的执行权限</span><br><span class="line">chmod u+w  文件地址    #  给文件所有者添加写的权限</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="12-日志管理"><a href="#12-日志管理" class="headerlink" title="12.日志管理"></a>12.日志管理</h3><p>######1)显示文件内容</p>
+<p>a.cat指令   -  直接显示文件中所有的内容</p>
+<p>cat 文件    -  直接查看文件所有内容</p>
+<p>总结: 查看文件内容的时候可以加参数-n，让内容在显示的时候显示行号</p>
+<p>b.查看部分内容</p>
+<p>head   N  文件地址    - 显示指定文件前N行内容(-n参数无效)</p>
+<p>tail    N  文件地址       -  显示指定文件最后N行内容(-n参数无效)</p>
+<p>c.分页显示</p>
+<p>less  文件       -  按页显示文件内容(通过快捷键控制内容显示过程； 文件内容不会打印到shell/终端里)</p>
+<p>less  -N 文件   -  按页显示文件内容，每次翻页的时候翻N行</p>
+<p>more  文件      - 按页显示文件内容(通过快捷键控制内容显示过程； 文件内容会打印到shell/终端里)</p>
+<p>more  -N 文件   -  按页显示文件内容，每次翻页的时候翻N行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">快捷键:</span><br><span class="line"></span><br><span class="line">- 按 j 向下一行</span><br><span class="line"></span><br><span class="line">- 按 k 向上一行</span><br><span class="line"></span><br><span class="line">- 按 f 向下翻一页</span><br><span class="line"></span><br><span class="line">- 按b 向上翻一页</span><br><span class="line"></span><br><span class="line">- 按 g 到全文开头</span><br><span class="line"></span><br><span class="line">- 按 G 到全文结尾</span><br><span class="line"></span><br><span class="line">- 按 Q 退出</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-结果的处理"><a href="#2-结果的处理" class="headerlink" title="2)结果的处理"></a>2)结果的处理</h5><p>凡是有的打印结果的指令，我们都可以通过相关指令对应结果进行处理</p>
+<p>######a. 管道 - |</p>
+<p>如果需要对某一个指令的结果使用另外的指令进行二次处理的时候，就需要用到管道(|)</p>
+<h6 id="b-sort-排序"><a href="#b-sort-排序" class="headerlink" title="b.sort    - 排序"></a>b.sort    - 排序</h6><p>sort     -  从小到大排序(将一行内容作为一个字符串，按字符串大小对应内容进行排序，默认不区分大小写)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cat a.txt |sort      # 对a.txt的文件内容从小到大排序显示</span><br><span class="line"></span><br><span class="line">sort的参数:</span><br><span class="line">-r   - 逆序</span><br><span class="line">-nk 1  - 数值大小排序</span><br><span class="line">-nk 2  - 字符大小排序(默认)</span><br><span class="line"></span><br><span class="line">cat a.txt|sort -nk 1    # 对a.txt的文件内容按数字大小从小到大排序</span><br><span class="line">cat a.txt|sort -rnk 1    # 对a.txt的文件内容按数字大小从大到小排序</span><br><span class="line">cat a.txt|sort -nk 2    # 对a.txt的文件内容按字符大小从小到大排序(默认)</span><br><span class="line">cat a.txt|sort -rnk 2    # 对a.txt的文件内容按字符大小从大到小排序</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="c-uniq-去重"><a href="#c-uniq-去重" class="headerlink" title="c.uniq   -去重"></a>c.uniq   -去重</h6><p>uniq     - 只能将紧挨着的相同行去掉重复的(如果需要去掉所有重复的行，先排序将相同的行放到一起)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat a.txt|uniq     # 去掉a.txt文件内容中相邻重复的行</span><br><span class="line">cat a.txt|sort|uniq   # 去掉a.txt文件内容中所有重复的行</span><br><span class="line"></span><br><span class="line">uniq的参数</span><br><span class="line">-c     - 重复次数</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="d-awk-获取列"><a href="#d-awk-获取列" class="headerlink" title="d.awk  - 获取列"></a>d.awk  - 获取列</h6><p>awk ‘{print $N}’      -  获取内容中第N列的数据</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">history|awk '&#123;print $2&#125;'    # 获取历史记录第2列的内容</span><br><span class="line">history|awk '&#123;print $2,$3&#125;'  # 获取历史记录第2列和第3列的内容</span><br></pre></td></tr></table></figure>
+
+
+
+<p>练习:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history |awk '&#123;print $4&#125;' |sort |uniq ‐c | sort ‐rnk 1 | head ‐n 3    # 统计最常用的3个指令及其使用次数</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3）输出重定向-gt-gt-gt"><a href="#3）输出重定向-gt-gt-gt" class="headerlink" title="3）输出重定向   -    &gt;/&gt;&gt;"></a>3）输出重定向   -    &gt;/&gt;&gt;</h5><p>执行有打印结果的指令  &gt;  文件地址     -  将指定指令执行的结果保存到指定文件中(先清除原文件内容再添加)</p>
+<p>执行有打印结果的指令  &gt;&gt;  文件地址    -  将指定指令执行的结果保存到指定文件中(直接将结果追加到原文件中)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">history &gt; a.txt     #将当前历史记录直接保存到a.txt文件中</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 将最常用的3个指令及其使用次数保存到a.txt文件中</span></span><br><span class="line">history |awk '&#123;print $4&#125;' |sort |uniq ‐c | sort ‐rnk 1 | head ‐n 3 &gt; a.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="4-统计"><a href="#4-统计" class="headerlink" title="4)统计"></a>4)统计</h5><p>wc  -c/-w/-l   文件地址        - 统计指定文件中字符/单词/行的数量</p>
+<h5 id="5-查找"><a href="#5-查找" class="headerlink" title="5)查找"></a>5)查找</h5><p>######grep   - 找内容</p>
+<p>a.  grep  内容  文件地址       - 在指定文件中查找指定内容(返回文件中所有包含指定内容的行)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">grep you a.txt    # 获取a.txt中包含you的所有的行</span><br><span class="line"></span><br><span class="line">grep的参数:</span><br><span class="line">-n      - 显示结果的时候显示行号</span><br><span class="line">-i      - 查找内容的时候忽略大小写</span><br><span class="line">-E      - 按正则表达式进行匹配   </span><br><span class="line">		  使用方法： grep -E '正则表达式' 文件</span><br><span class="line">		  注意: Linux操作系统中正则表达式不支持:\d,\D,\w,\W,\s,\S,\b,\B; 其他语法都支持</span><br><span class="line">-v      - 忽略字段</span><br><span class="line">		  grep you a.txt  -v  # 获取a.txt中不包含you的所有的行</span><br></pre></td></tr></table></figure>
+
+
+
+<p>b.  执行有打印结果的指令 |grep 内容      - 在指令执行结果中查找指定内容</p>
+<p>c. grep -r  内容 文件夹地址     -在指定文件夹中所有的文件中查找指定内容</p>
+<p>######find   - 找文件</p>
+<p>find  文件夹路径  -name    文件名     -  在指定文件夹下按文件名找指定文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 找指定文件名</span></span><br><span class="line">find dir1 -name 'test1.py'      # 在文件夹dir1找名字是test1.py的文件</span><br><span class="line">find dir1 -name '*.txt'         # 在文件夹dir1找后缀是txt的所有文件</span><br><span class="line">find dir1 -name 'test*.txt'</span><br><span class="line">find dir1 -name 'test*'</span><br><span class="line">find dir1 -name '*c.txt'</span><br></pre></td></tr></table></figure>
+
+<p>find  文件夹路径  -size  +/-文件大小       - 在指定文件夹下找文件大小满足条件的所有的文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find dir1 -size +4k       # 查找在文件夹dir1中所有大于4k的文件</span><br><span class="line">find dir1 -size -4k       # 查找在文件夹dir1中所有小于4k的文件</span><br><span class="line">find dir1 -size +5k -size -10k  # 查找在文件夹dir1中所有大于5k并且小于10k的文件(文件大小如果是小数，算的时候向上取整)</span><br><span class="line">find dir1 -size +4k -name '*.txt'   # 查找在文件夹dir1中所有大于4k的txt文件</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="查指令"><a href="#查指令" class="headerlink" title="查指令"></a>查指令</h6><p>which 指令名       -精确查找当前指令对应的文件的路径</p>
+<p>whereis 指令名     -查找和指定指令相关的所有的文件的路径</p>
+<p>man   指令名        -获取指定指令的使用手册</p>
+<p>指令名   — help    -获取指定指令的帮助文档</p>
+
+    </div>
+
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Hanlin Zhang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hanlin.fun/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/" title="Linux日常指令">https://hanlin.fun/2019/12/21/Linux日常指令/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+              <a href="/tags/vim/" rel="tag"><i class="fa fa-tag"></i> vim</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/22/vim%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="vim的使用">
+      vim的使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-cd指令-进入文件夹"><span class="nav-number">1.</span> <span class="nav-text">1.cd指令   -  进入文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ls指令-显示当前目录中的内容"><span class="nav-number">2.</span> <span class="nav-text">2.ls指令   - 显示当前目录中的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-pwd指令"><span class="nav-number">3.</span> <span class="nav-text">3. pwd指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-文件操作"><span class="nav-number">4.</span> <span class="nav-text">4.文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-删除文件和文件夹"><span class="nav-number">5.</span> <span class="nav-text">6.删除文件和文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-history指令-获取历史记录-指令的历史记录"><span class="nav-number">6.</span> <span class="nav-text">7.history指令    -  获取历史记录(指令的历史记录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-创建连接"><span class="nav-number">7.</span> <span class="nav-text">8. 创建连接</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-创建软连接（掌握-）"><span class="nav-number">7.0.0.1.</span> <span class="nav-text">1)创建软连接（掌握!）</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-进程相关指令"><span class="nav-number">8.</span> <span class="nav-text">9.进程相关指令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-ps指令"><span class="nav-number">8.0.0.1.</span> <span class="nav-text">1) ps指令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-top指令"><span class="nav-number">8.0.0.2.</span> <span class="nav-text">2)top指令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-free指令"><span class="nav-number">8.0.0.3.</span> <span class="nav-text">3)free指令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-kill指令"><span class="nav-number">8.0.0.4.</span> <span class="nav-text">4)kill指令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-uptime"><span class="nav-number">8.0.0.5.</span> <span class="nav-text">5)uptime</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-用户管理"><span class="nav-number">9.</span> <span class="nav-text">10.用户管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-文件权限"><span class="nav-number">10.</span> <span class="nav-text">11.文件权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-日志管理"><span class="nav-number">11.</span> <span class="nav-text">12.日志管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-结果的处理"><span class="nav-number">11.0.1.</span> <span class="nav-text">2)结果的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#b-sort-排序"><span class="nav-number">11.0.1.1.</span> <span class="nav-text">b.sort    - 排序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#c-uniq-去重"><span class="nav-number">11.0.1.2.</span> <span class="nav-text">c.uniq   -去重</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#d-awk-获取列"><span class="nav-number">11.0.1.3.</span> <span class="nav-text">d.awk  - 获取列</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3）输出重定向-gt-gt-gt"><span class="nav-number">11.0.2.</span> <span class="nav-text">3）输出重定向   -    &gt;&#x2F;&gt;&gt;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-统计"><span class="nav-number">11.0.3.</span> <span class="nav-text">4)统计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-查找"><span class="nav-number">11.0.4.</span> <span class="nav-text">5)查找</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#查指令"><span class="nav-number">11.0.4.1.</span> <span class="nav-text">查指令</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="霖"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">霖</p>
+  <div class="site-description" itemprop="description">一个人的狂欢</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zzd6263165" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zzd6263165" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:541276587@qq.com" title="E-Mail → mailto:541276587@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=541276587" title="QQ → tencent:&#x2F;&#x2F;AddContact&#x2F;?fromId&#x3D;50&amp;fromSubId&#x3D;1&amp;subcmd&#x3D;all&amp;uin&#x3D;541276587" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+        <span class="links-of-blogroll-item">
+          <a href="https://tingzai.github.io/" title="https:&#x2F;&#x2F;tingzai.github.io&#x2F;" rel="noopener" target="_blank">婷仔</a>
+        </span>
+        <span class="links-of-blogroll-item">
+          <a href="https://fhlsyol.top/" title="https:&#x2F;&#x2F;fhlsyol.top&#x2F;" rel="noopener" target="_blank">Fhlsyol</a>
+        </span>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">霖</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">29k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">26 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        访客数：<span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        访问量：<span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'wMLvHRQdkadhpPGKoWXUz11d-gzGzoHsz',
+      appKey: 'Ipz1DCcghBkQg3esYwNirDvv',
+      placeholder: "别走呀！发个滑稽也行呀",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+  <!-- 音频播放 -->
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+</body>
+</html>

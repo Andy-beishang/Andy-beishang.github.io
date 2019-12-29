@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>霖时人間</title>
+  
+  <subtitle>相信的心就是你的魔法</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://hanlin.fun/"/>
+  <updated>2019-12-29T08:06:03.416Z</updated>
+  <id>https://hanlin.fun/</id>
+  
+  <author>
+    <name>霖</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>非常乱的随笔</title>
+    <link href="https://hanlin.fun/2019/12/27/%E9%9A%8F%E7%AC%94/"/>
+    <id>https://hanlin.fun/2019/12/27/%E9%9A%8F%E7%AC%94/</id>
+    <published>2019-12-27T01:28:00.000Z</published>
+    <updated>2019-12-29T08:06:03.416Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CVS / VSS —&amp;gt; 锁定模式&lt;br&gt;Subversion（SVN）—&amp;gt; 合并模式 + 中央服务器&lt;br&gt;BitKeeper / Git —&amp;gt; 合并模式 + 分布式版本控制&lt;/p&gt;
+&lt;p&gt;Multics —&amp;gt; Unics —&amp;gt; Unix&lt;br&gt;Unix —&amp;gt; MINIX —&amp;gt; Linux —&amp;gt; Android&lt;br&gt;Unix —&amp;gt; BSD —&amp;gt; FreeBSD —&amp;gt; macOS —&amp;gt; ios&lt;br&gt;Unix —&amp;gt; AIX / Hp-Unix / Solaris&lt;br&gt;ken thompson —&amp;gt; B&lt;br&gt;dennis ritchie —&amp;gt; C&lt;/p&gt;
+&lt;p&gt;Linux安装软件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;包管理工具 &lt;ul&gt;
+&lt;li&gt;yum CentOS&lt;br&gt;  ~ yum search nginx&lt;br&gt;  ~ yum install nginx&lt;br&gt;  ~ yum erase nginx / yum remove nginx&lt;br&gt;  ~ yum info nginx&lt;br&gt;  ~ yum list installed | grep nginx&lt;/li&gt;
+&lt;li&gt;rpm Redhat&lt;br&gt;  ~ rpm -ivh 下载的rpm包文件名&lt;br&gt;  ~ rpm -e&lt;br&gt;  ~ rpm -qa&lt;/li&gt;
+&lt;li&gt;apt Ubuntu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;源代码构建安装&lt;br&gt;安装Redis官方最新版&lt;br&gt; ~ wget &lt;a href=&quot;http://download.redis.io/releases/redis-5.0.7.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://download.redis.io/releases/redis-5.0.7.tar.gz&lt;/a&gt;&lt;br&gt; ~ gunzip redis-5.0.7.tar.gz&lt;br&gt; ~ tar -xvf redis-5.0.7.tar&lt;br&gt; ~ cd redis-5.0.7&lt;br&gt; ~ make &amp;amp;&amp;amp; make install&lt;br&gt;安装Git官方最新版&lt;br&gt; ~ wget &lt;a href=&quot;https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz&lt;/a&gt;&lt;br&gt; ~ xz -d git-2.24.1.tar.xz&lt;br&gt; ~ tar -xf git-2.24.1.tar&lt;br&gt; ~ cd git-2.24.1&lt;br&gt; ~ yum install -y curl libcurl-devel&lt;br&gt; ~ ./configure –prefix=/usr/local&lt;br&gt; ~ make &amp;amp;&amp;amp; make install&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;lloogg.com —&amp;gt; LAMP = Linux + Apache + MySQL + PHP&lt;br&gt;LNMP = Linux + Nginx + MySQL + PHP&lt;br&gt;Remote Dictionary Server —&amp;gt; KV存储系统&lt;br&gt;GitHub —&amp;gt; 3.x —&amp;gt; 5.x&lt;br&gt;缓存系统缓解关系型数据库的访问压力&lt;/p&gt;
+&lt;p&gt;命令 &amp;amp; —&amp;gt; 将命令放到后台运行&lt;br&gt;jobs —&amp;gt; 查看后台运行的命令&lt;br&gt;fg %编号 —&amp;gt; 将后台命令放到前台运行&lt;br&gt;Ctrl+z —&amp;gt; 将前台命令暂停并放到后台&lt;br&gt;bg %编号 —&amp;gt; 将暂停的命令在后台运行&lt;/p&gt;
+&lt;p&gt;redis-cli -p 端口 -h 主机&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;set username luohao ex 120 —&amp;gt; 添加键值对&lt;br&gt;get username —&amp;gt; 通过键查找值&lt;br&gt;ttl username —&amp;gt; 查看键过期时间&lt;br&gt;expire username 300 —&amp;gt; 设置键过期时间&lt;br&gt;keys * —&amp;gt; 查看所有键&lt;br&gt;dbsize —&amp;gt; 查看数据库大小（键值对数量）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;address already in use：端口被占用&lt;br&gt;redis-server –requirepass zhl901010 –port 1234 &amp;gt;&amp;gt; redis-2.log &amp;amp;&lt;/p&gt;
+&lt;p&gt;jobs&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="个人笔记" scheme="https://hanlin.fun/categories/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="个人笔记" scheme="https://hanlin.fun/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pymysql</title>
+    <link href="https://hanlin.fun/2019/12/26/pymysql/"/>
+    <id>https://hanlin.fun/2019/12/26/pymysql/</id>
+    <published>2019-12-26T09:31:00.000Z</published>
+    <updated>2019-12-29T08:07:34.364Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;pymysql在Python中的使用&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td 
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://hanlin.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="SQL" scheme="https://hanlin.fun/tags/SQL/"/>
+    
+      <category term="mySQL" scheme="https://hanlin.fun/tags/mySQL/"/>
+    
+      <category term="python" scheme="https://hanlin.fun/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>03.授权、事务、视图和索引</title>
+    <link href="https://hanlin.fun/2019/12/25/03-%E6%8E%88%E6%9D%83%E4%BA%8B%E5%8A%A1%E3%80%81%E8%A7%86%E5%9B%BE%E5%92%8C%E7%B4%A2%E5%BC%95/"/>
+    <id>https://hanlin.fun/2019/12/25/03-%E6%8E%88%E6%9D%83%E4%BA%8B%E5%8A%A1%E3%80%81%E8%A7%86%E5%9B%BE%E5%92%8C%E7%B4%A2%E5%BC%95/</id>
+    <published>2019-12-25T03:23:00.000Z</published>
+    <updated>2019-12-29T08:08:04.255Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;DCL（数据控制语言）&quot;&gt;&lt;a href=&quot;#DCL（数据控制语言）&quot; class=&quot;headerlink&quot; title=&quot;DCL（数据控制语言）&quot;&gt;&lt;/a&gt;DCL（数据控制语言）&lt;/h3&gt;&lt;p&gt;DCL主要提供授权和召回授权以及事务等相关功能&lt;/p&gt;
+&lt;h4 id=&quot;1-用户管理（root账号才有的权限）&quot;&gt;&lt;a href=&quot;#1-用户管理（root账号才有的权限）&quot; class=&quot;headerlink&quot; title=&quot;1.用户管理（root账号才有的权限）&quot;&gt;&lt;/a&gt;1.用户管理（root账号才有的权限）&lt;/h4&gt;&lt;h5 id=&quot;1）创建用户&quot;&gt;&lt;a href=&quot;#1）创建用户&quot; class=&quot;headerlink&quot; title=&quot;1）创建用户&quot;&gt;&lt;/a&gt;1）创建用户&lt;/h5&gt;&lt;p&gt;&lt;code&gt;create user &amp;#39;用户名&amp;#39;@&amp;#39;登录地址&amp;#39;；&lt;/code&gt;    -    创建数据库用户，该用户登录不需要密码&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;create user &amp;#39;用户名&amp;#39;@&amp;#39;登录地址&amp;#39; identified by &amp;#39;密码&amp;#39;；&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;用户名    -    随便命名&lt;/p&gt;
+&lt;p&gt;登录地址    -    ip地址/localhost（本机）/%（任意位置）&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;user1&#39;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&#39;localhost&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;user2&#39;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&#39;%&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;IDENTIFIED&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;123456&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://hanlin.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="SQL" scheme="https://hanlin.fun/tags/SQL/"/>
+    
+      <category term="数据库" scheme="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="mySQL" scheme="https://hanlin.fun/tags/mySQL/"/>
+    
+      <category term="数据库控制语言" scheme="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A7%E5%88%B6%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>01.SQL基础语法</title>
+    <link href="https://hanlin.fun/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    <id>https://hanlin.fun/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</id>
+    <published>2019-12-24T11:08:00.000Z</published>
+    <updated>2019-12-29T08:08:41.350Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-sql基础&quot;&gt;&lt;a href=&quot;#1-sql基础&quot; class=&quot;headerlink&quot; title=&quot;1.sql基础&quot;&gt;&lt;/a&gt;1.sql基础&lt;/h3&gt;&lt;p&gt;sql又叫结构化查询语言，分为三大类：DDL（数据定义语言）、DML（数据操作语言）、DCL（数据控制语言）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DDL：create（创建数据库和表）、drop（删除数据库和表）、alter（修改数据库和表）&lt;/li&gt;
+&lt;li&gt;DML：insert（增）、delete（删）、update（改）、select（查）&lt;/li&gt;
+&lt;li&gt;DCL：grant（授权）、revoke（召回授权）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;sql的注释是在注释前加–；sql中sql的关键字不区分大小写；sql语句结束后需要加分号&lt;/p&gt;
+&lt;h3 id=&quot;2-DDL（数据定义语言）&quot;&gt;&lt;a href=&quot;#2-DDL（数据定义语言）&quot; class=&quot;headerlink&quot; title=&quot;2. DDL（数据定义语言）&quot;&gt;&lt;/a&gt;2. DDL（数据定义语言）&lt;/h3&gt;&lt;h4 id=&quot;2-1-数据库操作&quot;&gt;&lt;a href=&quot;#2-1-数据库操作&quot; class=&quot;headerlink&quot; title=&quot;2.1 数据库操作&quot;&gt;&lt;/a&gt;2.1 数据库操作&lt;/h4&gt;&lt;h5 id=&quot;2-1-1-创建数据库&quot;&gt;&lt;a href=&quot;#2-1-1-创建数据库&quot; class=&quot;headerlink&quot; title=&quot;2.1.1 创建数据库&quot;&gt;&lt;/a&gt;2.1.1 创建数据库&lt;/h5&gt;&lt;p&gt;create database 数据库名称；    -    创建指定数据库，如果这个数据库已经存在，会报错&lt;/p&gt;
+&lt;p&gt;create database if not exists 数据库名称；    -     当指定数据库不存在的时候创建对应的数据库&lt;/p&gt;
+&lt;p&gt;create database if not exists 数据库名称 default charset utf8；    -    创建数据库的时候指定数据库文件的编码方式&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://hanlin.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="SQL" scheme="https://hanlin.fun/tags/SQL/"/>
+    
+      <category term="数据库" scheme="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="mySQL" scheme="https://hanlin.fun/tags/mySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>02.外键约束和高级查询</title>
+    <link href="https://hanlin.fun/2019/12/24/mySQL/"/>
+    <id>https://hanlin.fun/2019/12/24/mySQL/</id>
+    <published>2019-12-24T01:48:00.000Z</published>
+    <updated>2019-12-29T08:09:06.829Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-E-R实体关系图&quot;&gt;&lt;a href=&quot;#1-E-R实体关系图&quot; class=&quot;headerlink&quot; title=&quot;1.E.R实体关系图&quot;&gt;&lt;/a&gt;1.E.R实体关系图&lt;/h3&gt;&lt;p&gt;E.R实体关系图是通过图标的形式来表示数据库中表和字段以及表和表之间的关系。&lt;/p&gt;
+&lt;p&gt;表和表之间的关系主要有四种：一对一，一对多，多对一，多对多&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/pasted-2.png&quot; alt=&quot;E.R实体关系图示例&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-外键约束&quot;&gt;&lt;a href=&quot;#2-外键约束&quot; class=&quot;headerlink&quot; title=&quot;2.外键约束&quot;&gt;&lt;/a&gt;2.外键约束&lt;/h3&gt;&lt;h4 id=&quot;什么是外键约束&quot;&gt;&lt;a href=&quot;#什么是外键约束&quot; class=&quot;headerlink&quot; title=&quot;什么是外键约束&quot;&gt;&lt;/a&gt;什么是外键约束&lt;/h4&gt;&lt;p&gt;外键约束就是：让字段的值的取值范围在另外一张表的主键中&lt;/p&gt;
+&lt;h4 id=&quot;怎么添加外键约束&quot;&gt;&lt;a href=&quot;#怎么添加外键约束&quot; class=&quot;headerlink&quot; title=&quot;怎么添加外键约束&quot;&gt;&lt;/a&gt;怎么添加外键约束&lt;/h4&gt;&lt;h5 id=&quot;1）保证当前表中有一个字段能够保存另外一张表的主键&quot;&gt;&lt;a href=&quot;#1）保证当前表中有一个字段能够保存另外一张表的主键&quot; class=&quot;headerlink&quot; title=&quot;1）保证当前表中有一个字段能够保存另外一张表的主键&quot;&gt;&lt;/a&gt;1）保证当前表中有一个字段能够保存另外一张表的主键&lt;/h5&gt;&lt;h5 id=&quot;2）添加外键约束&quot;&gt;&lt;a href=&quot;#2）添加外键约束&quot; class=&quot;headerlink&quot; title=&quot;2）添加外键约束&quot;&gt;&lt;/a&gt;2）添加外键约束&lt;/h5&gt;
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://hanlin.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="mySQL" scheme="https://hanlin.fun/tags/mySQL/"/>
+    
+      <category term="查询操作" scheme="https://hanlin.fun/tags/%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>shell编程</title>
+    <link href="https://hanlin.fun/2019/12/22/shell%E7%BC%96%E7%A8%8B/"/>
+    <id>https://hanlin.fun/2019/12/22/shell%E7%BC%96%E7%A8%8B/</id>
+    <published>2019-12-22T11:08:00.000Z</published>
+    <updated>2019-12-29T07:14:10.600Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;shell编程&quot;&gt;&lt;a href=&quot;#shell编程&quot; class=&quot;headerlink&quot; title=&quot;shell编程&quot;&gt;&lt;/a&gt;shell编程&lt;/h1&gt;&lt;p&gt;Shell脚本，是一种为shell编写的脚本程序。&lt;/p&gt;
+&lt;p&gt;Shell编程跟JavaScript、Python编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。&lt;/p&gt;
+&lt;p&gt;Linux的Shell种类有很多，我们主要用的是Bourne Shell(/usr.bin/sh或/bin/sh)&lt;/p&gt;
+&lt;h3 id=&quot;1-创建shell文件&quot;&gt;&lt;a href=&quot;#1-创建shell文件&quot; class=&quot;headerlink&quot; title=&quot;1.创建shell文件&quot;&gt;&lt;/a&gt;1.创建shell文件&lt;/h3&gt;&lt;p&gt;原则上shell程序可以写在任何文件中，但是一般会在shell文件后加后缀.sh表示当前文件是一个shell文件&lt;/p&gt;
+&lt;p&gt;shell需要可执行权限，所以创建好的shell文件需要添加x权限&lt;/p&gt;
+&lt;h3 id=&quot;2-基础语法&quot;&gt;&lt;a href=&quot;#2-基础语法&quot; class=&quot;headerlink&quot; title=&quot;2.基础语法&quot;&gt;&lt;/a&gt;2.基础语法&lt;/h3&gt;&lt;h6 id=&quot;1）注释&quot;&gt;&lt;a href=&quot;#1）注释&quot; class=&quot;headerlink&quot; title=&quot;1）注释&quot;&gt;&lt;/a&gt;1）注释&lt;/h6&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; 单行注释&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;:《（此处为两个小于符号）EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;多行注释1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;多行注释2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="shell" scheme="https://hanlin.fun/categories/shell/"/>
+    
+    
+      <category term="脚本" scheme="https://hanlin.fun/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+      <category term="shell" scheme="https://hanlin.fun/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git常用指令</title>
+    <link href="https://hanlin.fun/2019/12/22/git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>https://hanlin.fun/2019/12/22/git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
+    <published>2019-12-22T10:35:00.000Z</published>
+    <updated>2019-12-22T10:54:59.699Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;git常用指令&quot;&gt;&lt;a href=&quot;#git常用指令&quot; class=&quot;headerlink&quot; title=&quot;git常用指令&quot;&gt;&lt;/a&gt;git常用指令&lt;/h1&gt;&lt;h2 id=&quot;1-基本指令&quot;&gt;&lt;a href=&quot;#1-基本指令&quot; class=&quot;headerlink&quot; title=&quot;1.基本指令&quot;&gt;&lt;/a&gt;1.基本指令&lt;/h2&gt;&lt;p&gt;&lt;code&gt;git init&lt;/code&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ——  新建git仓库&lt;br&gt;&lt;code&gt;git add 文件/文件夹&lt;/code&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ——  将文件添加到缓存区中&lt;br&gt;&lt;code&gt;git add -A&lt;/code&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; — 添加所有内容到缓存区中&lt;br&gt;&lt;code&gt;git status&lt;/code&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;———    查看git状态&lt;br&gt;&lt;code&gt;git commit -m  ‘提交信息’&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——  将缓存区中的内容全部提交到git本地仓库中  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git log&lt;/code&gt;   &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——-    查看提交日志  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git reset  -- hard   HEAD&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——   让工作目录中的内容和仓库中的内容保持一致&lt;br&gt;&lt;code&gt;git reset  --hard HEAD^&lt;/code&gt;   &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——  回到上一个版本&lt;br&gt;&lt;code&gt;git  reset  -- hard 版本号&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——  回到指定的版本  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git checkout  文件名&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ——  从暂存区中恢复工作目录中的内容(让工作区中的指定文件，回到上次提交的时候的状态)  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git clone &amp;lt;url&amp;gt;&lt;/code&gt; - 将服务器上的项目(仓库)克隆 (使用https地址需要输入密码，使用ssh地址需要添加公钥)  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git remote add origin 地址&lt;/code&gt;      &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;—– 关联远程仓库(只需要关联一次)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git push [-u] origin master&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;—– 提交(-u在第一次提交分支的时候才用)  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git push&lt;/code&gt;         —  将本地仓库的内容提交到远程仓库master分支上&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git指令" scheme="https://hanlin.fun/categories/git%E6%8C%87%E4%BB%A4/"/>
+    
+    
+      <category term="git" scheme="https://hanlin.fun/tags/git/"/>
+    
+      <category term="仓库" scheme="https://hanlin.fun/tags/%E4%BB%93%E5%BA%93/"/>
+    
+      <category term="远程仓库" scheme="https://hanlin.fun/tags/%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim的使用</title>
+    <link href="https://hanlin.fun/2019/12/22/vim%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://hanlin.fun/2019/12/22/vim%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2019-12-22T10:33:00.000Z</published>
+    <updated>2019-12-29T07:09:46.797Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;vim的使用&quot;&gt;&lt;a href=&quot;#vim的使用&quot; class=&quot;headerlink&quot; title=&quot;vim的使用&quot;&gt;&lt;/a&gt;vim的使用&lt;/h1&gt;&lt;h3 id=&quot;1-vim的三种模式&quot;&gt;&lt;a href=&quot;#1-vim的三种模式&quot; class=&quot;headerlink&quot; title=&quot;1.vim的三种模式&quot;&gt;&lt;/a&gt;1.vim的三种模式&lt;/h3&gt;&lt;p&gt;&lt;b&gt;命令模式：&lt;/b&gt;末尾既没有插入的字样也没有冒号&lt;/p&gt;
+&lt;p&gt;​        (在编辑模式和末行模式下按esc键可以进入命令模式)&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;编辑模式：&lt;/b&gt;末尾会显示’—插入—‘/‘—insert—‘， 并且在编辑模式下可以对文件进行输入操作(可以编辑)&lt;/p&gt;
+&lt;p&gt;​        (在命令模式下按i就可以进入编辑模式)&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;末行模式：&lt;/b&gt;末尾显示冒号，并且冒号后边可以输入内容&lt;/p&gt;
+&lt;p&gt;​        (在命令模式下输入冒号就可以进入末行模式)&lt;/p&gt;
+&lt;h3 id=&quot;2-vim的配置&quot;&gt;&lt;a href=&quot;#2-vim的配置&quot; class=&quot;headerlink&quot; title=&quot;2.vim的配置&quot;&gt;&lt;/a&gt;2.vim的配置&lt;/h3&gt;&lt;p&gt;通过编辑&lt;code&gt;~/.vimrc&lt;/code&gt;文件或者&lt;code&gt;/etc/vimrc&lt;/code&gt;文件可以对vim编辑器进行相关配置&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="vim指令" scheme="https://hanlin.fun/categories/vim%E6%8C%87%E4%BB%A4/"/>
+    
+    
+      <category term="Linux" scheme="https://hanlin.fun/tags/Linux/"/>
+    
+      <category term="vim" scheme="https://hanlin.fun/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux日常指令</title>
+    <link href="https://hanlin.fun/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/"/>
+    <id>https://hanlin.fun/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/</id>
+    <published>2019-12-21T08:25:00.000Z</published>
+    <updated>2019-12-29T07:15:18.934Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux是一个非常强大的系统，它具有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;源代码完全开源&lt;/li&gt;
+&lt;li&gt;支持所有的因特网协议&lt;/li&gt;
+&lt;li&gt;系统工具链完整&lt;/li&gt;
+&lt;li&gt;执行效率高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;等优点；因此熟练地掌握Linux系统的常用指令就显得非常重要了。&lt;/p&gt;
+&lt;h3 id=&quot;1-cd指令-进入文件夹&quot;&gt;&lt;a href=&quot;#1-cd指令-进入文件夹&quot; class=&quot;headerlink&quot; title=&quot;1.cd指令   -  进入文件夹&quot;&gt;&lt;/a&gt;1.cd指令   -  进入文件夹&lt;/h3&gt;&lt;p&gt;cd  文件夹路径(路径可以是绝对地址也可以是相对地址)      -  进入到指定路径对应的文件夹&lt;/p&gt;
+&lt;p&gt;cd  ..              -   返回上层目录&lt;/p&gt;
+&lt;p&gt;cd  /               -  进入操作系统根目录&lt;/p&gt;
+&lt;p&gt;cd ~               -  进入电脑的文件系统根目录&lt;/p&gt;
+&lt;h3 id=&quot;2-ls指令-显示当前目录中的内容&quot;&gt;&lt;a href=&quot;#2-ls指令-显示当前目录中的内容&quot; class=&quot;headerlink&quot; title=&quot;2.ls指令   - 显示当前目录中的内容&quot;&gt;&lt;/a&gt;2.ls指令   - 显示当前目录中的内容&lt;/h3&gt;&lt;p&gt;ls                  -   直接显示当前文件夹中的内容的名字(隐藏文件和文件夹看不到)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux指令" scheme="https://hanlin.fun/categories/Linux%E6%8C%87%E4%BB%A4/"/>
+    
+    
+      <category term="Linux" scheme="https://hanlin.fun/tags/Linux/"/>
+    
+      <category term="vim" scheme="https://hanlin.fun/tags/vim/"/>
+    
+  </entry>
+  
+</feed>
