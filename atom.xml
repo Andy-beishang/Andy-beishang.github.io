@@ -18,8 +18,8 @@
   
   <entry>
     <title>非常乱的随笔</title>
-    <link href="https://hanlin.fun/2019/12/27/%E9%9A%8F%E7%AC%94/"/>
-    <id>https://hanlin.fun/2019/12/27/%E9%9A%8F%E7%AC%94/</id>
+    <link href="https://hanlin.fun/2019/12/27/sui-bi/"/>
+    <id>https://hanlin.fun/2019/12/27/sui-bi/</id>
     <published>2019-12-27T01:28:00.000Z</published>
     <updated>2019-12-29T08:06:03.416Z</updated>
     
@@ -87,8 +87,8 @@
   
   <entry>
     <title>03.授权、事务、视图和索引</title>
-    <link href="https://hanlin.fun/2019/12/25/03-%E6%8E%88%E6%9D%83%E4%BA%8B%E5%8A%A1%E3%80%81%E8%A7%86%E5%9B%BE%E5%92%8C%E7%B4%A2%E5%BC%95/"/>
-    <id>https://hanlin.fun/2019/12/25/03-%E6%8E%88%E6%9D%83%E4%BA%8B%E5%8A%A1%E3%80%81%E8%A7%86%E5%9B%BE%E5%92%8C%E7%B4%A2%E5%BC%95/</id>
+    <link href="https://hanlin.fun/2019/12/25/03-shou-quan-shi-wu-shi-tu-he-suo-yin/"/>
+    <id>https://hanlin.fun/2019/12/25/03-shou-quan-shi-wu-shi-tu-he-suo-yin/</id>
     <published>2019-12-25T03:23:00.000Z</published>
     <updated>2019-12-29T08:08:04.255Z</updated>
     
@@ -120,8 +120,8 @@
   
   <entry>
     <title>01.SQL基础语法</title>
-    <link href="https://hanlin.fun/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
-    <id>https://hanlin.fun/2019/12/24/01-SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</id>
+    <link href="https://hanlin.fun/2019/12/24/01-sql-ji-chu-yu-fa/"/>
+    <id>https://hanlin.fun/2019/12/24/01-sql-ji-chu-yu-fa/</id>
     <published>2019-12-24T11:08:00.000Z</published>
     <updated>2019-12-29T08:08:41.350Z</updated>
     
@@ -154,8 +154,8 @@
   
   <entry>
     <title>02.外键约束和高级查询</title>
-    <link href="https://hanlin.fun/2019/12/24/mySQL/"/>
-    <id>https://hanlin.fun/2019/12/24/mySQL/</id>
+    <link href="https://hanlin.fun/2019/12/24/mysql/"/>
+    <id>https://hanlin.fun/2019/12/24/mysql/</id>
     <published>2019-12-24T01:48:00.000Z</published>
     <updated>2019-12-29T08:09:06.829Z</updated>
     
@@ -183,8 +183,8 @@
   
   <entry>
     <title>shell编程</title>
-    <link href="https://hanlin.fun/2019/12/22/shell%E7%BC%96%E7%A8%8B/"/>
-    <id>https://hanlin.fun/2019/12/22/shell%E7%BC%96%E7%A8%8B/</id>
+    <link href="https://hanlin.fun/2019/12/22/shell-bian-cheng/"/>
+    <id>https://hanlin.fun/2019/12/22/shell-bian-cheng/</id>
     <published>2019-12-22T11:08:00.000Z</published>
     <updated>2019-12-29T07:14:10.600Z</updated>
     
@@ -211,8 +211,8 @@
   
   <entry>
     <title>git常用指令</title>
-    <link href="https://hanlin.fun/2019/12/22/git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
-    <id>https://hanlin.fun/2019/12/22/git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
+    <link href="https://hanlin.fun/2019/12/22/git-chang-yong-zhi-ling/"/>
+    <id>https://hanlin.fun/2019/12/22/git-chang-yong-zhi-ling/</id>
     <published>2019-12-22T10:35:00.000Z</published>
     <updated>2019-12-22T10:54:59.699Z</updated>
     
@@ -243,8 +243,8 @@
   
   <entry>
     <title>vim的使用</title>
-    <link href="https://hanlin.fun/2019/12/22/vim%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>https://hanlin.fun/2019/12/22/vim%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <link href="https://hanlin.fun/2019/12/22/vim-de-shi-yong/"/>
+    <id>https://hanlin.fun/2019/12/22/vim-de-shi-yong/</id>
     <published>2019-12-22T10:33:00.000Z</published>
     <updated>2019-12-29T07:09:46.797Z</updated>
     
@@ -272,8 +272,8 @@
   
   <entry>
     <title>Linux日常指令</title>
-    <link href="https://hanlin.fun/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/"/>
-    <id>https://hanlin.fun/2019/12/21/Linux%E6%97%A5%E5%B8%B8%E6%8C%87%E4%BB%A4/</id>
+    <link href="https://hanlin.fun/2019/12/21/linux-ri-chang-zhi-ling/"/>
+    <id>https://hanlin.fun/2019/12/21/linux-ri-chang-zhi-ling/</id>
     <published>2019-12-21T08:25:00.000Z</published>
     <updated>2019-12-29T07:15:18.934Z</updated>
     
