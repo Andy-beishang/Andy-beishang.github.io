@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hanlin.fun/"/>
-  <updated>2019-12-29T08:06:03.416Z</updated>
+  <updated>2019-12-29T13:35:48.351Z</updated>
   <id>https://hanlin.fun/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>非常乱的随笔</title>
+    <title>在Linux中安装软件</title>
+    <link href="https://hanlin.fun/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/"/>
+    <id>https://hanlin.fun/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/</id>
+    <published>2019-12-29T13:07:00.000Z</published>
+    <updated>2019-12-29T13:35:48.351Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;Linux中安装软件的方法&quot;&gt;&lt;a href=&quot;#Linux中安装软件的方法&quot; class=&quot;headerlink&quot; title=&quot;Linux中安装软件的方法&quot;&gt;&lt;/a&gt;Linux中安装软件的方法&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;1.包管理工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://hanlin.fun/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://hanlin.fun/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人随笔</title>
     <link href="https://hanlin.fun/2019/12/27/sui-bi/"/>
     <id>https://hanlin.fun/2019/12/27/sui-bi/</id>
     <published>2019-12-27T01:28:00.000Z</published>
-    <updated>2019-12-29T08:06:03.416Z</updated>
+    <updated>2019-12-29T13:07:41.739Z</updated>
     
     <summary type="html">
     

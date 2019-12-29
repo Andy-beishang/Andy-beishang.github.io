@@ -320,6 +320,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="霖">
+      <meta itemprop="description" content="一个人的狂欢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="霖时人間">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/" class="post-title-link" itemprop="url">在Linux中安装软件</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-29 21:07:00 / 修改时间：21:35:48" itemprop="dateCreated datePublished" datetime="2019-12-29T21:07:00+08:00">2019-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>589</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="Linux中安装软件的方法"><a href="#Linux中安装软件的方法" class="headerlink" title="Linux中安装软件的方法"></a>Linux中安装软件的方法</h4><ul>
+<li>1.包管理工具</li>
+</ul>
+<blockquote>
+<p>-yum CentOS<br>    ~yum search nginx # 在库中查询是否有nginx的包<br>   ~yum install nginx # 安装nginx<br>   ~yum erase nginx/yum remove nginx # 卸载nginx<br>   ~yum info nginx # 查看安装的nginx的信息<br>   ~yum list installed|grep nginx 查看已经安装的和nginx相关的软件</p>
+</blockquote>
+<blockquote>
+<p>-rpm Redhat<br>    ~rpm -ivh 下载的rpm包文件名 # 安装软件并监察安装进度<br>   ~rpm -e rpm包名 # 卸载安装的rpm包<br>   ~rpm -qa # 列出所有的被安装的rpm包</p>
+</blockquote>
+<blockquote>
+<p>-apt Ubantu</p>
+</blockquote>
+<ul>
+<li>2.源代码构建安装</li>
+</ul>
+<p>eg:安装Redis官方最新版为例</p>
+<blockquote>
+<p>~wget <a href="https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz" target="_blank" rel="noopener">https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz</a> # 下载Redis包，以压缩方式xz的包为例<br>  ~xz -d git-2.24.1.tar.xz # 解压缩<br>  ~tar -xf git-2.24.1.tar # 解归档<br>  ~cd git-2.24.1 # 进入解归档后的安装文件目录<br>  ~yum install -y curl libcurl-devel # 执行安装命令<br>  ~./configure –prefix=/usr/local # 指定安装路径<br>  ~make &amp;&amp; make install # 安装</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/27/sui-bi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -334,7 +440,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/27/sui-bi/" class="post-title-link" itemprop="url">非常乱的随笔</a>
+            <a href="/2019/12/27/sui-bi/" class="post-title-link" itemprop="url">个人随笔</a>
         </h1>
 
         <div class="post-meta">
@@ -351,7 +457,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-29 16:06:03" itemprop="dateModified" datetime="2019-12-29T16:06:03+08:00">2019-12-29</time>
+                <time title="修改时间：2019-12-29 21:07:41" itemprop="dateModified" datetime="2019-12-29T21:07:41+08:00">2019-12-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -436,108 +542,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/26/pymysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="霖">
-      <meta itemprop="description" content="一个人的狂欢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="霖时人間">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/26/pymysql/" class="post-title-link" itemprop="url">pymysql</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-26 17:31:00" itemprop="dateCreated datePublished" datetime="2019-12-26T17:31:00+08:00">2019-12-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-29 16:07:34" itemprop="dateModified" datetime="2019-12-29T16:07:34+08:00">2019-12-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>pymysql在Python中的使用</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br></pre></td></tr></table></figure>
-<h3 id="1-和mysql建立连接"><a href="#1-和mysql建立连接" class="headerlink" title="1.和mysql建立连接"></a>1.和mysql建立连接</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">连接对象 = pymysql.connect(host,port,user,password)  - 和指定mysql建立连接并且返回一个连接对象</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">说明:</span></span><br><span class="line"><span class="string">    host - mysql主机地址（localhost表示当前设备上的mysql, 服务器公网ip）</span></span><br><span class="line"><span class="string">    port - mysql服务端口， 3306</span></span><br><span class="line"><span class="string">    user - mysql用户</span></span><br><span class="line"><span class="string">    password  - 用户对应的密码(如果创建用户的时候没有设置密码，这个参数可以不用赋值)</span></span><br><span class="line"><span class="string">    database - 建立连接后默认操作的数据库</span></span><br><span class="line"><span class="string">    charset - 设置连接的数据库文件的编码方式</span></span><br><span class="line"><span class="string">    autocommit - 是否自动提交</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">con = pymysql.connect(</span><br><span class="line">        host=<span class="string">'localhost'</span>,</span><br><span class="line">        port=<span class="number">3306</span>,</span><br><span class="line">        user=<span class="string">'root'</span>,</span><br><span class="line">        password=<span class="string">'yuting123456'</span>,</span><br><span class="line">        database=<span class="string">'school'</span>,</span><br><span class="line">        charset=<span class="string">'utf8'</span>,</span><br><span class="line">        autocommit=<span class="literal">True</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h3 id="2-通过连接获取游标对象"><a href="#2-通过连接获取游标对象" class="headerlink" title="2.通过连接获取游标对象"></a>2.通过连接获取游标对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">with 连接对象.cursor(查询返回值类型=None) as 游标对象:</span></span><br><span class="line"><span class="string">    数据库操作上下文</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">说明:</span></span><br><span class="line"><span class="string">    查询返回值类型  - None: 查询结果以元组的形式返回; </span></span><br><span class="line"><span class="string">                    pymysql.cursors.DictCursor: 查询结果以字典的形式返回</span></span><br><span class="line"><span class="string">    数据库操作上下文 - 游标对象(数据库操作)只有在数据库操作上下文才有效</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">with</span> con.cursor() <span class="keyword">as</span> cursor:</span><br><span class="line">    <span class="comment"># 数据库操作上下文</span></span><br><span class="line">    <span class="comment"># 3.执行sql语句: 游标对象.execute(sql语句)</span></span><br><span class="line">    cursor.execute(<span class="string">'create database if not exists pyschool;'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#  关闭连接</span></span><br><span class="line">con.close()</span><br></pre></td></tr></table></figure>
-<h3 id="3-在Python中对表的操作"><a href="#3-在Python中对表的操作" class="headerlink" title="3.在Python中对表的操作"></a>3.在Python中对表的操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">query_table</span><span class="params">(connect)</span>:</span></span><br><span class="line">    <span class="comment"># 注意: 执行查询的sql语句,查询结果保存在游标对象中的</span></span><br><span class="line">    <span class="comment"># 游标对象.fetchall()</span></span><br><span class="line">    sql_str = <span class="string">'select * from tb_student;'</span></span><br><span class="line">    <span class="keyword">with</span> connect.cursor(pymysql.cursors.DictCursor) <span class="keyword">as</span> cursor:</span><br><span class="line">        result = cursor.execute(sql_str)</span><br><span class="line">        print(result, cursor)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 注意: cursor中的查询结果，取一个就少一个</span></span><br><span class="line">        <span class="comment"># 1. 游标对象.fetchall() - 获取当前查询的所有的结果</span></span><br><span class="line">        <span class="comment"># all_result = cursor.fetchall()</span></span><br><span class="line">        <span class="comment"># print('查询结果的个数:', len(all_result))</span></span><br><span class="line">        <span class="comment"># for dic in all_result:</span></span><br><span class="line">        <span class="comment">#     print(dic['stuname'])</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># all_result2 = cursor.fetchall()</span></span><br><span class="line">        <span class="comment"># print(all_result2)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 2. 游标对象.fetchone()  - 获取当前查询中一条数据</span></span><br><span class="line">        print(cursor.fetchone())</span><br><span class="line">        print(cursor.fetchone())</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 3. 游标对象.fetchmany(size)   -- 获取当前查询中指定条数的数据</span></span><br><span class="line">        print(cursor.fetchmany(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">operate_table</span><span class="params">(connect)</span>:</span></span><br><span class="line">    <span class="string">"""增删改"""</span></span><br><span class="line">    <span class="comment"># 1.增</span></span><br><span class="line">    <span class="comment"># sql_str = '''</span></span><br><span class="line">    <span class="comment">#     insert into tb_student</span></span><br><span class="line">    <span class="comment">#     (stuname, stusex, stuage, setutel)</span></span><br><span class="line">    <span class="comment">#     values</span></span><br><span class="line">    <span class="comment">#     ('张三', 1, 30, '17823736452'),</span></span><br><span class="line">    <span class="comment">#     ('stu1', 0, 28, '16728729739');</span></span><br><span class="line">    <span class="comment"># '''</span></span><br><span class="line">    print(<span class="string">'=========插入学生=========='</span>)</span><br><span class="line">    sql_str = <span class="string">'insert into tb_student (stuname, stusex, stuage, setutel) values %s;'</span></span><br><span class="line">    str2 = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        name = input(<span class="string">'请输入名字:'</span>)</span><br><span class="line">        sex = int(input(<span class="string">'请输入性别(0/1):'</span>))</span><br><span class="line">        age = int(input(<span class="string">'请输入年龄:'</span>))</span><br><span class="line">        tel = input(<span class="string">'请输入电话号码:'</span>)</span><br><span class="line">        value = input(<span class="string">'是否继续添加(y/n):'</span>)</span><br><span class="line">        str2 += <span class="string">"('%s', %d, %d, '%s'),"</span> % (name, sex, age, tel)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> value == <span class="string">'n'</span>:</span><br><span class="line">            print(str2[:<span class="number">-1</span>])</span><br><span class="line">            sql_str = sql_str % str2[:<span class="number">-1</span>]</span><br><span class="line">            print(sql_str)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> connect.cursor() <span class="keyword">as</span> cursor:</span><br><span class="line">        cursor.execute(sql_str)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_table</span><span class="params">(connect)</span>:</span></span><br><span class="line">    <span class="string">"""创建表"""</span></span><br><span class="line">    <span class="keyword">with</span> connect.cursor() <span class="keyword">as</span> cursor:</span><br><span class="line">        <span class="comment"># 1.=========创建学生表=========</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            sql_str = <span class="string">'''</span></span><br><span class="line"><span class="string">            create table tb_student</span></span><br><span class="line"><span class="string">            (</span></span><br><span class="line"><span class="string">                stuid int auto_increment,</span></span><br><span class="line"><span class="string">                stuname varchar(10) not null,</span></span><br><span class="line"><span class="string">                stuage int,</span></span><br><span class="line"><span class="string">                stusex bit default 1,</span></span><br><span class="line"><span class="string">                setutel varchar(11),</span></span><br><span class="line"><span class="string">                primary key (stuid)</span></span><br><span class="line"><span class="string">            );</span></span><br><span class="line"><span class="string">            '''</span></span><br><span class="line">            cursor.execute(sql_str)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 自定制表</span></span><br><span class="line">        <span class="comment"># table_name = input('表名:')</span></span><br><span class="line">        <span class="comment"># pre = table_name[:3]</span></span><br><span class="line">        <span class="comment"># cnames = []</span></span><br><span class="line">        <span class="comment"># while True:</span></span><br><span class="line">        <span class="comment">#     cname = input('请输入字段名(q-退出):')</span></span><br><span class="line">        <span class="comment">#     if cname == 'q':</span></span><br><span class="line">        <span class="comment">#         break</span></span><br><span class="line">        <span class="comment">#     cnames.append(pre+cname+' text,')</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># str1 = '''</span></span><br><span class="line">        <span class="comment">#     create table if not exists tb_%s</span></span><br><span class="line">        <span class="comment">#     (</span></span><br><span class="line">        <span class="comment">#         %sid int auto_increment,</span></span><br><span class="line">        <span class="comment">#         %s</span></span><br><span class="line">        <span class="comment">#         primary key (%sid)</span></span><br><span class="line">        <span class="comment">#     );</span></span><br><span class="line">        <span class="comment"># '''</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># sql_str = str1 % (</span></span><br><span class="line">        <span class="comment">#     table_name,</span></span><br><span class="line">        <span class="comment">#     table_name[:3],</span></span><br><span class="line">        <span class="comment">#     ' '.join(cnames),</span></span><br><span class="line">        <span class="comment">#     table_name[: 3]</span></span><br><span class="line">        <span class="comment"># )</span></span><br><span class="line">        <span class="comment"># print(sql_str)</span></span><br><span class="line">        <span class="comment"># cursor.execute(sql_str)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 1.建立连接</span></span><br><span class="line">    con = pymysql.connect(</span><br><span class="line">            host=<span class="string">'localhost'</span>,</span><br><span class="line">            user=<span class="string">'root'</span>,</span><br><span class="line">            password=<span class="string">'yuting123456'</span>,</span><br><span class="line">            port=<span class="number">3306</span>,</span><br><span class="line">            charset=<span class="string">'utf8'</span>,</span><br><span class="line">            autocommit=<span class="literal">True</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2.切换数据库</span></span><br><span class="line">    <span class="keyword">with</span> con.cursor() <span class="keyword">as</span> cursor:</span><br><span class="line">        cursor.execute(<span class="string">'use pyschool;'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 3.创建表</span></span><br><span class="line">    create_table(con)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 4.操作表</span></span><br><span class="line">    operate_table(con)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 5.查询数据</span></span><br><span class="line">    query_table(con)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -605,14 +614,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -695,7 +704,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">27 分钟</span>
 </div>
 
         

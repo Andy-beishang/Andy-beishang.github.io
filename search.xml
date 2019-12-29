@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>非常乱的随笔</title>
+    <title>在Linux中安装软件</title>
+    <url>/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/</url>
+    <content><![CDATA[<h4 id="Linux中安装软件的方法"><a href="#Linux中安装软件的方法" class="headerlink" title="Linux中安装软件的方法"></a>Linux中安装软件的方法</h4><ul>
+<li>1.包管理工具</li>
+</ul>
+<blockquote>
+<p>-yum CentOS<br>    ~yum search nginx # 在库中查询是否有nginx的包<br>   ~yum install nginx # 安装nginx<br>   ~yum erase nginx/yum remove nginx # 卸载nginx<br>   ~yum info nginx # 查看安装的nginx的信息<br>   ~yum list installed|grep nginx 查看已经安装的和nginx相关的软件</p>
+</blockquote>
+<blockquote>
+<p>-rpm Redhat<br>    ~rpm -ivh 下载的rpm包文件名 # 安装软件并监察安装进度<br>   ~rpm -e rpm包名 # 卸载安装的rpm包<br>   ~rpm -qa # 列出所有的被安装的rpm包</p>
+</blockquote>
+<blockquote>
+<p>-apt Ubantu</p>
+</blockquote>
+<ul>
+<li>2.源代码构建安装</li>
+</ul>
+<p>eg:安装Redis官方最新版为例</p>
+<blockquote>
+<p>~wget <a href="https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz" target="_blank" rel="noopener">https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz</a> # 下载Redis包，以压缩方式xz的包为例<br>  ~xz -d git-2.24.1.tar.xz # 解压缩<br>  ~tar -xf git-2.24.1.tar # 解归档<br>  ~cd git-2.24.1 # 进入解归档后的安装文件目录<br>  ~yum install -y curl libcurl-devel # 执行安装命令<br>  ~./configure –prefix=/usr/local # 指定安装路径<br>  ~make &amp;&amp; make install # 安装</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人随笔</title>
     <url>/2019/12/27/sui-bi/</url>
     <content><![CDATA[<p>CVS / VSS —&gt; 锁定模式<br>Subversion（SVN）—&gt; 合并模式 + 中央服务器<br>BitKeeper / Git —&gt; 合并模式 + 分布式版本控制</p>
 <p>Multics —&gt; Unics —&gt; Unix<br>Unix —&gt; MINIX —&gt; Linux —&gt; Android<br>Unix —&gt; BSD —&gt; FreeBSD —&gt; macOS —&gt; ios<br>Unix —&gt; AIX / Hp-Unix / Solaris<br>ken thompson —&gt; B<br>dennis ritchie —&gt; C</p>
