@@ -81,13 +81,11 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;DCL（数据控制语言）&quot;&gt;&lt;a href=&quot;#DCL（数据控制语言）&quot; class=&quot;headerlink&quot; title=&quot;DCL（数据控制语言）&quot;&gt;&lt;/a&gt;DCL（数据控制语言）&lt;/h3&gt;&lt;p&gt;DCL主要提供授权和召回授权以及事务等相关功能&lt;/p&gt;
-&lt;h4 id=&quot;1-用户管理（root账号才有的权限）&quot;&gt;&lt;a href=&quot;#1-用户管理（root账号才有的权限）&quot; class=&quot;headerlink&quot; title=&quot;1.用户管理（root账号才有的权限）&quot;&gt;&lt;/a&gt;1.用户管理（root账号才有的权限）&lt;/h4&gt;&lt;h5 id=&quot;1）创建用户&quot;&gt;&lt;a href=&quot;#1）创建用户&quot; class=&quot;headerlink&quot; title=&quot;1）创建用户&quot;&gt;&lt;/a&gt;1）创建用户&lt;/h5&gt;&lt;p&gt;&lt;code&gt;create user &amp;#39;用户名&amp;#39;@&amp;#39;登录地址&amp;#39;；&lt;/code&gt;    -    创建数据库用户，该用户登录不需要密码&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;create user &amp;#39;用户名&amp;#39;@&amp;#39;登录地址&amp;#39; identified by &amp;#39;密码&amp;#39;；&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;说明：&lt;/p&gt;
-&lt;p&gt;用户名    -    随便命名&lt;/p&gt;
-&lt;p&gt;登录地址    -    ip地址/localhost（本机）/%（任意位置）&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;user1&#39;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&#39;localhost&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;user2&#39;&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&#39;%&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;IDENTIFIED&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;123456&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      
+      
+        &lt;h3 id=&quot;DCL（数据控制语言）&quot;&gt;&lt;a href=&quot;#DCL（数据控制语言）&quot; class=&quot;headerlink&quot; title=&quot;DCL（数据控制语言）&quot;&gt;&lt;/a&gt;DCL（数据控制语言）&lt;/h3&gt;&lt;p&gt;DCL主要提供授权和召回授权以及事务等相关功能&lt;/p&gt;
+&lt;h4 id
+      
     
     </summary>
     
@@ -114,16 +112,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1-sql基础&quot;&gt;&lt;a href=&quot;#1-sql基础&quot; class=&quot;headerlink&quot; title=&quot;1.sql基础&quot;&gt;&lt;/a&gt;1.sql基础&lt;/h3&gt;&lt;p&gt;sql又叫结构化查询语言，分为三大类：DDL（数据定义语言）、DML（数据操作语言）、DCL（数据控制语言）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;DDL：create（创建数据库和表）、drop（删除数据库和表）、alter（修改数据库和表）&lt;/li&gt;
-&lt;li&gt;DML：insert（增）、delete（删）、update（改）、select（查）&lt;/li&gt;
-&lt;li&gt;DCL：grant（授权）、revoke（召回授权）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;sql的注释是在注释前加–；sql中sql的关键字不区分大小写；sql语句结束后需要加分号&lt;/p&gt;
-&lt;h3 id=&quot;2-DDL（数据定义语言）&quot;&gt;&lt;a href=&quot;#2-DDL（数据定义语言）&quot; class=&quot;headerlink&quot; title=&quot;2. DDL（数据定义语言）&quot;&gt;&lt;/a&gt;2. DDL（数据定义语言）&lt;/h3&gt;&lt;h4 id=&quot;2-1-数据库操作&quot;&gt;&lt;a href=&quot;#2-1-数据库操作&quot; class=&quot;headerlink&quot; title=&quot;2.1 数据库操作&quot;&gt;&lt;/a&gt;2.1 数据库操作&lt;/h4&gt;&lt;h5 id=&quot;2-1-1-创建数据库&quot;&gt;&lt;a href=&quot;#2-1-1-创建数据库&quot; class=&quot;headerlink&quot; title=&quot;2.1.1 创建数据库&quot;&gt;&lt;/a&gt;2.1.1 创建数据库&lt;/h5&gt;&lt;p&gt;create database 数据库名称；    -    创建指定数据库，如果这个数据库已经存在，会报错&lt;/p&gt;
-&lt;p&gt;create database if not exists 数据库名称；    -     当指定数据库不存在的时候创建对应的数据库&lt;/p&gt;
-&lt;p&gt;create database if not exists 数据库名称 default charset utf8；    -    创建数据库的时候指定数据库文件的编码方式&lt;/p&gt;
+      
+      
+        &lt;h3 id=&quot;1-sql基础&quot;&gt;&lt;a href=&quot;#1-sql基础&quot; class=&quot;headerlink&quot; title=&quot;1.sql基础&quot;&gt;&lt;/a&gt;1.sql基础&lt;/h3&gt;&lt;p&gt;sql又叫结构化查询语言，分为三大类：DDL（数据定义语言）、DML（数据操作语言）、DCL（数据控
+      
     
     </summary>
     
@@ -148,11 +140,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1-E-R实体关系图&quot;&gt;&lt;a href=&quot;#1-E-R实体关系图&quot; class=&quot;headerlink&quot; title=&quot;1.E.R实体关系图&quot;&gt;&lt;/a&gt;1.E.R实体关系图&lt;/h3&gt;&lt;p&gt;E.R实体关系图是通过图标的形式来表示数据库中表和字段以及表和表之间的关系。&lt;/p&gt;
-&lt;p&gt;表和表之间的关系主要有四种：一对一，一对多，多对一，多对多&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/pasted-2.png&quot; alt=&quot;E.R实体关系图示例&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;2-外键约束&quot;&gt;&lt;a href=&quot;#2-外键约束&quot; class=&quot;headerlink&quot; title=&quot;2.外键约束&quot;&gt;&lt;/a&gt;2.外键约束&lt;/h3&gt;&lt;h4 id=&quot;什么是外键约束&quot;&gt;&lt;a href=&quot;#什么是外键约束&quot; class=&quot;headerlink&quot; title=&quot;什么是外键约束&quot;&gt;&lt;/a&gt;什么是外键约束&lt;/h4&gt;&lt;p&gt;外键约束就是：让字段的值的取值范围在另外一张表的主键中&lt;/p&gt;
-&lt;h4 id=&quot;怎么添加外键约束&quot;&gt;&lt;a href=&quot;#怎么添加外键约束&quot; class=&quot;headerlink&quot; title=&quot;怎么添加外键约束&quot;&gt;&lt;/a&gt;怎么添加外键约束&lt;/h4&gt;&lt;h5 id=&quot;1）保证当前表中有一个字段能够保存另外一张表的主键&quot;&gt;&lt;a href=&quot;#1）保证当前表中有一个字段能够保存另外一张表的主键&quot; class=&quot;headerlink&quot; title=&quot;1）保证当前表中有一个字段能够保存另外一张表的主键&quot;&gt;&lt;/a&gt;1）保证当前表中有一个字段能够保存另外一张表的主键&lt;/h5&gt;&lt;h5 id=&quot;2）添加外键约束&quot;&gt;&lt;a href=&quot;#2）添加外键约束&quot; class=&quot;headerlink&quot; title=&quot;2）添加外键约束&quot;&gt;&lt;/a&gt;2）添加外键约束&lt;/h5&gt;
+      
+      
+        &lt;h3 id=&quot;1-E-R实体关系图&quot;&gt;&lt;a href=&quot;#1-E-R实体关系图&quot; class=&quot;headerlink&quot; title=&quot;1.E.R实体关系图&quot;&gt;&lt;/a&gt;1.E.R实体关系图&lt;/h3&gt;&lt;p&gt;E.R实体关系图是通过图标的形式来表示数据库中表和字段以及表和表之间的关系。
+      
     
     </summary>
     
@@ -177,12 +168,11 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;shell编程&quot;&gt;&lt;a href=&quot;#shell编程&quot; class=&quot;headerlink&quot; title=&quot;shell编程&quot;&gt;&lt;/a&gt;shell编程&lt;/h1&gt;&lt;p&gt;Shell脚本，是一种为shell编写的脚本程序。&lt;/p&gt;
-&lt;p&gt;Shell编程跟JavaScript、Python编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。&lt;/p&gt;
-&lt;p&gt;Linux的Shell种类有很多，我们主要用的是Bourne Shell(/usr.bin/sh或/bin/sh)&lt;/p&gt;
-&lt;h3 id=&quot;1-创建shell文件&quot;&gt;&lt;a href=&quot;#1-创建shell文件&quot; class=&quot;headerlink&quot; title=&quot;1.创建shell文件&quot;&gt;&lt;/a&gt;1.创建shell文件&lt;/h3&gt;&lt;p&gt;原则上shell程序可以写在任何文件中，但是一般会在shell文件后加后缀.sh表示当前文件是一个shell文件&lt;/p&gt;
-&lt;p&gt;shell需要可执行权限，所以创建好的shell文件需要添加x权限&lt;/p&gt;
-&lt;h3 id=&quot;2-基础语法&quot;&gt;&lt;a href=&quot;#2-基础语法&quot; class=&quot;headerlink&quot; title=&quot;2.基础语法&quot;&gt;&lt;/a&gt;2.基础语法&lt;/h3&gt;&lt;h6 id=&quot;1）注释&quot;&gt;&lt;a href=&quot;#1）注释&quot; class=&quot;headerlink&quot; title=&quot;1）注释&quot;&gt;&lt;/a&gt;1）注释&lt;/h6&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; 单行注释&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;:《（此处为两个小于符号）EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;多行注释1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;多行注释2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      
+      
+        &lt;h1 id=&quot;shell编程&quot;&gt;&lt;a href=&quot;#shell编程&quot; class=&quot;headerlink&quot; title=&quot;shell编程&quot;&gt;&lt;/a&gt;shell编程&lt;/h1&gt;&lt;p&gt;Shell脚本，是一种为shell编写的脚本程序。&lt;/p&gt;
+&lt;p&gt;Shell编程跟JavaScrip
+      
     
     </summary>
     
@@ -205,14 +195,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;git常用指令&quot;&gt;&lt;a href=&quot;#git常用指令&quot; class=&quot;headerlink&quot; title=&quot;git常用指令&quot;&gt;&lt;/a&gt;git常用指令&lt;/h1&gt;&lt;h2 id=&quot;1-基本指令&quot;&gt;&lt;a href=&quot;#1-基本指令&quot; class=&quot;headerlink&quot; title=&quot;1.基本指令&quot;&gt;&lt;/a&gt;1.基本指令&lt;/h2&gt;&lt;p&gt;&lt;code&gt;git init&lt;/code&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ——  新建git仓库&lt;br&gt;&lt;code&gt;git add 文件/文件夹&lt;/code&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ——  将文件添加到缓存区中&lt;br&gt;&lt;code&gt;git add -A&lt;/code&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; — 添加所有内容到缓存区中&lt;br&gt;&lt;code&gt;git status&lt;/code&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;———    查看git状态&lt;br&gt;&lt;code&gt;git commit -m  ‘提交信息’&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——  将缓存区中的内容全部提交到git本地仓库中  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git log&lt;/code&gt;   &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——-    查看提交日志  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git reset  -- hard   HEAD&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——   让工作目录中的内容和仓库中的内容保持一致&lt;br&gt;&lt;code&gt;git reset  --hard HEAD^&lt;/code&gt;   &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——  回到上一个版本&lt;br&gt;&lt;code&gt;git  reset  -- hard 版本号&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;——  回到指定的版本  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git checkout  文件名&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ——  从暂存区中恢复工作目录中的内容(让工作区中的指定文件，回到上次提交的时候的状态)  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git clone &amp;lt;url&amp;gt;&lt;/code&gt; - 将服务器上的项目(仓库)克隆 (使用https地址需要输入密码，使用ssh地址需要添加公钥)  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git remote add origin 地址&lt;/code&gt;      &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;—– 关联远程仓库(只需要关联一次)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git push [-u] origin master&lt;/code&gt;  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;—– 提交(-u在第一次提交分支的时候才用)  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;git push&lt;/code&gt;         —  将本地仓库的内容提交到远程仓库master分支上&lt;/p&gt;
+      
+      
+        &lt;h1 id=&quot;git常用指令&quot;&gt;&lt;a href=&quot;#git常用指令&quot; class=&quot;headerlink&quot; title=&quot;git常用指令&quot;&gt;&lt;/a&gt;git常用指令&lt;/h1&gt;&lt;h2 id=&quot;1-基本指令&quot;&gt;&lt;a href=&quot;#1-基本指令&quot; class=&quot;headerlink&quot; 
+      
     
     </summary>
     
@@ -237,13 +223,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;vim的使用&quot;&gt;&lt;a href=&quot;#vim的使用&quot; class=&quot;headerlink&quot; title=&quot;vim的使用&quot;&gt;&lt;/a&gt;vim的使用&lt;/h1&gt;&lt;h3 id=&quot;1-vim的三种模式&quot;&gt;&lt;a href=&quot;#1-vim的三种模式&quot; class=&quot;headerlink&quot; title=&quot;1.vim的三种模式&quot;&gt;&lt;/a&gt;1.vim的三种模式&lt;/h3&gt;&lt;p&gt;&lt;b&gt;命令模式：&lt;/b&gt;末尾既没有插入的字样也没有冒号&lt;/p&gt;
-&lt;p&gt;​        (在编辑模式和末行模式下按esc键可以进入命令模式)&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;编辑模式：&lt;/b&gt;末尾会显示’—插入—‘/‘—insert—‘， 并且在编辑模式下可以对文件进行输入操作(可以编辑)&lt;/p&gt;
-&lt;p&gt;​        (在命令模式下按i就可以进入编辑模式)&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;末行模式：&lt;/b&gt;末尾显示冒号，并且冒号后边可以输入内容&lt;/p&gt;
-&lt;p&gt;​        (在命令模式下输入冒号就可以进入末行模式)&lt;/p&gt;
-&lt;h3 id=&quot;2-vim的配置&quot;&gt;&lt;a href=&quot;#2-vim的配置&quot; class=&quot;headerlink&quot; title=&quot;2.vim的配置&quot;&gt;&lt;/a&gt;2.vim的配置&lt;/h3&gt;&lt;p&gt;通过编辑&lt;code&gt;~/.vimrc&lt;/code&gt;文件或者&lt;code&gt;/etc/vimrc&lt;/code&gt;文件可以对vim编辑器进行相关配置&lt;/p&gt;
+      
+      
+        &lt;h1 id=&quot;vim的使用&quot;&gt;&lt;a href=&quot;#vim的使用&quot; class=&quot;headerlink&quot; title=&quot;vim的使用&quot;&gt;&lt;/a&gt;vim的使用&lt;/h1&gt;&lt;h3 id=&quot;1-vim的三种模式&quot;&gt;&lt;a href=&quot;#1-vim的三种模式&quot; class=&quot;headerli
+      
     
     </summary>
     
@@ -266,19 +249,17 @@
     
     <summary type="html">
     
-      &lt;p&gt;Linux是一个非常强大的系统，它具有：&lt;/p&gt;
+      
+      
+        &lt;p&gt;Linux是一个非常强大的系统，它具有：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;源代码完全开源&lt;/li&gt;
 &lt;li&gt;支持所有的因特网协议&lt;/li&gt;
 &lt;li&gt;系统工具链完整&lt;/li&gt;
 &lt;li&gt;执行效率高&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;等优点；因此熟练地掌握Linux系统的常用指令就显得非常重要了。&lt;/p&gt;
-&lt;h3 id=&quot;1-cd指令-进入文件夹&quot;&gt;&lt;a href=&quot;#1-cd指令-进入文件夹&quot; class=&quot;headerlink&quot; title=&quot;1.cd指令   -  进入文件夹&quot;&gt;&lt;/a&gt;1.cd指令   -  进入文件夹&lt;/h3&gt;&lt;p&gt;cd  文件夹路径(路径可以是绝对地址也可以是相对地址)      -  进入到指定路径对应的文件夹&lt;/p&gt;
-&lt;p&gt;cd  ..              -   返回上层目录&lt;/p&gt;
-&lt;p&gt;cd  /               -  进入操作系统根目录&lt;/p&gt;
-&lt;p&gt;cd ~               -  进入电脑的文件系统根目录&lt;/p&gt;
-&lt;h3 id=&quot;2-ls指令-显示当前目录中的内容&quot;&gt;&lt;a href=&quot;#2-ls指令-显示当前目录中的内容&quot; class=&quot;headerlink&quot; title=&quot;2.ls指令   - 显示当前目录中的内容&quot;&gt;&lt;/a&gt;2.ls指令   - 显示当前目录中的内容&lt;/h3&gt;&lt;p&gt;ls                  -   直接显示当前文件夹中的内容的名字(隐藏文件和文件夹看不到)&lt;/p&gt;
+&lt;p&gt;等优点；因此熟练地掌握Linux系统的常用指令就显得非常重
+      
     
     </summary>
     
