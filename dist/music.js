@@ -14,6 +14,48 @@ const ap = new APlayer({
         artist: 'Low Roar',
         url: 'http://link.hhtjim.com/163/472045266.mp3',
         cover: 'http://p2.music.126.net/ITG_4dox75W6DsXVmM3lJg==/18996262393165753.jpg',
+      },
+      {
+        name: "走马",
+        artist: '陈粒',
+        url: '/music/陈粒 - 走马.mp3',
+        cover: '/img/走马.jpg',
+      },
+      {
+        name: "小半",
+        artist: '陈粒',
+        url: '/music/陈粒 - 小半.mp3',
+        cover: '/img/小半.jpg',
+      },
+      {
+        name: "Sound of Silence",
+        artist: 'Simon & Garfunkel',
+        url: '/music/The Sound Of Silence.mp3',
+        cover: '/img/soundofsilence.jpg',
+      },
+      {
+        name: "Hotel California",
+        artist: 'Eagles',
+        url: '/music/Eagles - Hotel California.mp3',
+        cover: '/img/eagle.jpg',
+      },
+      {
+        name: "Gone With The Sin",
+        artist: 'HiM',
+        url: '/music/HiM - Gone With The Sin.mp3',
+        cover: '/img/him.jpg',
+      },
+      {
+        name: "Rain",
+        artist: '秦基博',
+        url: 'http://link.hhtjim.com/163/26418808.mp3',
+        cover: '/img/rain.jpg',
+      },
+      {
+        name: "Dont cry",
+        artist: 'Guns&Roses',
+        url: 'http://link.hhtjim.com/163/28952211.mp3',
+        cover: '/img/dontcry.jpg',
       }
     ]
 });
