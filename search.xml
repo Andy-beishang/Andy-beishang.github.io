@@ -42,8 +42,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>SQL</tag>
         <tag>mySQL</tag>
+        <tag>SQL</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -108,9 +108,9 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>SQL</tag>
         <tag>数据库</tag>
         <tag>mySQL</tag>
+        <tag>SQL</tag>
         <tag>数据库控制语言</tag>
       </tags>
   </entry>
@@ -226,14 +226,14 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>SQL</tag>
         <tag>数据库</tag>
         <tag>mySQL</tag>
+        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
     <title>02.外键约束和高级查询</title>
-    <url>/2019/12/24/mysql/</url>
+    <url>/2019/12/24/02.wai-jian-yue-shu-he-gao-ji-cha-xun/</url>
     <content><![CDATA[<h3 id="1-E-R实体关系图"><a href="#1-E-R实体关系图" class="headerlink" title="1.E.R实体关系图"></a>1.E.R实体关系图</h3><p>E.R实体关系图是通过图标的形式来表示数据库中表和字段以及表和表之间的关系。</p>
 <p>表和表之间的关系主要有四种：一对一，一对多，多对一，多对多</p>
 <p><img src="/images/pasted-2.png" alt="E.R实体关系图示例"></p>
