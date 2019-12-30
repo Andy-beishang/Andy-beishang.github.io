@@ -9,9 +9,9 @@
 
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2004年，松冈茉优因被演艺公司看中而进入艺能界。2007年，松冈茉优凭借校园剧《考试之神》正式出道。2008年，松冈茉优开始担任儿童节目《Oha Suta》常规成员。2010年，松冈茉优出演了《桂千鹤诊察日记》。2013年，松冈茉优凭借晨间剧《海女》而被更多的观众所认识。2014年，松冈茉优被日经娱乐月刊评选为最受瞩目的六位次世代女演员之一。</p>
-<p><img src="/img/sg1.jpg" alt="松冈茉优1"></p>
+<p><img data-src="/img/sg1.jpg" alt="松冈茉优1"></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015年，松冈茉优因出演社会话题剧《问题餐厅》而受到更多关注；同年，她还出演了悬疑剧《She》。2017年，她出演了都市剧《我丈夫不擅长工作》。2018年，松冈茉优凭借爱情片《不想恋爱》获得第27届日本电影职业大奖最佳女主角奖。2019年1月，凭借在《小偷家族》、《花牌情缘：结》等影片获得第61届蓝丝带奖最佳女配角奖</p>
-<p><img src="/img/sg2.jpg" alt="松冈茉优1"></p>
+<p><img data-src="/img/sg2.jpg" alt="松冈茉优1"></p>
 ]]></content>
       <categories>
         <category>养眼美女</category>
@@ -136,8 +136,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>mySQL</tag>
         <tag>SQL</tag>
+        <tag>mySQL</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -169,11 +169,11 @@
 <p>eg:获取学生学科的成绩</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> stuid,stuname,couid,couname,score <span class="keyword">from</span> tb_student,tb_record,tb_course <span class="keyword">where</span> tb_student.stuid=tb_record.sid <span class="keyword">and</span> tb_record.cid=tb_course.couid;</span><br><span class="line"></span><br><span class="line"><span class="comment">--对以上查询创建视图</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> vw_stu_info <span class="keyword">as</span> (<span class="keyword">select</span> stuid,stuname,couid,couname,score <span class="keyword">from</span> tb_student,tb_record,tb_course <span class="keyword">where</span> tb_student.stuid=tb_record.sid <span class="keyword">and</span> tb_record.cid=tb_course.couid);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 当视图被创建之后，可以直接对该视图进行查询操作</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-7.png" alt="创建视图"></p>
+<p><img data-src="/images/pasted-7.png" alt="创建视图"></p>
 <h4 id="2-使用视图"><a href="#2-使用视图" class="headerlink" title="2.使用视图"></a>2.使用视图</h4><p>视图在使用的时候和表的使用方法一样（注意：视图一般只用于查询操作，而不进行增删改的操作）</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询视图和查询表一样</span></span><br><span class="line"><span class="keyword">select</span> stuname,<span class="keyword">avg</span>(score)<span class="keyword">from</span> vw_stu_info <span class="keyword">group</span> <span class="keyword">by</span> stuid;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-6.png" alt="直接对视图进行查询操作"></p>
+<p><img data-src="/images/pasted-6.png" alt="直接对视图进行查询操作"></p>
 <p>注：当对用户进行授权的时候，可以只针对视图进行授权操作。</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> vw_emp_info <span class="keyword">as</span> <span class="keyword">select</span> eno,ename,job,mgr,dno <span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">on</span> hrs.vw_emp_info <span class="keyword">to</span> <span class="string">'user1'</span>@<span class="string">'localhost'</span>;</span><br></pre></td></tr></table></figure>
 
@@ -182,11 +182,11 @@
 <p><code>create unique index 索引名 on 表名 （字段）；</code>    -    给指定字段添加唯一索引（字段是唯一的时候才能添加唯一索引）</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_student <span class="keyword">where</span> stuname=<span class="string">'项少龙'</span>;</span><br><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_student <span class="keyword">WHERE</span> stuid =<span class="number">3755</span>;</span><br><span class="line"><span class="comment">-- explain 获取sql语句的执行计划，是用来查看执行性能的方法</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-8.png" alt="无索引查询"></p>
-<p><img src="/images/pasted-9.png" alt="唯一索引查询"></p>
+<p><img data-src="/images/pasted-8.png" alt="无索引查询"></p>
+<p><img data-src="/images/pasted-9.png" alt="唯一索引查询"></p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> idx_stuname <span class="keyword">on</span> tb_student(stuname);</span><br><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_student <span class="keyword">where</span> stuname=<span class="string">'项少龙'</span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-10.png" alt="普通索引查询"></p>
+<p><img data-src="/images/pasted-10.png" alt="普通索引查询"></p>
 <p>注意：模糊查询的时候以<code>%</code>，<code>_</code>开头时，相较于无索引查询，效率几乎不会提高</p>
 <h4 id="2-删除索引"><a href="#2-删除索引" class="headerlink" title="2.删除索引"></a>2.删除索引</h4><p><code>alter table 表名 drop index 索引名；</code></p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_student <span class="keyword">drop</span> <span class="keyword">index</span> idx_stuname;</span><br></pre></td></tr></table></figure>
@@ -202,9 +202,9 @@
         <category>数据库</category>
       </categories>
       <tags>
+        <tag>SQL</tag>
         <tag>数据库</tag>
         <tag>mySQL</tag>
-        <tag>SQL</tag>
         <tag>数据库控制语言</tag>
       </tags>
   </entry>
@@ -320,9 +320,9 @@
         <category>数据库</category>
       </categories>
       <tags>
+        <tag>SQL</tag>
         <tag>数据库</tag>
         <tag>mySQL</tag>
-        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -330,7 +330,7 @@
     <url>/2019/12/24/02.wai-jian-yue-shu-he-gao-ji-cha-xun/</url>
     <content><![CDATA[<h3 id="1-E-R实体关系图"><a href="#1-E-R实体关系图" class="headerlink" title="1.E.R实体关系图"></a>1.E.R实体关系图</h3><p>E.R实体关系图是通过图标的形式来表示数据库中表和字段以及表和表之间的关系。</p>
 <p>表和表之间的关系主要有四种：一对一，一对多，多对一，多对多</p>
-<p><img src="/images/pasted-2.png" alt="E.R实体关系图示例"></p>
+<p><img data-src="/images/pasted-2.png" alt="E.R实体关系图示例"></p>
 <h3 id="2-外键约束"><a href="#2-外键约束" class="headerlink" title="2.外键约束"></a>2.外键约束</h3><h4 id="什么是外键约束"><a href="#什么是外键约束" class="headerlink" title="什么是外键约束"></a>什么是外键约束</h4><p>外键约束就是：让字段的值的取值范围在另外一张表的主键中</p>
 <h4 id="怎么添加外键约束"><a href="#怎么添加外键约束" class="headerlink" title="怎么添加外键约束"></a>怎么添加外键约束</h4><h5 id="1）保证当前表中有一个字段能够保存另外一张表的主键"><a href="#1）保证当前表中有一个字段能够保存另外一张表的主键" class="headerlink" title="1）保证当前表中有一个字段能够保存另外一张表的主键"></a>1）保证当前表中有一个字段能够保存另外一张表的主键</h5><h5 id="2）添加外键约束"><a href="#2）添加外键约束" class="headerlink" title="2）添加外键约束"></a>2）添加外键约束</h5><p>不同的对应关系，外键的添加的要求（方式）不同：</p>
 <ul>
@@ -356,7 +356,7 @@
 </li>
 </ul>
 <h3 id="4-高级查询"><a href="#4-高级查询" class="headerlink" title="4. 高级查询"></a>4. 高级查询</h3><p>以下的查询操作全部基于下表：</p>
-<p><img src="/images/pasted-3.png" alt="建立E.R关系表"></p>
+<p><img data-src="/images/pasted-3.png" alt="建立E.R关系表"></p>
 <h4 id="4-1-去重操作"><a href="#4-1-去重操作" class="headerlink" title="4.1 去重操作"></a>4.1 去重操作</h4><p>select distinct 字段名 from 表名；</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> redate <span class="keyword">from</span> tb_record <span class="keyword">order</span> <span class="keyword">by</span> redate;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> <span class="keyword">sid</span> <span class="keyword">from</span> tb_record;	<span class="comment">--	查询所有选课的学生的id</span></span><br></pre></td></tr></table></figure>
 <h4 id="4-2-限制和分页"><a href="#4-2-限制和分页" class="headerlink" title="4.2 限制和分页"></a>4.2 限制和分页</h4><ul>
@@ -373,11 +373,11 @@
 <p>eg：获取每个学生的平均分</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sid</span>,<span class="keyword">avg</span>(score) <span class="keyword">from</span> tb_record <span class="keyword">group</span> <span class="keyword">by</span> (<span class="keyword">sid</span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-0.png" alt="每个学生平均分"></p>
+<p><img data-src="/images/pasted-0.png" alt="每个学生平均分"></p>
 <p>获取每个学科的平均分</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> cid,<span class="keyword">avg</span>(score) <span class="keyword">from</span> tb_record <span class="keyword">group</span> <span class="keyword">by</span> (cid);</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-1.png" alt="每个学科平均分"></p>
+<p><img data-src="/images/pasted-1.png" alt="每个学科平均分"></p>
 <p>获取每个学生选课数量</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sid</span>,<span class="keyword">count</span>(cid) <span class="keyword">from</span> tb_record <span class="keyword">group</span> <span class="keyword">by</span> (<span class="keyword">sid</span>);</span><br></pre></td></tr></table></figure>
 <h4 id="4-5-子查询"><a href="#4-5-子查询" class="headerlink" title="4.5 子查询"></a>4.5 子查询</h4><p>将一个查询的结果作为另外一个查询的条件或者查询对象</p>

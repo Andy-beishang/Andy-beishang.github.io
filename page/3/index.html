@@ -14,6 +14,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -28,9 +29,9 @@
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    fancybox: true,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
@@ -496,7 +497,7 @@
       
           <h3 id="1-E-R实体关系图"><a href="#1-E-R实体关系图" class="headerlink" title="1.E.R实体关系图"></a>1.E.R实体关系图</h3><p>E.R实体关系图是通过图标的形式来表示数据库中表和字段以及表和表之间的关系。</p>
 <p>表和表之间的关系主要有四种：一对一，一对多，多对一，多对多</p>
-<p><img src="/images/pasted-2.png" alt="E.R实体关系图示例"></p>
+<p><img data-src="/images/pasted-2.png" alt="E.R实体关系图示例"></p>
 <h3 id="2-外键约束"><a href="#2-外键约束" class="headerlink" title="2.外键约束"></a>2.外键约束</h3><h4 id="什么是外键约束"><a href="#什么是外键约束" class="headerlink" title="什么是外键约束"></a>什么是外键约束</h4><p>外键约束就是：让字段的值的取值范围在另外一张表的主键中</p>
 <h4 id="怎么添加外键约束"><a href="#怎么添加外键约束" class="headerlink" title="怎么添加外键约束"></a>怎么添加外键约束</h4><h5 id="1）保证当前表中有一个字段能够保存另外一张表的主键"><a href="#1）保证当前表中有一个字段能够保存另外一张表的主键" class="headerlink" title="1）保证当前表中有一个字段能够保存另外一张表的主键"></a>1）保证当前表中有一个字段能够保存另外一张表的主键</h5><h5 id="2）添加外键约束"><a href="#2）添加外键约束" class="headerlink" title="2）添加外键约束"></a>2）添加外键约束</h5>
           <!--noindex-->
@@ -726,6 +727,9 @@
   
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -833,5 +837,7 @@ window.addEventListener('pjax:success', () => {
 <div id="aplayer"></div>
 <script type="text/javascript" src="/dist/APlayer.min.js"></script>
 <script type="text/javascript" src="/dist/music.js"></script>
+<script src="/live2d-widget/autoload.js"></script>
+
 </body>
 </html>

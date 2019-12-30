@@ -14,6 +14,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -28,9 +29,9 @@
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    fancybox: true,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
@@ -63,9 +64,9 @@
 <meta property="article:published_time" content="2019-12-25T03:23:00.000Z">
 <meta property="article:modified_time" content="2019-12-29T08:08:04.255Z">
 <meta property="article:author" content="霖">
+<meta property="article:tag" content="SQL">
 <meta property="article:tag" content="数据库">
 <meta property="article:tag" content="mySQL">
-<meta property="article:tag" content="SQL">
 <meta property="article:tag" content="数据库控制语言">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hanlin.fun/images/pasted-7.png">
@@ -320,11 +321,11 @@
 <p>eg:获取学生学科的成绩</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> stuid,stuname,couid,couname,score <span class="keyword">from</span> tb_student,tb_record,tb_course <span class="keyword">where</span> tb_student.stuid=tb_record.sid <span class="keyword">and</span> tb_record.cid=tb_course.couid;</span><br><span class="line"></span><br><span class="line"><span class="comment">--对以上查询创建视图</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> vw_stu_info <span class="keyword">as</span> (<span class="keyword">select</span> stuid,stuname,couid,couname,score <span class="keyword">from</span> tb_student,tb_record,tb_course <span class="keyword">where</span> tb_student.stuid=tb_record.sid <span class="keyword">and</span> tb_record.cid=tb_course.couid);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 当视图被创建之后，可以直接对该视图进行查询操作</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-7.png" alt="创建视图"></p>
+<p><img data-src="/images/pasted-7.png" alt="创建视图"></p>
 <h4 id="2-使用视图"><a href="#2-使用视图" class="headerlink" title="2.使用视图"></a>2.使用视图</h4><p>视图在使用的时候和表的使用方法一样（注意：视图一般只用于查询操作，而不进行增删改的操作）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查询视图和查询表一样</span></span><br><span class="line"><span class="keyword">select</span> stuname,<span class="keyword">avg</span>(score)<span class="keyword">from</span> vw_stu_info <span class="keyword">group</span> <span class="keyword">by</span> stuid;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-6.png" alt="直接对视图进行查询操作"></p>
+<p><img data-src="/images/pasted-6.png" alt="直接对视图进行查询操作"></p>
 <p>注：当对用户进行授权的时候，可以只针对视图进行授权操作。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> vw_emp_info <span class="keyword">as</span> <span class="keyword">select</span> eno,ename,job,mgr,dno <span class="keyword">from</span> tb_emp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">on</span> hrs.vw_emp_info <span class="keyword">to</span> <span class="string">'user1'</span>@<span class="string">'localhost'</span>;</span><br></pre></td></tr></table></figure>
 
@@ -333,11 +334,11 @@
 <p><code>create unique index 索引名 on 表名 （字段）；</code>    -    给指定字段添加唯一索引（字段是唯一的时候才能添加唯一索引）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_student <span class="keyword">where</span> stuname=<span class="string">'项少龙'</span>;</span><br><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_student <span class="keyword">WHERE</span> stuid =<span class="number">3755</span>;</span><br><span class="line"><span class="comment">-- explain 获取sql语句的执行计划，是用来查看执行性能的方法</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-8.png" alt="无索引查询"></p>
-<p><img src="/images/pasted-9.png" alt="唯一索引查询"></p>
+<p><img data-src="/images/pasted-8.png" alt="无索引查询"></p>
+<p><img data-src="/images/pasted-9.png" alt="唯一索引查询"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> idx_stuname <span class="keyword">on</span> tb_student(stuname);</span><br><span class="line"><span class="keyword">EXPLAIN</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_student <span class="keyword">where</span> stuname=<span class="string">'项少龙'</span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-10.png" alt="普通索引查询"></p>
+<p><img data-src="/images/pasted-10.png" alt="普通索引查询"></p>
 <p>注意：模糊查询的时候以<code>%</code>，<code>_</code>开头时，相较于无索引查询，效率几乎不会提高</p>
 <h4 id="2-删除索引"><a href="#2-删除索引" class="headerlink" title="2.删除索引"></a>2.删除索引</h4><p><code>alter table 表名 drop index 索引名；</code></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tb_student <span class="keyword">drop</span> <span class="keyword">index</span> idx_stuname;</span><br></pre></td></tr></table></figure>
@@ -385,9 +386,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/SQL/" rel="tag"><i class="fa fa-tag"></i> SQL</a>
               <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
               <a href="/tags/mySQL/" rel="tag"><i class="fa fa-tag"></i> mySQL</a>
-              <a href="/tags/SQL/" rel="tag"><i class="fa fa-tag"></i> SQL</a>
               <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A7%E5%88%B6%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> 数据库控制语言</a>
           </div>
 
@@ -609,6 +610,9 @@
   
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -735,5 +739,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 <div id="aplayer"></div>
 <script type="text/javascript" src="/dist/APlayer.min.js"></script>
 <script type="text/javascript" src="/dist/music.js"></script>
+<script src="/live2d-widget/autoload.js"></script>
+
 </body>
 </html>

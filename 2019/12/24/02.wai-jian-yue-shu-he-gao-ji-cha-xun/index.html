@@ -14,6 +14,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -28,9 +29,9 @@
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    fancybox: true,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
@@ -295,7 +296,7 @@
       
         <h3 id="1-E-R实体关系图"><a href="#1-E-R实体关系图" class="headerlink" title="1.E.R实体关系图"></a>1.E.R实体关系图</h3><p>E.R实体关系图是通过图标的形式来表示数据库中表和字段以及表和表之间的关系。</p>
 <p>表和表之间的关系主要有四种：一对一，一对多，多对一，多对多</p>
-<p><img src="/images/pasted-2.png" alt="E.R实体关系图示例"></p>
+<p><img data-src="/images/pasted-2.png" alt="E.R实体关系图示例"></p>
 <h3 id="2-外键约束"><a href="#2-外键约束" class="headerlink" title="2.外键约束"></a>2.外键约束</h3><h4 id="什么是外键约束"><a href="#什么是外键约束" class="headerlink" title="什么是外键约束"></a>什么是外键约束</h4><p>外键约束就是：让字段的值的取值范围在另外一张表的主键中</p>
 <h4 id="怎么添加外键约束"><a href="#怎么添加外键约束" class="headerlink" title="怎么添加外键约束"></a>怎么添加外键约束</h4><h5 id="1）保证当前表中有一个字段能够保存另外一张表的主键"><a href="#1）保证当前表中有一个字段能够保存另外一张表的主键" class="headerlink" title="1）保证当前表中有一个字段能够保存另外一张表的主键"></a>1）保证当前表中有一个字段能够保存另外一张表的主键</h5><h5 id="2）添加外键约束"><a href="#2）添加外键约束" class="headerlink" title="2）添加外键约束"></a>2）添加外键约束</h5><p>不同的对应关系，外键的添加的要求（方式）不同：</p>
 <ul>
@@ -321,7 +322,7 @@
 </li>
 </ul>
 <h3 id="4-高级查询"><a href="#4-高级查询" class="headerlink" title="4. 高级查询"></a>4. 高级查询</h3><p>以下的查询操作全部基于下表：</p>
-<p><img src="/images/pasted-3.png" alt="建立E.R关系表"></p>
+<p><img data-src="/images/pasted-3.png" alt="建立E.R关系表"></p>
 <h4 id="4-1-去重操作"><a href="#4-1-去重操作" class="headerlink" title="4.1 去重操作"></a>4.1 去重操作</h4><p>select distinct 字段名 from 表名；</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> redate <span class="keyword">from</span> tb_record <span class="keyword">order</span> <span class="keyword">by</span> redate;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> <span class="keyword">sid</span> <span class="keyword">from</span> tb_record;	<span class="comment">--	查询所有选课的学生的id</span></span><br></pre></td></tr></table></figure>
 <h4 id="4-2-限制和分页"><a href="#4-2-限制和分页" class="headerlink" title="4.2 限制和分页"></a>4.2 限制和分页</h4><ul>
@@ -338,11 +339,11 @@
 <p>eg：获取每个学生的平均分</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sid</span>,<span class="keyword">avg</span>(score) <span class="keyword">from</span> tb_record <span class="keyword">group</span> <span class="keyword">by</span> (<span class="keyword">sid</span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-0.png" alt="每个学生平均分"></p>
+<p><img data-src="/images/pasted-0.png" alt="每个学生平均分"></p>
 <p>获取每个学科的平均分</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cid,<span class="keyword">avg</span>(score) <span class="keyword">from</span> tb_record <span class="keyword">group</span> <span class="keyword">by</span> (cid);</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/pasted-1.png" alt="每个学科平均分"></p>
+<p><img data-src="/images/pasted-1.png" alt="每个学科平均分"></p>
 <p>获取每个学生选课数量</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sid</span>,<span class="keyword">count</span>(cid) <span class="keyword">from</span> tb_record <span class="keyword">group</span> <span class="keyword">by</span> (<span class="keyword">sid</span>);</span><br></pre></td></tr></table></figure>
 <h4 id="4-5-子查询"><a href="#4-5-子查询" class="headerlink" title="4.5 子查询"></a>4.5 子查询</h4><p>将一个查询的结果作为另外一个查询的条件或者查询对象</p>
@@ -641,6 +642,9 @@
   
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -767,5 +771,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 <div id="aplayer"></div>
 <script type="text/javascript" src="/dist/APlayer.min.js"></script>
 <script type="text/javascript" src="/dist/music.js"></script>
+<script src="/live2d-widget/autoload.js"></script>
+
 </body>
 </html>
