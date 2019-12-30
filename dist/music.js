@@ -56,6 +56,36 @@ const ap = new APlayer({
         artist: 'Guns&Roses',
         url: 'http://link.hhtjim.com/163/28952211.mp3',
         cover: '/img/dontcry.jpg',
+      },
+      {
+        name: "ブルーバード",
+        artist: 'いきものがかり',
+        url: '/music/いきものがかり - ブルーバード.mp3',
+        cover: '/img/bluebird.jpg',
+      },
+      {
+        name: "Again",
+        artist: 'YUI',
+        url: '/music/YUI-Again.mp3',
+        cover: '/img/again.jpg',
+      },
+      {
+        name: "Sugar",
+        artist: 'Maroon5',
+        url: '/music/Maroon5-sugar.mp3',
+        cover: '/img/sugar.jpg',
+      },
+      {
+        name: "Move like jagger",
+        artist: 'Maroon5',
+        url: '/music/Move like jagger.mp3',
+        cover: '/img/mlj.jpg',
+      },
+      {
+        name: "I am yours",
+        artist: 'Jason Mraz',
+        url: '/music/I am yours.mp3',
+        cover: '/img/imy.jpg',
       }
     ]
 });
