@@ -334,7 +334,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/" class="post-title-link" itemprop="url">Redis的核心数据类型</a>
+            <a href="/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/" class="post-title-link" itemprop="url">Redis的基础及核心数据类型</a>
         </h1>
 
         <div class="post-meta">
@@ -345,7 +345,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-30 09:54:00 / 修改时间：10:01:09" itemprop="dateCreated datePublished" datetime="2019-12-30T09:54:00+08:00">2019-12-30</time>
+              <time title="创建时间：2019-12-30 09:54:00 / 修改时间：10:07:20" itemprop="dateCreated datePublished" datetime="2019-12-30T09:54:00+08:00">2019-12-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -365,14 +365,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -384,7 +384,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Redis的核心数据类型："><a href="#Redis的核心数据类型：" class="headerlink" title="Redis的核心数据类型："></a>Redis的核心数据类型：</h3><h4 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1. 字符串"></a>1. 字符串</h4><blockquote>
+          <h3 id="连接Redis数据库并添加数据"><a href="#连接Redis数据库并添加数据" class="headerlink" title="连接Redis数据库并添加数据"></a>连接Redis数据库并添加数据</h3><blockquote>
+<p>redis-cli -p 端口 -h 主机<br>set username luohao ex 120 —&gt; 添加键值对<br>get username —&gt; 通过键查找值<br>ttl username —&gt; 查看键过期时间<br>expire username 300 —&gt; 设置键过期时间<br>keys * —&gt; 查看所有键<br>dbsize —&gt; 查看数据库大小（键值对数量）<br>select 编号 —&gt; 切换数据库<br>save —&gt; 保存数据<br>bgsave —&gt; 后台保存数据<br>flushdb —&gt; 清空当前数据库的数据<br>flushall —&gt; 清空所有数据库的数据<br>exists —&gt; 判断指定的键是否存在<br>type —&gt; 查看键对应的值的数据类型</p>
+</blockquote>
+<h3 id="Redis的核心数据类型："><a href="#Redis的核心数据类型：" class="headerlink" title="Redis的核心数据类型："></a>Redis的核心数据类型：</h3><h4 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1. 字符串"></a>1. 字符串</h4><blockquote>
 <p>  set key value —&gt; 添加键值对<br>   get key —&gt; 通过键查看值<br>   strlen key —&gt; 获取字符串长度<br>   append key value2 —&gt; 给字符串追加内容<br>   mset key1 value1 key2 value2 —&gt; 添加多组键值对<br>   mget key1 key2 —&gt; 查看多个键对应的值<br>   incr key —&gt; 值加1<br>   incrby key value —&gt; 值加上value<br>   decr key —&gt; 值减1<br>   decrby key value —&gt; 值减去value<br>   getrange key start end —&gt; 获取字符串指定范围的子串<br>   setrange key offset value —&gt; 修改字符串指定位置<br>  的内容</p>
 </blockquote>
 <h4 id="2-哈希（表）-hash"><a href="#2-哈希（表）-hash" class="headerlink" title="2. 哈希（表） - hash"></a>2. 哈希（表） - hash</h4><blockquote>
@@ -393,10 +396,7 @@
 <h4 id="3-列表-list"><a href="#3-列表-list" class="headerlink" title="3. 列表 - list"></a>3. 列表 - list</h4><blockquote>
 <p>  lpush key value1 value2 value3 —&gt; 在左边添加元素<br>   rpush key value1 value2 value3 —&gt; 在右边添加元素<br>   lpop key —&gt; 从左边移除一个元素<br>   rpop key —&gt; 从右边移除一个元素<br>   lrange key start end —&gt; 查看列表指定范围的元素<br>   llen key —&gt; 查看列表元素个数<br>   lindex key index —&gt; 查看列表指定位置元素<br>  lrem key count value —&gt; 删除列表中指定元素</p>
 </blockquote>
-<h4 id="4-集合-set"><a href="#4-集合-set" class="headerlink" title="4. 集合 - set"></a>4. 集合 - set</h4><blockquote>
-<p>  sadd key value1 value2 value3 —&gt; 添加元素<br>   srem key value —&gt; 删除元素<br>   spop —&gt; 获取随机元素<br>   scard key —&gt; 查看元素个数<br>   smembers key —&gt; 查看所有元素<br>   sismember key value —&gt; 查看集合中有没有指定元素<br>   sinter key1 key2 —&gt; 交集<br>   sunion key1 key2 —&gt; 并集<br>  sdiff key1 key2 —&gt; 差集</p>
-</blockquote>
-<h4 id="5-有序集合-zset"><a href="#5-有序集合-zset" class="headerlink" title="5. 有序集合 - zset"></a>5. 有序集合 - zset</h4>
+<h4 id="4-集合-set"><a href="#4-集合-set" class="headerlink" title="4. 集合 - set"></a>4. 集合 - set</h4>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/#more" rel="contents">

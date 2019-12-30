@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Redis的核心数据类型</title>
+    <title>Redis的基础及核心数据类型</title>
     <url>/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/</url>
-    <content><![CDATA[<h3 id="Redis的核心数据类型："><a href="#Redis的核心数据类型：" class="headerlink" title="Redis的核心数据类型："></a>Redis的核心数据类型：</h3><h4 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1. 字符串"></a>1. 字符串</h4><blockquote>
+    <content><![CDATA[<h3 id="连接Redis数据库并添加数据"><a href="#连接Redis数据库并添加数据" class="headerlink" title="连接Redis数据库并添加数据"></a>连接Redis数据库并添加数据</h3><blockquote>
+<p>redis-cli -p 端口 -h 主机<br>set username luohao ex 120 —&gt; 添加键值对<br>get username —&gt; 通过键查找值<br>ttl username —&gt; 查看键过期时间<br>expire username 300 —&gt; 设置键过期时间<br>keys * —&gt; 查看所有键<br>dbsize —&gt; 查看数据库大小（键值对数量）<br>select 编号 —&gt; 切换数据库<br>save —&gt; 保存数据<br>bgsave —&gt; 后台保存数据<br>flushdb —&gt; 清空当前数据库的数据<br>flushall —&gt; 清空所有数据库的数据<br>exists —&gt; 判断指定的键是否存在<br>type —&gt; 查看键对应的值的数据类型</p>
+</blockquote>
+<h3 id="Redis的核心数据类型："><a href="#Redis的核心数据类型：" class="headerlink" title="Redis的核心数据类型："></a>Redis的核心数据类型：</h3><h4 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1. 字符串"></a>1. 字符串</h4><blockquote>
 <p>  set key value —&gt; 添加键值对<br>   get key —&gt; 通过键查看值<br>   strlen key —&gt; 获取字符串长度<br>   append key value2 —&gt; 给字符串追加内容<br>   mset key1 value1 key2 value2 —&gt; 添加多组键值对<br>   mget key1 key2 —&gt; 查看多个键对应的值<br>   incr key —&gt; 值加1<br>   incrby key value —&gt; 值加上value<br>   decr key —&gt; 值减1<br>   decrby key value —&gt; 值减去value<br>   getrange key start end —&gt; 获取字符串指定范围的子串<br>   setrange key offset value —&gt; 修改字符串指定位置<br>  的内容</p>
 </blockquote>
 <h4 id="2-哈希（表）-hash"><a href="#2-哈希（表）-hash" class="headerlink" title="2. 哈希（表） - hash"></a>2. 哈希（表） - hash</h4><blockquote>
