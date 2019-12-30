@@ -50,17 +50,15 @@
 
   <meta name="description" content="一个人的狂欢">
 <meta property="og:type" content="website">
-<meta property="og:title" content="schedule">
-<meta property="og:url" content="https://hanlin.fun/schedule/index.html">
+<meta property="og:title" content="霖时人間">
+<meta property="og:url" content="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="霖时人間">
 <meta property="og:description" content="一个人的狂欢">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-28T02:35:53.000Z">
-<meta property="article:modified_time" content="2019-12-28T02:37:49.781Z">
 <meta property="article:author" content="霖">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://hanlin.fun/schedule/">
+<link rel="canonical" href="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
 
 
 <script id="page-configurations">
@@ -72,8 +70,7 @@
   };
 </script>
 
-  <title>schedule | 霖时人間
-  </title>
+  <title>标签: 数据类型 | 霖时人間</title>
   
 
 
@@ -201,215 +198,58 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
-  <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h1 class="collection-header">数据类型
+          <small>标签</small>
+        </h1>
+      </div>
 
-<h1 class="post-title" itemprop="name headline">schedule
-</h1>
+      
+    <div class="collection-year">
+      <h1 class="collection-header">2019</h1>
+    </div>
 
-<div class="post-meta">
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2019-12-30T09:54:00+08:00"
+              content="2019-12-30">
+          12-30
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/" itemprop="url">
+            <span itemprop="name">Redis的核心数据类型</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+    </div>
+  </div>
+  
+  
   
 
-</div>
+  
 
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="event-list">
-          </div>
-          <script pjax>
-(function() {
-  // Initialization
-  var calendar = {
-    orderBy     : 'startTime',
-    showLocation: 'false',
-    offsetMax   : 72,
-    offsetMin   : 4,
-    showDeleted : 'false',
-    singleEvents: 'true',
-    maxResults  : '250'
-  }
-
-  // Read config form theme config file
-  Object.assign(calendar, {"single":true,"root":"calendar/","calendar_id":"<required>","api_key":"<required>","orderBy":"startTime","offsetMax":24,"offsetMin":4,"showDeleted":false,"singleEvents":true,"maxResults":250});
-
-  var now = new Date();
-  var timeMax = new Date();
-  var timeMin = new Date();
-
-  timeMax.setHours(now.getHours() + calendar.offsetMax);
-  timeMin.setHours(now.getHours() - calendar.offsetMin);
-  calendar.timeMaxISO      = timeMax.toISOString();
-  calendar.timeMinISO      = timeMin.toISOString();
-
-  // Build URL
-  const BASE_URL           = 'https://www.googleapis.com/calendar/v3/calendars/';
-  const FIELD_KEY          = 'key';
-  const FIELD_ORDERBY      = 'orderBy';
-  const FIELD_TIMEMAX      = 'timeMax';
-  const FIELD_TIMEMIN      = 'timeMin';
-  const FIELD_SHOWDELETED  = 'showDeleted';
-  const FIELD_SINGLEEVENTS = 'singleEvents';
-  const FIELD_MAXRESULTS   = 'maxResults';
-
-  var request_url = BASE_URL + calendar.calendar_id  + '/events?' +
-    FIELD_KEY          + '=' + calendar.api_key      + '&' +
-    FIELD_ORDERBY      + '=' + calendar.orderBy      + '&' +
-    FIELD_TIMEMAX      + '=' + calendar.timeMaxISO   + '&' +
-    FIELD_TIMEMIN      + '=' + calendar.timeMinISO   + '&' +
-    FIELD_SHOWDELETED  + '=' + calendar.showDeleted  + '&' +
-    FIELD_SINGLEEVENTS + '=' + calendar.singleEvents + '&' +
-    FIELD_MAXRESULTS   + '=' + calendar.maxResults;
-
-  fetchData();
-  var fetchDataTimer = setInterval(fetchData, 60000);
-  window.addEventListener('pjax:send', () => {
-    clearInterval(fetchDataTimer);
-  });
-
-  function fetchData() {
-    var eventList = document.querySelector('.event-list');
-    if (!eventList) return;
-
-    fetch(request_url).then(response => {
-      return response.json();
-    }).then(data => {
-      if (data.items.length === 0) {
-        eventList.innerHTML = '<hr>';
-        return;
-      }
-      // Clean the event list
-      eventList.innerHTML = '';
-      var prevEnd = 0; // used to decide where to insert an <hr>
-
-      data.items.forEach(event => {
-        // Parse data
-        var utc   = new Date().getTimezoneOffset() * 60000;
-        var start = event.start.dateTime = new Date(event.start.dateTime || (new Date(event.start.date).getTime() + utc));
-        var end   = event.end.dateTime = new Date(event.end.dateTime || (new Date(event.end.date).getTime() + utc));
-
-        tense = judgeTense(now, start, end); // 0:now 1:future -1:past
-
-        if (tense == 1 && prevEnd < now) {
-          eventList.innerHTML += '<hr>';
-        }
-
-        eventDOM = buildEventDOM(tense, event);
-        eventList.innerHTML += eventDOM;
-
-        prevEnd = end;
-      });
-    });
-  }
-
-  function getRelativeTime(current, previous) {
-    var msPerMinute = 60 * 1000;
-    var msPerHour = msPerMinute * 60;
-    var msPerDay = msPerHour * 24;
-    var msPerMonth = msPerDay * 30;
-    var msPerYear = msPerDay * 365;
-
-    var elapsed = current - previous;
-    var tense = elapsed > 0 ? 'ago' : 'later';
-
-    elapsed = Math.abs(elapsed);
-
-    if      ( elapsed < msPerHour  ) {
-      return Math.round(elapsed / msPerMinute) + ' minutes ' + tense;
-    }
-    else if ( elapsed < msPerDay   ) {
-      return Math.round(elapsed / msPerHour) + ' hours ' + tense;
-    }
-    else if ( elapsed < msPerMonth ) {
-      return 'about ' + Math.round(elapsed / msPerDay) + ' days ' + tense;
-    }
-    else if ( elapsed < msPerYear  ) {
-      return 'about ' + Math.round(elapsed / msPerMonth) + ' months ' + tense;
-    }
-    else {
-      return 'about' + Math.round(elapsed / msPerYear) + ' years' + tense;
-    }
-  }
-
-  function judgeTense(now, eventStart, eventEnd) {
-    if      (eventEnd   < now) { return -1; }
-    else if (eventStart > now) { return  1; }
-    else                       { return  0; }
-  }
-
-  function buildEventDOM(tense, event) {
-    var tenseClass = '';
-    var start      = event.start.dateTime;
-    var end        = event.end.dateTime;
-    switch(tense) {
-      case 0 : // now
-        tenseClass = 'event-now';
-        break;
-      case 1 : // future
-        tenseClass = 'event-future';
-        break;
-      case -1: // past
-        tenseClass = 'event-past';
-        break;
-      default:
-        throw 'Time data error';
-    }
-    var durationFormat = {
-      weekday: 'short',
-      hour   : '2-digit',
-      minute : '2-digit'
-    };
-    var relativeTimeStr = (tense == 0) ? 'NOW' : getRelativeTime(now, start);
-    var durationStr = start.toLocaleTimeString([], durationFormat) + ' - ' + end.toLocaleTimeString([], durationFormat);
-
-    var locationDOM = '';
-    if (calendar.showLocation && event.location) {
-      locationDOM = '<span class="event-location event-details">' + event.location + '</span>';
-    }
-
-    var eventContent = `<div class="event ${tenseClass}">
-        <h2 class="event-summary">
-          ${event.summary}
-          <span class="event-relative-time">${relativeTimeStr}</span>
-        </h2>
-        ${locationDOM}
-        <span class="event-duration event-details">${durationStr}</span>
-      </div>`;
-    return eventContent;
-  }
-})();
-</script>
-
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
-  </div>
 
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -700,25 +540,6 @@ window.addEventListener('pjax:success', () => {
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID: '93854aa6f21b4bc50b3a',
-      clientSecret: 'a3bb60bd26cef2a5e4ea26e14be5d975dbff36c1',
-      repo: 'zzd6263165.github.io',
-      owner: 'zzd6263165',
-      admin: ['zzd6263165'],
-      id: 'b9e1b6fa707f630bcc50d21ef0899554',
-        language: '',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
     </div>
   <!-- 音频播放 -->

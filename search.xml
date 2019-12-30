@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Redis的核心数据类型</title>
+    <url>/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/</url>
+    <content><![CDATA[<h3 id="Redis的核心数据类型："><a href="#Redis的核心数据类型：" class="headerlink" title="Redis的核心数据类型："></a>Redis的核心数据类型：</h3><h4 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1. 字符串"></a>1. 字符串</h4><blockquote>
+<p>  set key value —&gt; 添加键值对<br>   get key —&gt; 通过键查看值<br>   strlen key —&gt; 获取字符串长度<br>   append key value2 —&gt; 给字符串追加内容<br>   mset key1 value1 key2 value2 —&gt; 添加多组键值对<br>   mget key1 key2 —&gt; 查看多个键对应的值<br>   incr key —&gt; 值加1<br>   incrby key value —&gt; 值加上value<br>   decr key —&gt; 值减1<br>   decrby key value —&gt; 值减去value<br>   getrange key start end —&gt; 获取字符串指定范围的子串<br>   setrange key offset value —&gt; 修改字符串指定位置<br>  的内容</p>
+</blockquote>
+<h4 id="2-哈希（表）-hash"><a href="#2-哈希（表）-hash" class="headerlink" title="2. 哈希（表） - hash"></a>2. 哈希（表） - hash</h4><blockquote>
+<p>  hset key field value —&gt; 添加hash类型键值对<br>   hmset key field1 value1 field2 value2 —&gt; 添加多组hash类型键值对<br>   hget key field —&gt; 获取hash类型字段对应的值<br>   hmget key field1 field2 —&gt; 获取hash类型多个字段对应的值<br>   hgetall key —&gt; 获取hash类型所有的字段和对应的值<br>   hkeys key —&gt; 获取hash类型所有的字段<br>   hvals key —&gt; 获取hash类型所有字段的值<br>   hexists key field —&gt; 判断hash类型某个字段是否存&gt; 在</p>
+</blockquote>
+<h4 id="3-列表-list"><a href="#3-列表-list" class="headerlink" title="3. 列表 - list"></a>3. 列表 - list</h4><blockquote>
+<p>  lpush key value1 value2 value3 —&gt; 在左边添加元素<br>   rpush key value1 value2 value3 —&gt; 在右边添加元素<br>   lpop key —&gt; 从左边移除一个元素<br>   rpop key —&gt; 从右边移除一个元素<br>   lrange key start end —&gt; 查看列表指定范围的元素<br>   llen key —&gt; 查看列表元素个数<br>   lindex key index —&gt; 查看列表指定位置元素<br>  lrem key count value —&gt; 删除列表中指定元素</p>
+</blockquote>
+<h4 id="4-集合-set"><a href="#4-集合-set" class="headerlink" title="4. 集合 - set"></a>4. 集合 - set</h4><blockquote>
+<p>  sadd key value1 value2 value3 —&gt; 添加元素<br>   srem key value —&gt; 删除元素<br>   spop —&gt; 获取随机元素<br>   scard key —&gt; 查看元素个数<br>   smembers key —&gt; 查看所有元素<br>   sismember key value —&gt; 查看集合中有没有指定元素<br>   sinter key1 key2 —&gt; 交集<br>   sunion key1 key2 —&gt; 并集<br>  sdiff key1 key2 —&gt; 差集</p>
+</blockquote>
+<h4 id="5-有序集合-zset"><a href="#5-有序集合-zset" class="headerlink" title="5. 有序集合 - zset"></a>5. 有序集合 - zset</h4><blockquote>
+<p>  zadd key score1 mem1 score2 mem2 —&gt; 添加元素<br>   zrem key mem —&gt; 删除元素<br>   zrange key start end —&gt; 按score的升序查看元素<br>   zrevrange key start end —&gt; 按score的降序查看元素<br>   zscore key mem —&gt; 查看元素对应的score<br>  zincrby key value mem —&gt; 修改元素的score值</p>
+</blockquote>
+<h3 id="LBS应用-Location-Based-Service-基于位置的服务"><a href="#LBS应用-Location-Based-Service-基于位置的服务" class="headerlink" title="LBS应用 - Location-Based Service - 基于位置的服务"></a>LBS应用 - Location-Based Service - 基于位置的服务</h3><p>Linux系统启停服务</p>
+<pre><code>~ 启动：systemctl start nginx
+
+        service nginx start
+
+~ 停止：systemctl stop nginx
+
+        service nginx stop
+
+~ 重启：systemctl restart nginx
+
+~ 查看状态：systemctl status nginx
+
+~ 开机自启：systemctl enable nginx
+
+~ 禁用自启：systemctl disable nginx</code></pre>]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
+        <tag>数据类型</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在Linux中安装软件</title>
     <url>/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/</url>
     <content><![CDATA[<h4 id="Linux中安装软件的方法"><a href="#Linux中安装软件的方法" class="headerlink" title="Linux中安装软件的方法"></a>Linux中安装软件的方法</h4><ul>
