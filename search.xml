@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Python中使用Redis做数据缓存</title>
+    <url>/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/</url>
+    <content><![CDATA[<p>导入第三方库PyMySQL、Redis和pickle（把数据转化为二进制数据的第三方库）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
+
+<p>与MySQL数据库建立连接，并获取数据：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_test_from_db</span><span class="params">()</span>:</span></span><br><span class="line">	con = pymysql.connect(</span><br><span class="line">    	host=<span class="string">'localhost'</span>,</span><br><span class="line">      port=<span class="number">3306</span>,</span><br><span class="line">      user=<span class="string">'root'</span>,</span><br><span class="line">      password=<span class="string">'xxxx'</span></span><br><span class="line">      database=<span class="string">'s_test'</span>,</span><br><span class="line">      charset=<span class="string">'utf8'</span></span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">with</span> con.cursor() <span class="keyword">as</span> cursor:</span><br><span class="line">       cursor.execute(<span class="string">'select name, age from tb_test'</span>)</span><br><span class="line">       test = cursor.fetchall()</span><br><span class="line">    con.close()</span><br><span class="line"><span class="keyword">return</span> test</span><br></pre></td></tr></table></figure>
+
+<p>建立Redis连接，并从Redis缓存中获取数据，当缓存中没有数据的时候从MySQL数据库中获取数据并把数据存到缓存中</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	client = redis.Redis(</span><br><span class="line">    	host=<span class="string">'服务器公网ip'</span>,</span><br><span class="line">      port=<span class="number">6379</span>, <span class="comment"># redis端口，一般为6379端口</span></span><br><span class="line">      password=<span class="string">'服务器连接密码'</span></span><br><span class="line">    )</span><br><span class="line">   s_time = time.time</span><br><span class="line">   data = client.get(<span class="string">'test'</span>) <span class="comment"># 获取数据</span></span><br><span class="line">   <span class="keyword">if</span> data:</span><br><span class="line">   		test = pickle.loads(data)</span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">   		test = load_test_from_db()</span><br><span class="line">      client.set(<span class="string">'test'</span>,pickle.dumps(test))</span><br><span class="line">   e_time = time.time</span><br><span class="line">   print(test)</span><br><span class="line">   print(<span class="string">'执行耗时：'</span>,e_time - s_time)</span><br></pre></td></tr></table></figure>
+
+<p>执行代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	main()</span><br></pre></td></tr></table></figure>
+
+<p>结论：从缓存中读取数据的速度远高于从内存中读取数据的速度，即利用Redis来做数据的储存能达到空间换取时间的目的。</p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
+        <tag>MySQL</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Redis的基础及核心数据类型</title>
     <url>/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/</url>
     <content><![CDATA[<h3 id="连接Redis数据库并添加数据"><a href="#连接Redis数据库并添加数据" class="headerlink" title="连接Redis数据库并添加数据"></a>连接Redis数据库并添加数据</h3><blockquote>

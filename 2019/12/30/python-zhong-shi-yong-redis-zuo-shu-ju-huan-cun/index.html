@@ -48,17 +48,22 @@
 
 
 
-  <meta name="description" content="一个人的狂欢">
-<meta property="og:type" content="website">
-<meta property="og:title" content="霖时人間">
-<meta property="og:url" content="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A7%E5%88%B6%E8%AF%AD%E8%A8%80/index.html">
+  <meta name="description" content="导入第三方库PyMySQL、Redis和pickle（把数据转化为二进制数据的第三方库） 1234import redisimport pymysqlimport pickleimport time  与MySQL数据库建立连接，并获取数据： 12345678910111213141516def load_test_from_db():	con &#x3D; pymysql.connect(    	hos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python中使用Redis做数据缓存">
+<meta property="og:url" content="https://hanlin.fun/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/index.html">
 <meta property="og:site_name" content="霖时人間">
-<meta property="og:description" content="一个人的狂欢">
+<meta property="og:description" content="导入第三方库PyMySQL、Redis和pickle（把数据转化为二进制数据的第三方库） 1234import redisimport pymysqlimport pickleimport time  与MySQL数据库建立连接，并获取数据： 12345678910111213141516def load_test_from_db():	con &#x3D; pymysql.connect(    	hos">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-30T02:25:00.000Z">
+<meta property="article:modified_time" content="2019-12-30T02:50:35.593Z">
 <meta property="article:author" content="霖">
+<meta property="article:tag" content="Redis">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A7%E5%88%B6%E8%AF%AD%E8%A8%80/">
+<link rel="canonical" href="https://hanlin.fun/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/">
 
 
 <script id="page-configurations">
@@ -66,11 +71,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>标签: 数据库控制语言 | 霖时人間</title>
+  <title>Python中使用Redis做数据缓存 | 霖时人間</title>
   
 
 
@@ -202,54 +207,160 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">数据库控制语言
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="霖">
+      <meta itemprop="description" content="一个人的狂欢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="霖时人間">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python中使用Redis做数据缓存
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-30 10:25:00 / 修改时间：10:50:35" itemprop="dateCreated datePublished" datetime="2019-12-30T10:25:00+08:00">2019-12-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>838</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <p>导入第三方库PyMySQL、Redis和pickle（把数据转化为二进制数据的第三方库）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
+
+<p>与MySQL数据库建立连接，并获取数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_test_from_db</span><span class="params">()</span>:</span></span><br><span class="line">	con = pymysql.connect(</span><br><span class="line">    	host=<span class="string">'localhost'</span>,</span><br><span class="line">      port=<span class="number">3306</span>,</span><br><span class="line">      user=<span class="string">'root'</span>,</span><br><span class="line">      password=<span class="string">'xxxx'</span></span><br><span class="line">      database=<span class="string">'s_test'</span>,</span><br><span class="line">      charset=<span class="string">'utf8'</span></span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">with</span> con.cursor() <span class="keyword">as</span> cursor:</span><br><span class="line">       cursor.execute(<span class="string">'select name, age from tb_test'</span>)</span><br><span class="line">       test = cursor.fetchall()</span><br><span class="line">    con.close()</span><br><span class="line"><span class="keyword">return</span> test</span><br></pre></td></tr></table></figure>
+
+<p>建立Redis连接，并从Redis缓存中获取数据，当缓存中没有数据的时候从MySQL数据库中获取数据并把数据存到缓存中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	client = redis.Redis(</span><br><span class="line">    	host=<span class="string">'服务器公网ip'</span>,</span><br><span class="line">      port=<span class="number">6379</span>, <span class="comment"># redis端口，一般为6379端口</span></span><br><span class="line">      password=<span class="string">'服务器连接密码'</span></span><br><span class="line">    )</span><br><span class="line">   s_time = time.time</span><br><span class="line">   data = client.get(<span class="string">'test'</span>) <span class="comment"># 获取数据</span></span><br><span class="line">   <span class="keyword">if</span> data:</span><br><span class="line">   		test = pickle.loads(data)</span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">   		test = load_test_from_db()</span><br><span class="line">      client.set(<span class="string">'test'</span>,pickle.dumps(test))</span><br><span class="line">   e_time = time.time</span><br><span class="line">   print(test)</span><br><span class="line">   print(<span class="string">'执行耗时：'</span>,e_time - s_time)</span><br></pre></td></tr></table></figure>
+
+<p>执行代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	main()</span><br></pre></td></tr></table></figure>
+
+<p>结论：从缓存中读取数据的速度远高于从内存中读取数据的速度，即利用Redis来做数据的储存能达到空间换取时间的目的。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-25T11:23:00+08:00"
-              content="2019-12-25">
-          12-25
-        </time>
-      </div>
+      
+    </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/25/03-shou-quan-shi-wu-shi-tu-he-suo-yin/" itemprop="url">
-            <span itemprop="name">03.授权、事务、视图和索引</span>
-          </a>
-      </h2>
+    
+    
+    
+        
 
-    </header>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>霖
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hanlin.fun/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/" title="Python中使用Redis做数据缓存">https://hanlin.fun/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Redis/" rel="tag"><i class="fa fa-tag"></i> Redis</a>
+              <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/" rel="prev" title="Redis的基础及核心数据类型">
+      <i class="fa fa-chevron-left"></i> Redis的基础及核心数据类型
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -540,6 +651,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '93854aa6f21b4bc50b3a',
+      clientSecret: 'a3bb60bd26cef2a5e4ea26e14be5d975dbff36c1',
+      repo: 'zzd6263165.github.io',
+      owner: 'zzd6263165',
+      admin: ['zzd6263165'],
+      id: 'e86349d9ad77780a1e0c4a29eb07aea6',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
   <!-- 音频播放 -->

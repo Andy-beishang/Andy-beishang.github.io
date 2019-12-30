@@ -207,6 +207,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="霖">
+      <meta itemprop="description" content="一个人的狂欢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="霖时人間">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/" class="post-title-link" itemprop="url">在Linux中安装软件</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-29 21:07:00 / 修改时间：21:35:48" itemprop="dateCreated datePublished" datetime="2019-12-29T21:07:00+08:00">2019-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>589</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="Linux中安装软件的方法"><a href="#Linux中安装软件的方法" class="headerlink" title="Linux中安装软件的方法"></a>Linux中安装软件的方法</h4><ul>
+<li>1.包管理工具</li>
+</ul>
+<blockquote>
+<p>-yum CentOS<br>    ~yum search nginx # 在库中查询是否有nginx的包<br>   ~yum install nginx # 安装nginx<br>   ~yum erase nginx/yum remove nginx # 卸载nginx<br>   ~yum info nginx # 查看安装的nginx的信息<br>   ~yum list installed|grep nginx 查看已经安装的和nginx相关的软件</p>
+</blockquote>
+<blockquote>
+<p>-rpm Redhat<br>    ~rpm -ivh 下载的rpm包文件名 # 安装软件并监察安装进度<br>   ~rpm -e rpm包名 # 卸载安装的rpm包<br>   ~rpm -qa # 列出所有的被安装的rpm包</p>
+</blockquote>
+<blockquote>
+<p>-apt Ubantu</p>
+</blockquote>
+<ul>
+<li>2.源代码构建安装</li>
+</ul>
+<p>eg:安装Redis官方最新版为例</p>
+<blockquote>
+<p>~wget <a href="https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz" target="_blank" rel="noopener">https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz</a> # 下载Redis包，以压缩方式xz的包为例<br>  ~xz -d git-2.24.1.tar.xz # 解压缩<br>  ~tar -xf git-2.24.1.tar # 解归档<br>  ~cd git-2.24.1 # 进入解归档后的安装文件目录<br>  ~yum install -y curl libcurl-devel # 执行安装命令<br>  ~./configure –prefix=/usr/local # 指定安装路径<br>  ~make &amp;&amp; make install # 安装</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/26/pymysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -407,116 +513,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/24/01-sql-ji-chu-yu-fa/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="霖">
-      <meta itemprop="description" content="一个人的狂欢">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="霖时人間">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/24/01-sql-ji-chu-yu-fa/" class="post-title-link" itemprop="url">01.SQL基础语法</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-24 19:08:00" itemprop="dateCreated datePublished" datetime="2019-12-24T19:08:00+08:00">2019-12-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-29 16:08:41" itemprop="dateModified" datetime="2019-12-29T16:08:41+08:00">2019-12-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-sql基础"><a href="#1-sql基础" class="headerlink" title="1.sql基础"></a>1.sql基础</h3><p>sql又叫结构化查询语言，分为三大类：DDL（数据定义语言）、DML（数据操作语言）、DCL（数据控制语言）</p>
-<ul>
-<li>DDL：create（创建数据库和表）、drop（删除数据库和表）、alter（修改数据库和表）</li>
-<li>DML：insert（增）、delete（删）、update（改）、select（查）</li>
-<li>DCL：grant（授权）、revoke（召回授权）</li>
-</ul>
-<p>sql的注释是在注释前加–；sql中sql的关键字不区分大小写；sql语句结束后需要加分号</p>
-<h3 id="2-DDL（数据定义语言）"><a href="#2-DDL（数据定义语言）" class="headerlink" title="2. DDL（数据定义语言）"></a>2. DDL（数据定义语言）</h3><h4 id="2-1-数据库操作"><a href="#2-1-数据库操作" class="headerlink" title="2.1 数据库操作"></a>2.1 数据库操作</h4><h5 id="2-1-1-创建数据库"><a href="#2-1-1-创建数据库" class="headerlink" title="2.1.1 创建数据库"></a>2.1.1 创建数据库</h5><p>create database 数据库名称；    -    创建指定数据库，如果这个数据库已经存在，会报错</p>
-<p>create database if not exists 数据库名称；    -     当指定数据库不存在的时候创建对应的数据库</p>
-<p>create database if not exists 数据库名称 default charset utf8；    -    创建数据库的时候指定数据库文件的编码方式</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/24/01-sql-ji-chu-yu-fa/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -589,7 +585,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -602,7 +598,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -674,7 +670,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">29k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
