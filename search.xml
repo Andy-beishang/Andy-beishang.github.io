@@ -21,8 +21,10 @@
 <h4 id="5-有序集合-zset"><a href="#5-有序集合-zset" class="headerlink" title="5. 有序集合 - zset"></a>5. 有序集合 - zset</h4><blockquote>
 <p>  zadd key score1 mem1 score2 mem2 —&gt; 添加元素<br>   zrem key mem —&gt; 删除元素<br>   zrange key start end —&gt; 按score的升序查看元素<br>   zrevrange key start end —&gt; 按score的降序查看元素<br>   zscore key mem —&gt; 查看元素对应的score<br>  zincrby key value mem —&gt; 修改元素的score值</p>
 </blockquote>
-<h3 id="LBS应用-Location-Based-Service-基于位置的服务"><a href="#LBS应用-Location-Based-Service-基于位置的服务" class="headerlink" title="LBS应用 - Location-Based Service - 基于位置的服务"></a>LBS应用 - Location-Based Service - 基于位置的服务</h3><p>Linux系统启停服务</p>
-<pre><code>~ 启动：systemctl start nginx
+<h3 id="LBS应用-Location-Based-Service-基于位置的服务"><a href="#LBS应用-Location-Based-Service-基于位置的服务" class="headerlink" title="LBS应用 - Location-Based Service - 基于位置的服务"></a>LBS应用 - Location-Based Service - 基于位置的服务</h3><blockquote>
+<p>LBS中的geo方法<br>geoadd key location1 经度 纬度 location2 经度 纬度…<br>geodist key location1 location2<br>georadius key 经度 纬度 距离 withcoord（显示坐标） withdist（显示距离）</p>
+</blockquote>
+<h3 id="Linux系统启停服务"><a href="#Linux系统启停服务" class="headerlink" title="Linux系统启停服务"></a>Linux系统启停服务</h3><pre><code>~ 启动：systemctl start nginx
 
         service nginx start
 
