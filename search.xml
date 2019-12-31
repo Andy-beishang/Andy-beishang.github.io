@@ -1015,10 +1015,10 @@
 </tr>
 </thead>
 <tbody><tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>-/d/l</td>
+<td>rwx</td>
+<td>r-x</td>
+<td>r-x</td>
 </tr>
 </tbody></table>
 <p>默认情况下文件和文件夹的权限: 文件所有者有读写权限， 同组用户和其他用户都是只读权限。</p>
@@ -1103,7 +1103,21 @@
 <p>whereis 指令名     -查找和指定指令相关的所有的文件的路径</p>
 <p>man   指令名        -获取指定指令的使用手册</p>
 <p>指令名   — help    -获取指定指令的帮助文档</p>
-]]></content>
+<h3 id="13-Linux系统启停服务"><a href="#13-Linux系统启停服务" class="headerlink" title="13.Linux系统启停服务"></a>13.Linux系统启停服务</h3><pre><code>~ 启动：systemctl start nginx
+
+        service nginx start
+
+~ 停止：systemctl stop nginx
+
+        service nginx stop
+
+~ 重启：systemctl restart nginx
+
+~ 查看状态：systemctl status nginx
+
+~ 开机自启：systemctl enable nginx
+
+~ 禁用自启：systemctl disable nginx</code></pre>]]></content>
       <categories>
         <category>Linux指令</category>
       </categories>
