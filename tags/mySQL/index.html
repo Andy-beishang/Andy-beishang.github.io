@@ -52,14 +52,14 @@
   <meta name="description" content="一个人的狂欢">
 <meta property="og:type" content="website">
 <meta property="og:title" content="霖时人間">
-<meta property="og:url" content="https://hanlin.fun/tags/mySQL/index.html">
+<meta property="og:url" content="https://hanlin.fun/tags/MySQL/index.html">
 <meta property="og:site_name" content="霖时人間">
 <meta property="og:description" content="一个人的狂欢">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="霖">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://hanlin.fun/tags/mySQL/">
+<link rel="canonical" href="https://hanlin.fun/tags/MySQL/">
 
 
 <script id="page-configurations">
@@ -71,7 +71,7 @@
   };
 </script>
 
-  <title>标签: mySQL | 霖时人間</title>
+  <title>标签: MySQL | 霖时人間</title>
   
 
 
@@ -209,7 +209,7 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <h1 class="collection-header">mySQL
+        <h1 class="collection-header">MySQL
           <small>标签</small>
         </h1>
       </div>
@@ -224,75 +224,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2019-12-26T17:31:00+08:00"
-              content="2019-12-26">
-          12-26
+              datetime="2019-12-30T10:25:00+08:00"
+              content="2019-12-30">
+          12-30
         </time>
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/26/pymysql/" itemprop="url">
-            <span itemprop="name">pymysql</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-25T11:23:00+08:00"
-              content="2019-12-25">
-          12-25
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/25/03-shou-quan-shi-wu-shi-tu-he-suo-yin/" itemprop="url">
-            <span itemprop="name">03.授权、事务、视图和索引</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-25T09:48:00+08:00"
-              content="2019-12-25">
-          12-25
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/25/02.wai-jian-yue-shu-he-gao-ji-cha-xun/" itemprop="url">
-            <span itemprop="name">02.外键约束和高级查询</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-24T19:08:00+08:00"
-              content="2019-12-24">
-          12-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/24/01-sql-ji-chu-yu-fa/" itemprop="url">
-            <span itemprop="name">01.SQL基础语法</span>
+          <a class="post-title-link" href="/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/" itemprop="url">
+            <span itemprop="name">Python中使用Redis做数据缓存</span>
           </a>
       </h2>
 
@@ -536,6 +476,85 @@ var pjax = new Pjax({
 
 window.addEventListener('pjax:success', () => {
   document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  <script src="//code.tidio.co/k9ughjaj6qve5bhkgq5jehurdlhptpc6.js"></script>
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+    </div>
+  <!-- 音频播放 -->
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+<script src="/live2d-widget/autoload.js"></script>
+
+</body>
+</html>t').forEach(element => {
     var code = element.text || element.textContent || element.innerHTML || '';
     var parent = element.parentNode;
     parent.removeChild(element);
