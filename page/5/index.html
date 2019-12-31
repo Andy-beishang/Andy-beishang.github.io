@@ -52,26 +52,26 @@
   <meta name="description" content="一个人的狂欢">
 <meta property="og:type" content="website">
 <meta property="og:title" content="霖时人間">
-<meta property="og:url" content="https://hanlin.fun/tags/%E7%BE%8E%E5%A5%B3/index.html">
+<meta property="og:url" content="https://hanlin.fun/page/5/index.html">
 <meta property="og:site_name" content="霖时人間">
 <meta property="og:description" content="一个人的狂欢">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="霖">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://hanlin.fun/tags/%E7%BE%8E%E5%A5%B3/">
+<link rel="canonical" href="https://hanlin.fun/page/5/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
+    isHome: true,
     isPost: false
   };
 </script>
 
-  <title>标签: 美女 | 霖时人間</title>
+  <title>霖时人間</title>
   
 
 
@@ -203,49 +203,221 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">美女
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/22/shell-bian-cheng/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="霖">
+      <meta itemprop="description" content="一个人的狂欢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="霖时人間">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/22/shell-bian-cheng/" class="post-title-link" itemprop="url">shell编程</a>
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-22 19:08:00" itemprop="dateCreated datePublished" datetime="2019-12-22T19:08:00+08:00">2019-12-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-29 15:14:10" itemprop="dateModified" datetime="2019-12-29T15:14:10+08:00">2019-12-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+          <h1 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h1><p>Shell脚本，是一种为shell编写的脚本程序。</p>
+<p>Shell编程跟JavaScript、Python编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。</p>
+<p>Linux的Shell种类有很多，我们主要用的是Bourne Shell(/usr.bin/sh或/bin/sh)</p>
+<h3 id="1-创建shell文件"><a href="#1-创建shell文件" class="headerlink" title="1.创建shell文件"></a>1.创建shell文件</h3><p>原则上shell程序可以写在任何文件中，但是一般会在shell文件后加后缀.sh表示当前文件是一个shell文件</p>
+<p>shell需要可执行权限，所以创建好的shell文件需要添加x权限</p>
+<h3 id="2-基础语法"><a href="#2-基础语法" class="headerlink" title="2.基础语法"></a>2.基础语法</h3><h6 id="1）注释"><a href="#1）注释" class="headerlink" title="1）注释"></a>1）注释</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 单行注释</span></span><br><span class="line">:《（此处为两个小于符号）EOF</span><br><span class="line">多行注释1</span><br><span class="line">多行注释2</span><br><span class="line">...</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/22/shell-bian-cheng/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <div>
+      
+    </div>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-30T11:37:00+08:00"
-              content="2019-12-30">
-          12-30
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/30/song-gang-mo-you/" itemprop="url">
-            <span itemprop="name">松冈茉优</span>
-          </a>
-      </h2>
-
-    </header>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
   </article>
+  
+  
+  
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hanlin.fun/2019/12/22/git-chang-yong-zhi-ling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="霖">
+      <meta itemprop="description" content="一个人的狂欢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="霖时人間">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/22/git-chang-yong-zhi-ling/" class="post-title-link" itemprop="url">git常用指令</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-22 18:35:00 / 修改时间：18:54:59" itemprop="dateCreated datePublished" datetime="2019-12-22T18:35:00+08:00">2019-12-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git%E6%8C%87%E4%BB%A4/" itemprop="url" rel="index">
+                    <span itemprop="name">git指令</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="git常用指令"><a href="#git常用指令" class="headerlink" title="git常用指令"></a>git常用指令</h1><h2 id="1-基本指令"><a href="#1-基本指令" class="headerlink" title="1.基本指令"></a>1.基本指令</h2><p><code>git init</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  新建git仓库<br><code>git add 文件/文件夹</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  将文件添加到缓存区中<br><code>git add -A</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — 添加所有内容到缓存区中<br><code>git status</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;———    查看git状态<br><code>git commit -m  ‘提交信息’</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  将缓存区中的内容全部提交到git本地仓库中  </p>
+<p><code>git log</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——-    查看提交日志  </p>
+<p><code>git reset  -- hard   HEAD</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——   让工作目录中的内容和仓库中的内容保持一致<br><code>git reset  --hard HEAD^</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到上一个版本<br><code>git  reset  -- hard 版本号</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到指定的版本  </p>
+<p><code>git checkout  文件名</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  从暂存区中恢复工作目录中的内容(让工作区中的指定文件，回到上次提交的时候的状态)  </p>
+<p><code>git clone &lt;url&gt;</code> - 将服务器上的项目(仓库)克隆 (使用https地址需要输入密码，使用ssh地址需要添加公钥)  </p>
+<p><code>git remote add origin 地址</code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 关联远程仓库(只需要关联一次)</p>
+<p><code>git push [-u] origin master</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 提交(-u在第一次提交分支的时候才用)  </p>
+<p><code>git push</code>         —  将本地仓库的内容提交到远程仓库master分支上</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/22/git-chang-yong-zhi-ling/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
-  </div>
+
+    <div>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
   
   
   
 
+  </div>
+
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -312,20 +484,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -397,12 +569,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">31k</span>
+    <span title="站点总字数">30k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">28 分钟</span>
+    <span title="站点阅读时长">27 分钟</span>
 </div>
 
         
