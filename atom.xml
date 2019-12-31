@@ -73,27 +73,35 @@
   </entry>
   
   <entry>
-    <title>Redis的基础及核心数据类型</title>
+    <title>Redis的基础</title>
     <link href="https://hanlin.fun/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/"/>
     <id>https://hanlin.fun/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/</id>
     <published>2019-12-30T01:54:00.000Z</published>
-    <updated>2019-12-30T02:11:51.063Z</updated>
+    <updated>2019-12-31T10:41:39.645Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;连接Redis数据库并添加数据&quot;&gt;&lt;a href=&quot;#连接Redis数据库并添加数据&quot; class=&quot;headerlink&quot; title=&quot;连接Redis数据库并添加数据&quot;&gt;&lt;/a&gt;连接Redis数据库并添加数据&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;redis-cli -p 端口 -h 主机&lt;br&gt;set username luohao ex 120 —&amp;gt; 添加键值对&lt;br&gt;get username —&amp;gt; 通过键查找值&lt;br&gt;ttl username —&amp;gt; 查看键过期时间&lt;br&gt;expire username 300 —&amp;gt; 设置键过期时间&lt;br&gt;keys * —&amp;gt; 查看所有键&lt;br&gt;dbsize —&amp;gt; 查看数据库大小（键值对数量）&lt;br&gt;select 编号 —&amp;gt; 切换数据库&lt;br&gt;save —&amp;gt; 保存数据&lt;br&gt;bgsave —&amp;gt; 后台保存数据&lt;br&gt;flushdb —&amp;gt; 清空当前数据库的数据&lt;br&gt;flushall —&amp;gt; 清空所有数据库的数据&lt;br&gt;exists —&amp;gt; 判断指定的键是否存在&lt;br&gt;type —&amp;gt; 查看键对应的值的数据类型&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Redis的核心数据类型：&quot;&gt;&lt;a href=&quot;#Redis的核心数据类型：&quot; class=&quot;headerlink&quot; title=&quot;Redis的核心数据类型：&quot;&gt;&lt;/a&gt;Redis的核心数据类型：&lt;/h3&gt;&lt;h4 id=&quot;1-字符串&quot;&gt;&lt;a href=&quot;#1-字符串&quot; class=&quot;headerlink&quot; title=&quot;1. 字符串&quot;&gt;&lt;/a&gt;1. 字符串&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;  set key value —&amp;gt; 添加键值对&lt;br&gt;   get key —&amp;gt; 通过键查看值&lt;br&gt;   strlen key —&amp;gt; 获取字符串长度&lt;br&gt;   append key value2 —&amp;gt; 给字符串追加内容&lt;br&gt;   mset key1 value1 key2 value2 —&amp;gt; 添加多组键值对&lt;br&gt;   mget key1 key2 —&amp;gt; 查看多个键对应的值&lt;br&gt;   incr key —&amp;gt; 值加1&lt;br&gt;   incrby key value —&amp;gt; 值加上value&lt;br&gt;   decr key —&amp;gt; 值减1&lt;br&gt;   decrby key value —&amp;gt; 值减去value&lt;br&gt;   getrange key start end —&amp;gt; 获取字符串指定范围的子串&lt;br&gt;   setrange key offset value —&amp;gt; 修改字符串指定位置&lt;br&gt;  的内容&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;2-哈希（表）-hash&quot;&gt;&lt;a href=&quot;#2-哈希（表）-hash&quot; class=&quot;headerlink&quot; title=&quot;2. 哈希（表） - hash&quot;&gt;&lt;/a&gt;2. 哈希（表） - hash&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;  hset key field value —&amp;gt; 添加hash类型键值对&lt;br&gt;   hmset key field1 value1 field2 value2 —&amp;gt; 添加多组hash类型键值对&lt;br&gt;   hget key field —&amp;gt; 获取hash类型字段对应的值&lt;br&gt;   hmget key field1 field2 —&amp;gt; 获取hash类型多个字段对应的值&lt;br&gt;   hgetall key —&amp;gt; 获取hash类型所有的字段和对应的值&lt;br&gt;   hkeys key —&amp;gt; 获取hash类型所有的字段&lt;br&gt;   hvals key —&amp;gt; 获取hash类型所有字段的值&lt;br&gt;   hexists key field —&amp;gt; 判断hash类型某个字段是否存&amp;gt; 在&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;3-列表-list&quot;&gt;&lt;a href=&quot;#3-列表-list&quot; class=&quot;headerlink&quot; title=&quot;3. 列表 - list&quot;&gt;&lt;/a&gt;3. 列表 - list&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;  lpush key value1 value2 value3 —&amp;gt; 在左边添加元素&lt;br&gt;   rpush key value1 value2 value3 —&amp;gt; 在右边添加元素&lt;br&gt;   lpop key —&amp;gt; 从左边移除一个元素&lt;br&gt;   rpop key —&amp;gt; 从右边移除一个元素&lt;br&gt;   lrange key start end —&amp;gt; 查看列表指定范围的元素&lt;br&gt;   llen key —&amp;gt; 查看列表元素个数&lt;br&gt;   lindex key index —&amp;gt; 查看列表指定位置元素&lt;br&gt;  lrem key count value —&amp;gt; 删除列表中指定元素&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;4-集合-set&quot;&gt;&lt;a href=&quot;#4-集合-set&quot; class=&quot;headerlink&quot; title=&quot;4. 集合 - set&quot;&gt;&lt;/a&gt;4. 集合 - set&lt;/h4&gt;
+      &lt;h3 id=&quot;Redis简介&quot;&gt;&lt;a href=&quot;#Redis简介&quot; class=&quot;headerlink&quot; title=&quot;Redis简介&quot;&gt;&lt;/a&gt;Redis简介&lt;/h3&gt;&lt;p&gt;Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。&lt;/p&gt;
+&lt;p&gt;Redis 与其他 key - value 缓存产品有以下三个特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。&lt;/li&gt;
+&lt;li&gt;Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。&lt;/li&gt;
+&lt;li&gt;Redis支持数据的备份，即master-slave模式的数据备份。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Redis-优势&quot;&gt;&lt;a href=&quot;#Redis-优势&quot; class=&quot;headerlink&quot; title=&quot;Redis 优势&quot;&gt;&lt;/a&gt;Redis 优势&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;性能极高 – Redis能读的速度是110000次/s,写的速度是81000次/s 。&lt;/li&gt;
+&lt;li&gt;丰富的数据类型 – Redis支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。&lt;/li&gt;
+&lt;li&gt;原子 – Redis的所有操作都是原子性的，意思就是要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过MULTI和EXEC指令包起来。&lt;/li&gt;
+&lt;li&gt;丰富的特性 – Redis还支持 publish/subscribe, 通知, key 过期等等特性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Redis与其他key-value存储有什么不同？&quot;&gt;&lt;a href=&quot;#Redis与其他key-value存储有什么不同？&quot; class=&quot;headerlink&quot; title=&quot;Redis与其他key-value存储有什么不同？&quot;&gt;&lt;/a&gt;Redis与其他key-value存储有什么不同？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Redis有着更为复杂的数据结构并且提供对他们的原子性操作，这是一个不同于其他数据库的进化路径。Redis的数据类型都是基于基本数据结构的同时对程序员透明，无需进行额外的抽象。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Redis运行在内存中但是可以持久化到磁盘，所以在对不同数据集进行高速读写时需要权衡内存，因为数据量不能大于硬件内存。在内存数据库方面的另一个优点是，相比在磁盘上相同的复杂的数据结构，在内存中操作起来非常简单，这样Redis可以做很多内部复杂性很强的事情。同时，在磁盘格式方面他们是紧凑的以追加的方式产生的，因为他们并不需要进行随机访问。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;（ 上述内容均转自菜鸟教程&lt;a href=&quot;https://www.runoob.com/redis/redis-intro.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.runoob.com/redis/redis-intro.html&lt;/a&gt; ）&lt;/p&gt;
+&lt;h3 id=&quot;Linux环境下Redis的安装&quot;&gt;&lt;a href=&quot;#Linux环境下Redis的安装&quot; class=&quot;headerlink&quot; title=&quot;Linux环境下Redis的安装&quot;&gt;&lt;/a&gt;Linux环境下Redis的安装&lt;/h3&gt;
     
     </summary>
     

@@ -48,44 +48,343 @@
       </tags>
   </entry>
   <entry>
-    <title>Redis的基础及核心数据类型</title>
+    <title>Redis的基础</title>
     <url>/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/</url>
-    <content><![CDATA[<h3 id="连接Redis数据库并添加数据"><a href="#连接Redis数据库并添加数据" class="headerlink" title="连接Redis数据库并添加数据"></a>连接Redis数据库并添加数据</h3><blockquote>
-<p>redis-cli -p 端口 -h 主机<br>set username luohao ex 120 —&gt; 添加键值对<br>get username —&gt; 通过键查找值<br>ttl username —&gt; 查看键过期时间<br>expire username 300 —&gt; 设置键过期时间<br>keys * —&gt; 查看所有键<br>dbsize —&gt; 查看数据库大小（键值对数量）<br>select 编号 —&gt; 切换数据库<br>save —&gt; 保存数据<br>bgsave —&gt; 后台保存数据<br>flushdb —&gt; 清空当前数据库的数据<br>flushall —&gt; 清空所有数据库的数据<br>exists —&gt; 判断指定的键是否存在<br>type —&gt; 查看键对应的值的数据类型</p>
-</blockquote>
-<h3 id="Redis的核心数据类型："><a href="#Redis的核心数据类型：" class="headerlink" title="Redis的核心数据类型："></a>Redis的核心数据类型：</h3><h4 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1. 字符串"></a>1. 字符串</h4><blockquote>
-<p>  set key value —&gt; 添加键值对<br>   get key —&gt; 通过键查看值<br>   strlen key —&gt; 获取字符串长度<br>   append key value2 —&gt; 给字符串追加内容<br>   mset key1 value1 key2 value2 —&gt; 添加多组键值对<br>   mget key1 key2 —&gt; 查看多个键对应的值<br>   incr key —&gt; 值加1<br>   incrby key value —&gt; 值加上value<br>   decr key —&gt; 值减1<br>   decrby key value —&gt; 值减去value<br>   getrange key start end —&gt; 获取字符串指定范围的子串<br>   setrange key offset value —&gt; 修改字符串指定位置<br>  的内容</p>
-</blockquote>
-<h4 id="2-哈希（表）-hash"><a href="#2-哈希（表）-hash" class="headerlink" title="2. 哈希（表） - hash"></a>2. 哈希（表） - hash</h4><blockquote>
-<p>  hset key field value —&gt; 添加hash类型键值对<br>   hmset key field1 value1 field2 value2 —&gt; 添加多组hash类型键值对<br>   hget key field —&gt; 获取hash类型字段对应的值<br>   hmget key field1 field2 —&gt; 获取hash类型多个字段对应的值<br>   hgetall key —&gt; 获取hash类型所有的字段和对应的值<br>   hkeys key —&gt; 获取hash类型所有的字段<br>   hvals key —&gt; 获取hash类型所有字段的值<br>   hexists key field —&gt; 判断hash类型某个字段是否存&gt; 在</p>
-</blockquote>
-<h4 id="3-列表-list"><a href="#3-列表-list" class="headerlink" title="3. 列表 - list"></a>3. 列表 - list</h4><blockquote>
-<p>  lpush key value1 value2 value3 —&gt; 在左边添加元素<br>   rpush key value1 value2 value3 —&gt; 在右边添加元素<br>   lpop key —&gt; 从左边移除一个元素<br>   rpop key —&gt; 从右边移除一个元素<br>   lrange key start end —&gt; 查看列表指定范围的元素<br>   llen key —&gt; 查看列表元素个数<br>   lindex key index —&gt; 查看列表指定位置元素<br>  lrem key count value —&gt; 删除列表中指定元素</p>
-</blockquote>
-<h4 id="4-集合-set"><a href="#4-集合-set" class="headerlink" title="4. 集合 - set"></a>4. 集合 - set</h4><blockquote>
-<p>  sadd key value1 value2 value3 —&gt; 添加元素<br>   srem key value —&gt; 删除元素<br>   spop —&gt; 获取随机元素<br>   scard key —&gt; 查看元素个数<br>   smembers key —&gt; 查看所有元素<br>   sismember key value —&gt; 查看集合中有没有指定元素<br>   sinter key1 key2 —&gt; 交集<br>   sunion key1 key2 —&gt; 并集<br>  sdiff key1 key2 —&gt; 差集</p>
-</blockquote>
-<h4 id="5-有序集合-zset"><a href="#5-有序集合-zset" class="headerlink" title="5. 有序集合 - zset"></a>5. 有序集合 - zset</h4><blockquote>
-<p>  zadd key score1 mem1 score2 mem2 —&gt; 添加元素<br>   zrem key mem —&gt; 删除元素<br>   zrange key start end —&gt; 按score的升序查看元素<br>   zrevrange key start end —&gt; 按score的降序查看元素<br>   zscore key mem —&gt; 查看元素对应的score<br>  zincrby key value mem —&gt; 修改元素的score值</p>
-</blockquote>
-<h3 id="LBS应用-Location-Based-Service-基于位置的服务"><a href="#LBS应用-Location-Based-Service-基于位置的服务" class="headerlink" title="LBS应用 - Location-Based Service - 基于位置的服务"></a>LBS应用 - Location-Based Service - 基于位置的服务</h3><blockquote>
-<p>LBS中的geo方法<br>geoadd key location1 经度 纬度 location2 经度 纬度…<br>geodist key location1 location2<br>georadius key 经度 纬度 距离 withcoord（显示坐标） withdist（显示距离）</p>
-</blockquote>
-<h3 id="Linux系统启停服务"><a href="#Linux系统启停服务" class="headerlink" title="Linux系统启停服务"></a>Linux系统启停服务</h3><pre><code>~ 启动：systemctl start nginx
-
-        service nginx start
-
-~ 停止：systemctl stop nginx
-
-        service nginx stop
-
-~ 重启：systemctl restart nginx
-
-~ 查看状态：systemctl status nginx
-
-~ 开机自启：systemctl enable nginx
-
-~ 禁用自启：systemctl disable nginx</code></pre>]]></content>
+    <content><![CDATA[<h3 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h3><p>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。</p>
+<p>Redis 与其他 key - value 缓存产品有以下三个特点：</p>
+<ul>
+<li>Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。</li>
+<li>Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</li>
+<li>Redis支持数据的备份，即master-slave模式的数据备份。</li>
+</ul>
+<h3 id="Redis-优势"><a href="#Redis-优势" class="headerlink" title="Redis 优势"></a>Redis 优势</h3><ul>
+<li>性能极高 – Redis能读的速度是110000次/s,写的速度是81000次/s 。</li>
+<li>丰富的数据类型 – Redis支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。</li>
+<li>原子 – Redis的所有操作都是原子性的，意思就是要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过MULTI和EXEC指令包起来。</li>
+<li>丰富的特性 – Redis还支持 publish/subscribe, 通知, key 过期等等特性。</li>
+</ul>
+<h3 id="Redis与其他key-value存储有什么不同？"><a href="#Redis与其他key-value存储有什么不同？" class="headerlink" title="Redis与其他key-value存储有什么不同？"></a>Redis与其他key-value存储有什么不同？</h3><ul>
+<li><p>Redis有着更为复杂的数据结构并且提供对他们的原子性操作，这是一个不同于其他数据库的进化路径。Redis的数据类型都是基于基本数据结构的同时对程序员透明，无需进行额外的抽象。</p>
+</li>
+<li><p>Redis运行在内存中但是可以持久化到磁盘，所以在对不同数据集进行高速读写时需要权衡内存，因为数据量不能大于硬件内存。在内存数据库方面的另一个优点是，相比在磁盘上相同的复杂的数据结构，在内存中操作起来非常简单，这样Redis可以做很多内部复杂性很强的事情。同时，在磁盘格式方面他们是紧凑的以追加的方式产生的，因为他们并不需要进行随机访问。</p>
+</li>
+</ul>
+<p>（ 上述内容均转自菜鸟教程<a href="https://www.runoob.com/redis/redis-intro.html" target="_blank" rel="noopener">https://www.runoob.com/redis/redis-intro.html</a> ）</p>
+<h3 id="Linux环境下Redis的安装"><a href="#Linux环境下Redis的安装" class="headerlink" title="Linux环境下Redis的安装"></a>Linux环境下Redis的安装</h3><p>源代码构建的方式进行安装为例</p>
+<pre><code>~ wget http://download.redis.io/releases/redis-5.0.7.tar.gz
+~ gunzip redis-5.0.7.tar.gz
+~ tar -xvf redis-5.0.7.tar
+~ cd redis-5.0.7
+~ make &amp;&amp; make install</code></pre><p>（ 其他方式请自行参考<a href="https://www.runoob.com/redis/redis-install.html" target="_blank" rel="noopener">https://www.runoob.com/redis/redis-install.html</a> ）</p>
+<h3 id="连接Redis数据库并添加数据"><a href="#连接Redis数据库并添加数据" class="headerlink" title="连接Redis数据库并添加数据"></a>连接Redis数据库并添加数据</h3><h4 id="启动Redis服务器"><a href="#启动Redis服务器" class="headerlink" title="启动Redis服务器"></a>启动Redis服务器</h4><pre><code>~redis-server --requirepass password（设定连接密码） --port 1234设定端口（默认使用6379端口） &gt;&gt; redis.log（将执行过程中生成的数据重定向） &amp;（后台运行）</code></pre><p>（ Redis的更多配置方法参考<a href="https://www.runoob.com/redis/redis-conf.html" target="_blank" rel="noopener">https://www.runoob.com/redis/redis-conf.html</a> ）</p>
+<h4 id="连接Redis服务器"><a href="#连接Redis服务器" class="headerlink" title="连接Redis服务器"></a>连接Redis服务器</h4><p>连接本地服务器（localhost）</p>
+<pre><code>~redis-cli</code></pre><p>连接远程服务器</p>
+<pre><code>~redis-cli -p prot（输入端口号） -h host（输入ip地址） -a password（输入密码）</code></pre><h4 id="基础指令"><a href="#基础指令" class="headerlink" title="基础指令"></a>基础指令</h4><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>指令说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auth password(连接密码)</td>
+<td>验证密码是否正确</td>
+</tr>
+<tr>
+<td>echo message</td>
+<td>打印message内容</td>
+</tr>
+<tr>
+<td>ping</td>
+<td>测试是否成功连接，成功的话会返回pong</td>
+</tr>
+<tr>
+<td>select 编号</td>
+<td>切换数据库，redis默认会为用户创建16个数据库</td>
+</tr>
+<tr>
+<td>quit</td>
+<td>断开与redis的连接</td>
+</tr>
+<tr>
+<td>set key value</td>
+<td>往数据库中添加键值对</td>
+</tr>
+<tr>
+<td>set key value ex time(秒数)</td>
+<td>向数据库中添加一对time后会失效的键值对</td>
+</tr>
+<tr>
+<td>get key</td>
+<td>获取键对应的值</td>
+</tr>
+<tr>
+<td>ttl key</td>
+<td>查看键对应的键值对的过期时间 -1代表永不过期</td>
+</tr>
+<tr>
+<td>expire key time</td>
+<td>给指定的键对应的键值对设置过期时间</td>
+</tr>
+<tr>
+<td>keys *</td>
+<td>查看数据库中的所有的键</td>
+</tr>
+<tr>
+<td>dbsize</td>
+<td>查看数据库中存在的键值对的数量</td>
+</tr>
+<tr>
+<td>save</td>
+<td>保存数据</td>
+</tr>
+<tr>
+<td>bgsave</td>
+<td>在后台保存数据</td>
+</tr>
+<tr>
+<td>flushdb</td>
+<td>清空当前数据库中的数据</td>
+</tr>
+<tr>
+<td>flushall</td>
+<td>清空所有数据库中的数据</td>
+</tr>
+<tr>
+<td>exists key</td>
+<td>判断指定的键是否存在</td>
+</tr>
+<tr>
+<td>type key</td>
+<td>查看指定的键对应的数据类型</td>
+</tr>
+</tbody></table>
+<h3 id="Redis的核心数据类型："><a href="#Redis的核心数据类型：" class="headerlink" title="Redis的核心数据类型："></a>Redis的核心数据类型：</h3><h4 id="字符串-String"><a href="#字符串-String" class="headerlink" title="字符串 - String"></a>字符串 - String</h4><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>指令说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>strlen key</td>
+<td>获取字符串长度</td>
+</tr>
+<tr>
+<td>append key value2</td>
+<td>给字符串追加内容</td>
+</tr>
+<tr>
+<td>mset key1 value1 key2 value2</td>
+<td>添加多组键值对</td>
+</tr>
+<tr>
+<td>mget key1 key2</td>
+<td>查看多个键对应的值</td>
+</tr>
+<tr>
+<td>incr key</td>
+<td>值加1</td>
+</tr>
+<tr>
+<td>incrby key value</td>
+<td>值加上value</td>
+</tr>
+<tr>
+<td>decr key</td>
+<td>值减1</td>
+</tr>
+<tr>
+<td>decrby key value</td>
+<td>值减去value</td>
+</tr>
+<tr>
+<td>getrange key start end</td>
+<td>获取字符串指定范围的子串</td>
+</tr>
+<tr>
+<td>setrange key offset value</td>
+<td>修改字符串指定位置的内容</td>
+</tr>
+</tbody></table>
+<h4 id="哈希（表）-hash"><a href="#哈希（表）-hash" class="headerlink" title="哈希（表） - hash"></a>哈希（表） - hash</h4><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>指令说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hset key field value</td>
+<td>添加hash类型键值对</td>
+</tr>
+<tr>
+<td>hmset key field1 value1 field2 value2</td>
+<td>添加多组hash类型键值对</td>
+</tr>
+<tr>
+<td>hget key field</td>
+<td>获取hash类型字段对应的值</td>
+</tr>
+<tr>
+<td>hmget key field1 field2</td>
+<td>获取hash类型多个字段对应的值</td>
+</tr>
+<tr>
+<td>hgetall key</td>
+<td>获取hash类型所有的字段和对应的值</td>
+</tr>
+<tr>
+<td>hkeys key</td>
+<td>获取hash类型所有的字段</td>
+</tr>
+<tr>
+<td>hvals key</td>
+<td>获取hash类型所有字段的值</td>
+</tr>
+<tr>
+<td>hexists key field</td>
+<td>判断hash类型某个字段是否存在</td>
+</tr>
+</tbody></table>
+<h4 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 - list"></a>列表 - list</h4><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>指令说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lpush key value1 value2 value3</td>
+<td>在左边添加元素</td>
+</tr>
+<tr>
+<td>rpush key value1 value2 value3</td>
+<td>在右边添加元素</td>
+</tr>
+<tr>
+<td>lpop key</td>
+<td>从左边移除一个元素</td>
+</tr>
+<tr>
+<td>rpop key</td>
+<td>从右边移除一个元素</td>
+</tr>
+<tr>
+<td>lrange key start end</td>
+<td>查看列表指定范围的元素</td>
+</tr>
+<tr>
+<td>llen key</td>
+<td>查看列表元素个数</td>
+</tr>
+<tr>
+<td>lindex key index</td>
+<td>查看列表指定位置元素</td>
+</tr>
+<tr>
+<td>lrem key count value</td>
+<td>删除列表中指定元素</td>
+</tr>
+</tbody></table>
+<h4 id="集合-set"><a href="#集合-set" class="headerlink" title="集合 - set"></a>集合 - set</h4><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>指令说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sadd key value1 value2 value3</td>
+<td>添加元素</td>
+</tr>
+<tr>
+<td>srem key value</td>
+<td>删除元素</td>
+</tr>
+<tr>
+<td>spop</td>
+<td>获取随机元素（取出后删除）</td>
+</tr>
+<tr>
+<td>scard key</td>
+<td>查看元素个数</td>
+</tr>
+<tr>
+<td>smembers key</td>
+<td>查看所有元素</td>
+</tr>
+<tr>
+<td>sismember key value</td>
+<td>查看集合中有没有指定元素</td>
+</tr>
+<tr>
+<td>sinter key1 key2</td>
+<td>交集</td>
+</tr>
+<tr>
+<td>sunion key1 key2</td>
+<td>并集</td>
+</tr>
+<tr>
+<td>sdiff key1 key2</td>
+<td>差集</td>
+</tr>
+</tbody></table>
+<h4 id="有序集合-zset"><a href="#有序集合-zset" class="headerlink" title="有序集合 - zset"></a>有序集合 - zset</h4><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>指令说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>zadd key score1 mem1 score2 mem2</td>
+<td>添加元素</td>
+</tr>
+<tr>
+<td>zrem key mem</td>
+<td>删除元素</td>
+</tr>
+<tr>
+<td>zrange key start end</td>
+<td>按score的升序查看元素</td>
+</tr>
+<tr>
+<td>zrevrange key start end</td>
+<td>按score的降序查看元素</td>
+</tr>
+<tr>
+<td>zscore key mem</td>
+<td>查看元素对应的score</td>
+</tr>
+<tr>
+<td>zincrby key value mem</td>
+<td>修改元素的score值</td>
+</tr>
+</tbody></table>
+<h3 id="LBS应用-Location-Based-Service-基于位置的服务"><a href="#LBS应用-Location-Based-Service-基于位置的服务" class="headerlink" title="LBS应用 - Location-Based Service - 基于位置的服务"></a>LBS应用 - Location-Based Service - 基于位置的服务</h3><p>LBS中的geo方法</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>指令说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>geoadd key location1 经度 纬度 location2 经度 纬度…</td>
+<td>添加位置坐标</td>
+</tr>
+<tr>
+<td>geodist key location1 location2</td>
+<td>计算位置之间的距离</td>
+</tr>
+<tr>
+<td>georadius key 经度 纬度 距离 withcoord（显示坐标） withdist（显示距离）</td>
+<td>显示以某个位置为中心一定距离的半径范围内的位置坐标及距离</td>
+</tr>
+</tbody></table>
+]]></content>
       <categories>
         <category>Redis</category>
       </categories>
