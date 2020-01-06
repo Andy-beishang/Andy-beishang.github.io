@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Django基础</title>
+    <url>/2020/01/02/django-ji-chu/</url>
+    <content><![CDATA[<h3 id="Django简介"><a href="#Django简介" class="headerlink" title="Django简介"></a>Django简介</h3><p>Python下有许多款不同的 Web 框架。Django是重量级选手中最有代表性的一位。许多成功的网站和APP都基于Django。</p>
+<p>Django是一个开放源代码的Web应用框架，由Python写成。</p>
+<p>Django遵守BSD版权，初次发布于2005年7月, 并于2008年9月发布了第一个正式版本1.0 。</p>
+<p>Django采用了MVC的软件设计模式，即模型M，视图V和控制器C。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Python中使用Redis做数据缓存</title>
     <url>/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/</url>
     <content><![CDATA[<p>导入第三方库PyMySQL、Redis和pickle（把数据转化为二进制数据的第三方库）</p>
@@ -414,8 +423,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>mySQL</tag>
         <tag>SQL</tag>
+        <tag>mySQL</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -480,9 +489,9 @@
         <category>数据库</category>
       </categories>
       <tags>
+        <tag>SQL</tag>
         <tag>数据库</tag>
         <tag>mySQL</tag>
-        <tag>SQL</tag>
         <tag>数据库控制语言</tag>
       </tags>
   </entry>
@@ -699,9 +708,9 @@
         <category>数据库</category>
       </categories>
       <tags>
+        <tag>SQL</tag>
         <tag>数据库</tag>
         <tag>mySQL</tag>
-        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>

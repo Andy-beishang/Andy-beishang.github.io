@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>霖时人間</title>
+  <title>悲伤</title>
   
-  <subtitle>相信的心就是你的魔法</subtitle>
+  <subtitle>人生最遗憾的事儿从来都不是失败，而是我本可以</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://hanlin.fun/"/>
-  <updated>2019-12-30T02:50:35.593Z</updated>
-  <id>https://hanlin.fun/</id>
+  <link href="https://beishang.fun/"/>
+  <updated>2020-01-02T11:11:43.396Z</updated>
+  <id>https://beishang.fun/</id>
   
   <author>
-    <name>霖</name>
+    <name>Andy</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Django基础</title>
+    <link href="https://beishang.fun/2020/01/02/django-ji-chu/"/>
+    <id>https://beishang.fun/2020/01/02/django-ji-chu/</id>
+    <published>2020-01-02T11:10:21.000Z</published>
+    <updated>2020-01-02T11:11:43.396Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Django简介&quot;&gt;&lt;a href=&quot;#Django简介&quot; class=&quot;headerlink&quot; title=&quot;Django简介&quot;&gt;&lt;/a&gt;Django简介&lt;/h3&gt;&lt;p&gt;Python下有许多款不同的 Web 框架。Django是重量级选手中最有代表性的一位。许多
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Python中使用Redis做数据缓存</title>
-    <link href="https://hanlin.fun/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/"/>
-    <id>https://hanlin.fun/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/</id>
+    <link href="https://beishang.fun/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/"/>
+    <id>https://beishang.fun/2019/12/30/python-zhong-shi-yong-redis-zuo-shu-ju-huan-cun/</id>
     <published>2019-12-30T02:25:00.000Z</published>
     <updated>2019-12-30T02:50:35.593Z</updated>
     
@@ -34,21 +54,21 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://hanlin.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://beishang.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="Redis" scheme="https://hanlin.fun/tags/Redis/"/>
+      <category term="Redis" scheme="https://beishang.fun/tags/Redis/"/>
     
-      <category term="MySQL" scheme="https://hanlin.fun/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://beishang.fun/tags/MySQL/"/>
     
-      <category term="Python" scheme="https://hanlin.fun/tags/Python/"/>
+      <category term="Python" scheme="https://beishang.fun/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Redis的基础</title>
-    <link href="https://hanlin.fun/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/"/>
-    <id>https://hanlin.fun/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/</id>
+    <link href="https://beishang.fun/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/"/>
+    <id>https://beishang.fun/2019/12/30/redis-de-he-xin-shu-ju-lei-xing/</id>
     <published>2019-12-30T01:54:00.000Z</published>
     <updated>2019-12-31T11:28:10.016Z</updated>
     
@@ -79,19 +99,19 @@
     </summary>
     
     
-      <category term="Redis" scheme="https://hanlin.fun/categories/Redis/"/>
+      <category term="Redis" scheme="https://beishang.fun/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="https://hanlin.fun/tags/Redis/"/>
+      <category term="Redis" scheme="https://beishang.fun/tags/Redis/"/>
     
-      <category term="数据类型" scheme="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+      <category term="数据类型" scheme="https://beishang.fun/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
     
   </entry>
   
   <entry>
     <title>在Linux中安装软件</title>
-    <link href="https://hanlin.fun/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/"/>
-    <id>https://hanlin.fun/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/</id>
+    <link href="https://beishang.fun/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/"/>
+    <id>https://beishang.fun/2019/12/29/zai-linux-zhong-an-zhuang-cheng-xu/</id>
     <published>2019-12-29T13:07:00.000Z</published>
     <updated>2019-12-29T13:35:48.351Z</updated>
     
@@ -108,17 +128,17 @@
     </summary>
     
     
-      <category term="Linux" scheme="https://hanlin.fun/categories/Linux/"/>
+      <category term="Linux" scheme="https://beishang.fun/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://hanlin.fun/tags/Linux/"/>
+      <category term="Linux" scheme="https://beishang.fun/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>pymysql</title>
-    <link href="https://hanlin.fun/2019/12/26/pymysql/"/>
-    <id>https://hanlin.fun/2019/12/26/pymysql/</id>
+    <link href="https://beishang.fun/2019/12/26/pymysql/"/>
+    <id>https://beishang.fun/2019/12/26/pymysql/</id>
     <published>2019-12-26T09:31:00.000Z</published>
     <updated>2019-12-29T08:07:34.364Z</updated>
     
@@ -133,21 +153,21 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://hanlin.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://beishang.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="mySQL" scheme="https://hanlin.fun/tags/mySQL/"/>
+      <category term="SQL" scheme="https://beishang.fun/tags/SQL/"/>
     
-      <category term="SQL" scheme="https://hanlin.fun/tags/SQL/"/>
+      <category term="mySQL" scheme="https://beishang.fun/tags/mySQL/"/>
     
-      <category term="python" scheme="https://hanlin.fun/tags/python/"/>
+      <category term="python" scheme="https://beishang.fun/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>03.授权、事务、视图和索引</title>
-    <link href="https://hanlin.fun/2019/12/25/03-shou-quan-shi-wu-shi-tu-he-suo-yin/"/>
-    <id>https://hanlin.fun/2019/12/25/03-shou-quan-shi-wu-shi-tu-he-suo-yin/</id>
+    <link href="https://beishang.fun/2019/12/25/03-shou-quan-shi-wu-shi-tu-he-suo-yin/"/>
+    <id>https://beishang.fun/2019/12/25/03-shou-quan-shi-wu-shi-tu-he-suo-yin/</id>
     <published>2019-12-25T03:23:00.000Z</published>
     <updated>2019-12-29T08:08:04.255Z</updated>
     
@@ -164,23 +184,23 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://hanlin.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://beishang.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="数据库" scheme="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="SQL" scheme="https://beishang.fun/tags/SQL/"/>
     
-      <category term="mySQL" scheme="https://hanlin.fun/tags/mySQL/"/>
+      <category term="数据库" scheme="https://beishang.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="SQL" scheme="https://hanlin.fun/tags/SQL/"/>
+      <category term="mySQL" scheme="https://beishang.fun/tags/mySQL/"/>
     
-      <category term="数据库控制语言" scheme="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A7%E5%88%B6%E8%AF%AD%E8%A8%80/"/>
+      <category term="数据库控制语言" scheme="https://beishang.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A7%E5%88%B6%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
   <entry>
     <title>02.外键约束和高级查询</title>
-    <link href="https://hanlin.fun/2019/12/25/02.wai-jian-yue-shu-he-gao-ji-cha-xun/"/>
-    <id>https://hanlin.fun/2019/12/25/02.wai-jian-yue-shu-he-gao-ji-cha-xun/</id>
+    <link href="https://beishang.fun/2019/12/25/02.wai-jian-yue-shu-he-gao-ji-cha-xun/"/>
+    <id>https://beishang.fun/2019/12/25/02.wai-jian-yue-shu-he-gao-ji-cha-xun/</id>
     <published>2019-12-25T01:48:00.000Z</published>
     <updated>2019-12-31T11:23:40.118Z</updated>
     
@@ -195,21 +215,21 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://hanlin.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://beishang.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="数据库" scheme="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://beishang.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="mySQL" scheme="https://hanlin.fun/tags/mySQL/"/>
+      <category term="mySQL" scheme="https://beishang.fun/tags/mySQL/"/>
     
-      <category term="查询操作" scheme="https://hanlin.fun/tags/%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C/"/>
+      <category term="查询操作" scheme="https://beishang.fun/tags/%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>01.SQL基础语法</title>
-    <link href="https://hanlin.fun/2019/12/24/01-sql-ji-chu-yu-fa/"/>
-    <id>https://hanlin.fun/2019/12/24/01-sql-ji-chu-yu-fa/</id>
+    <link href="https://beishang.fun/2019/12/24/01-sql-ji-chu-yu-fa/"/>
+    <id>https://beishang.fun/2019/12/24/01-sql-ji-chu-yu-fa/</id>
     <published>2019-12-24T11:08:00.000Z</published>
     <updated>2019-12-29T08:08:41.350Z</updated>
     
@@ -229,21 +249,21 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://hanlin.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://beishang.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="数据库" scheme="https://hanlin.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="SQL" scheme="https://beishang.fun/tags/SQL/"/>
     
-      <category term="mySQL" scheme="https://hanlin.fun/tags/mySQL/"/>
+      <category term="数据库" scheme="https://beishang.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="SQL" scheme="https://hanlin.fun/tags/SQL/"/>
+      <category term="mySQL" scheme="https://beishang.fun/tags/mySQL/"/>
     
   </entry>
   
   <entry>
     <title>shell编程</title>
-    <link href="https://hanlin.fun/2019/12/22/shell-bian-cheng/"/>
-    <id>https://hanlin.fun/2019/12/22/shell-bian-cheng/</id>
+    <link href="https://beishang.fun/2019/12/22/shell-bian-cheng/"/>
+    <id>https://beishang.fun/2019/12/22/shell-bian-cheng/</id>
     <published>2019-12-22T11:08:00.000Z</published>
     <updated>2019-12-29T07:14:10.600Z</updated>
     
@@ -259,19 +279,19 @@
     </summary>
     
     
-      <category term="shell" scheme="https://hanlin.fun/categories/shell/"/>
+      <category term="shell" scheme="https://beishang.fun/categories/shell/"/>
     
     
-      <category term="脚本" scheme="https://hanlin.fun/tags/%E8%84%9A%E6%9C%AC/"/>
+      <category term="脚本" scheme="https://beishang.fun/tags/%E8%84%9A%E6%9C%AC/"/>
     
-      <category term="shell" scheme="https://hanlin.fun/tags/shell/"/>
+      <category term="shell" scheme="https://beishang.fun/tags/shell/"/>
     
   </entry>
   
   <entry>
     <title>git常用指令</title>
-    <link href="https://hanlin.fun/2019/12/22/git-chang-yong-zhi-ling/"/>
-    <id>https://hanlin.fun/2019/12/22/git-chang-yong-zhi-ling/</id>
+    <link href="https://beishang.fun/2019/12/22/git-chang-yong-zhi-ling/"/>
+    <id>https://beishang.fun/2019/12/22/git-chang-yong-zhi-ling/</id>
     <published>2019-12-22T10:35:00.000Z</published>
     <updated>2019-12-22T10:54:59.699Z</updated>
     
@@ -289,21 +309,21 @@
     </summary>
     
     
-      <category term="git指令" scheme="https://hanlin.fun/categories/git%E6%8C%87%E4%BB%A4/"/>
+      <category term="git指令" scheme="https://beishang.fun/categories/git%E6%8C%87%E4%BB%A4/"/>
     
     
-      <category term="git" scheme="https://hanlin.fun/tags/git/"/>
+      <category term="git" scheme="https://beishang.fun/tags/git/"/>
     
-      <category term="仓库" scheme="https://hanlin.fun/tags/%E4%BB%93%E5%BA%93/"/>
+      <category term="仓库" scheme="https://beishang.fun/tags/%E4%BB%93%E5%BA%93/"/>
     
-      <category term="远程仓库" scheme="https://hanlin.fun/tags/%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/"/>
+      <category term="远程仓库" scheme="https://beishang.fun/tags/%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>vim的使用</title>
-    <link href="https://hanlin.fun/2019/12/22/vim-de-shi-yong/"/>
-    <id>https://hanlin.fun/2019/12/22/vim-de-shi-yong/</id>
+    <link href="https://beishang.fun/2019/12/22/vim-de-shi-yong/"/>
+    <id>https://beishang.fun/2019/12/22/vim-de-shi-yong/</id>
     <published>2019-12-22T10:33:00.000Z</published>
     <updated>2019-12-29T07:09:46.797Z</updated>
     
@@ -320,19 +340,19 @@
     </summary>
     
     
-      <category term="vim指令" scheme="https://hanlin.fun/categories/vim%E6%8C%87%E4%BB%A4/"/>
+      <category term="vim指令" scheme="https://beishang.fun/categories/vim%E6%8C%87%E4%BB%A4/"/>
     
     
-      <category term="Linux" scheme="https://hanlin.fun/tags/Linux/"/>
+      <category term="Linux" scheme="https://beishang.fun/tags/Linux/"/>
     
-      <category term="vim" scheme="https://hanlin.fun/tags/vim/"/>
+      <category term="vim" scheme="https://beishang.fun/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>Linux日常指令</title>
-    <link href="https://hanlin.fun/2019/12/21/linux-ri-chang-zhi-ling/"/>
-    <id>https://hanlin.fun/2019/12/21/linux-ri-chang-zhi-ling/</id>
+    <link href="https://beishang.fun/2019/12/21/linux-ri-chang-zhi-ling/"/>
+    <id>https://beishang.fun/2019/12/21/linux-ri-chang-zhi-ling/</id>
     <published>2019-12-21T08:25:00.000Z</published>
     <updated>2019-12-31T10:50:45.792Z</updated>
     
@@ -355,12 +375,12 @@
     </summary>
     
     
-      <category term="Linux指令" scheme="https://hanlin.fun/categories/Linux%E6%8C%87%E4%BB%A4/"/>
+      <category term="Linux指令" scheme="https://beishang.fun/categories/Linux%E6%8C%87%E4%BB%A4/"/>
     
     
-      <category term="Linux" scheme="https://hanlin.fun/tags/Linux/"/>
+      <category term="Linux" scheme="https://beishang.fun/tags/Linux/"/>
     
-      <category term="vim" scheme="https://hanlin.fun/tags/vim/"/>
+      <category term="vim" scheme="https://beishang.fun/tags/vim/"/>
     
   </entry>
   
